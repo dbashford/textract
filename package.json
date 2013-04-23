@@ -24,9 +24,16 @@
     "hint"
   ],
   "dependencies": {
-    "node-mime" : "1.2.9",
+    "mime" : "1.2.9",
     "pdf-text-extract" : "1.0.7"
   },
+  "devDependencies": {
+    "mocha": "1.9.0",
+    "chai": "1.5.0"
+  },
+  "scripts": {
+     "test": "node_modules/.bin/mocha"
+   },
   "license": "MIT",
   "engines": {
     "node": ">=0.8"
