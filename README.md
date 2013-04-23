@@ -33,7 +33,7 @@ textract(filePath, function( error, text ) {
 })
 ```
 
-If you do know the mime type of the file
+If you know the mime type of the file
 
 ```
 textract(type, filePath, function( error, text ) {
