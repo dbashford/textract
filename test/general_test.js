@@ -1,4 +1,4 @@
-var sysPath = require('path');
+var path = require('path');
 
 describe('textract', function() {
 
@@ -40,7 +40,29 @@ describe('textract', function() {
 
   });
 
-  describe('when passed incorrect parameters', function() {
+  describe('will error out gracefully', function() {
+
+    it('when file does not exist', function(done) {
+      var filePath = "foo/bar/foo.txt"
+      textract(filePath, function( error, text ) {
+        expect(text).to.be.null;
+        expect(error).to.be.an('object');
+        expect(error.message).to.be.an('string');
+        expect(error.message).to.eql( "File at path [[ " + filePath + " ]] does not exist.");
+        done();
+      });
+    });
+
+    it('when file has unrecognized mime type', function(done) {
+      var filePath = path.join(__dirname, 'files', 'nope.xls');
+      textract(filePath, function( error, text ) {
+        expect(text).to.be.null;
+        expect(error).to.be.an('object');
+        expect(error.message).to.be.an('string');
+        expect(error.message).to.eql( "textract does not currently extract files of type [[ application/vnd.ms-excel ]]" );
+        done();
+      });
+    });
 
   });
 
