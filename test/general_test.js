@@ -59,6 +59,7 @@ describe('textract', function() {
         expect(text).to.be.null;
         expect(error).to.be.an('object');
         expect(error.message).to.be.an('string');
+        expect(error.typeNotFound).to.be.true;
         expect(error.message).to.eql( "textract does not currently extract files of type [[ application/vnd.ms-excel ]]" );
         done();
       });

@@ -1,9 +1,17 @@
 textract
 ========
 
-A node module that will extract text from (for now) documents of types: pdf, doc, docx.  In some cases textract proxies to binaries that need to be installed.  See Reqirements below.
+A text extraction node module.
 
-Does textract not extract from files of the type you need?  Add an issue or submit a pull request.  It's super easy to add an extractor for a new type.
+## Currently Extracts...
+
+* PDF
+* DOC
+* DOCX
+* `application/javascript`
+* All `text/*` mime-types.
+
+Does textract not extract from files of the type you need?  Add an issue or submit a pull request.  It's super easy to add an extractor for a new mime type.
 
 ## Install
 
@@ -40,4 +48,6 @@ textract(type, filePath, function( error, text ) {
 
 })
 ```
+
+Error will contain informative text about why the extraction failed. If textract does not currently extract files of the type provided, a `typeNotFound` flag will be tossed on the error object.
 

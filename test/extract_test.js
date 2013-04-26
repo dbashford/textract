@@ -70,4 +70,36 @@ describe('textract', function() {
     });
   });
 
+  describe('for text/* files', function() {
+    it('will extract text from specifically a .txt file', function(done) {
+      var filePath = path.join( __dirname, "files", "txt.txt" );
+      textract(filePath, function( error, text ) {
+        expect(error).to.be.null;
+        expect(text).to.be.a('string');
+        expect(text).to.eql( "This is a plain old text file." );
+        done();
+      });
+    });
+
+    it('will extract text specifically from a .css file', function(done) {
+      var filePath = path.join( __dirname, "files", "css.css" );
+      textract(filePath, function( error, text ) {
+        expect(error).to.be.null;
+        expect(text).to.be.a('string');
+        expect(text).to.eql( ".foo {color:red}" );
+        done();
+      });
+    });
+
+    it('will extract text specifically from a .js file', function(done) {
+      var filePath = path.join( __dirname, "files", "js.js" );
+      textract(filePath, function( error, text ) {
+        expect(error).to.be.null;
+        expect(text).to.be.a('string');
+        expect(text).to.eql( "console.log(\"javascript is cooler than you\")" );
+        done();
+      });
+    });
+  });
+
 });
