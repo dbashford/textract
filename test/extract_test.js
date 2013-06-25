@@ -72,7 +72,6 @@ describe('textract', function() {
     it('will not extract smashed together text', function(done) {
       var filePath = path.join( __dirname, "files", "testresume.docx" );
       textract(filePath, function( error, text ) {
-        console.log(text)
         expect(error).to.be.null;
         expect(text).to.be.a('string');
         expect(text.substring(0,31)).to.eql( "Karol Miner 336 W. Chugalug Way" );
@@ -112,6 +111,17 @@ describe('textract', function() {
         done();
       });
     });
+
+    it('will remove extraneous white space from a .txt file', function(done) {
+      var filePath = path.join( __dirname, "files", "spacey.txt" );
+      textract(filePath, function( error, text ) {
+        expect(error).to.be.null;
+        expect(text).to.be.a('string');
+        expect(text).to.eql( "this has lots of space" );
+        done();
+      });
+    });
+
   });
 
 });
