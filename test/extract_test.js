@@ -68,6 +68,18 @@ describe('textract', function() {
         done();
       });
     });
+
+    it('will not extract smashed together text', function(done) {
+      var filePath = path.join( __dirname, "files", "testresume.docx" );
+      textract(filePath, function( error, text ) {
+        console.log(text)
+        expect(error).to.be.null;
+        expect(text).to.be.a('string');
+        expect(text.substring(0,31)).to.eql( "Karol Miner 336 W. Chugalug Way" );
+        done();
+      });
+    });
+
   });
 
   describe('for text/* files', function() {
