@@ -67,4 +67,25 @@ describe('textract', function() {
 
   });
 
+  it('can handle a text file with parens', function(done) {
+    var filePath = path.join(__dirname, 'files', 'new doc(1).txt');
+    textract(filePath, function( error, text ) {
+      expect(error).to.be.null;
+      expect(text).to.be.a('string');
+      expect(text).to.eql( "text!!!" );
+      done();
+    });
+  });
+
+
+  it('can handle a docx file with parens', function(done) {
+    var filePath = path.join(__dirname, 'files', 'new docx(1).docx');
+    textract(filePath, function( error, text ) {
+      expect(error).to.be.null;
+      expect(text).to.be.a('string');
+      expect(text.substring(0,20)).to.eql( "This is a test Just " );
+      done();
+    });
+  });
+
 });
