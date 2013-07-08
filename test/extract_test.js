@@ -24,6 +24,16 @@ describe('textract', function() {
     });
   });
 
+  it('will extract text from actual xls files', function(done) {
+    var docPath = path.join( __dirname, "files", "test.xls" );
+    textract(docPath, function( error, text ) {
+      expect(error).to.be.null;
+      expect(text).to.be.a('string');
+      expect(text.substring(0,20)).to.eql( "\"This\",\"is\",\"a\",\"spr" );
+      done();
+    });
+  });
+
   describe('for .pdf files', function() {
     it('will extract text from actual pdf files', function(done) {
       var filePath = path.join( __dirname, "files", "pdf.pdf" );

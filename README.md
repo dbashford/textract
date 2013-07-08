@@ -7,6 +7,7 @@ A text extraction node module.
 
 * PDF
 * DOC
+* XLS
 * DOCX
 * `application/javascript`
 * All `text/*` mime-types.
@@ -21,8 +22,9 @@ npm install textract
 
 ## Requirements
 
-* `PDF` extraction requires `pdftotext` be installed
-* `DOC` extraction requires `catdoc` be installed
+* `PDF` extraction requires `pdftotext` be installed [link](http://www.foolabs.com/xpdf/download.html)
+* `DOC` extraction requires `catdoc` be installed [link](http://www.wagner.pp.ru/~vitus/software/catdoc/)
+* `XLS` extraction requires `xls2csv` be installed (it comes with `catdoc`) [link](http://www.wagner.pp.ru/~vitus/software/catdoc/)
 * `DOCX` extraction requires `unzip` be available
 
 ## Import
