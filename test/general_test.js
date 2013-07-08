@@ -88,4 +88,53 @@ describe('textract', function() {
     });
   });
 
+  describe('can handle all the different API variations', function() {
+    // textract(filePath, callback)
+    // textract(mimeType, filePath, callback)
+    // textract(filePath, options, callback)
+    // textract(mimeType, filePath, options, callback)
+
+
+    it('textract(filePath, callback) ', function(done) {
+      var filePath = path.join(__dirname, 'files', 'new docx(1).docx');
+      textract(filePath, function( error, text ) {
+        expect(error).to.be.null;
+        expect(text).to.be.a('string');
+        expect(text.substring(0,20)).to.eql( "This is a test Just " );
+        done();
+      });
+    });
+
+    it('textract(mimeType, filePath, callback)', function(done) {
+      var filePath = path.join(__dirname, 'files', 'new docx(1).docx');
+      textract('application/vnd.openxmlformats-officedocument.wordprocessingml.document', filePath, function( error, text ) {
+        expect(error).to.be.null;
+        expect(text).to.be.a('string');
+        expect(text.substring(0,20)).to.eql( "This is a test Just " );
+        done();
+      });
+    });
+
+    it('textract(mimeType, filePath, options, callback)', function(done) {
+      var filePath = path.join(__dirname, 'files', 'new docx(1).docx');
+      textract('application/vnd.openxmlformats-officedocument.wordprocessingml.document', filePath, {}, function( error, text ) {
+        expect(error).to.be.null;
+        expect(text).to.be.a('string');
+        expect(text.substring(0,20)).to.eql( "This is a test Just " );
+        done();
+      });
+    });
+
+    it('textract(filePath, options, callback) ', function(done) {
+      var filePath = path.join(__dirname, 'files', 'new docx(1).docx');
+      textract(filePath, {}, function( error, text ) {
+        expect(error).to.be.null;
+        expect(text).to.be.a('string');
+        expect(text.substring(0,20)).to.eql( "This is a test Just " );
+        done();
+      });
+    });
+
+  })
+
 });
