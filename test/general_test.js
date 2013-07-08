@@ -54,7 +54,7 @@ describe('textract', function() {
     });
 
     it('when file has unrecognized mime type', function(done) {
-      var filePath = path.join(__dirname, 'files', 'nope.xlsx');
+      var filePath = path.join(__dirname, 'files', 'xls.xlsx');
       textract(filePath, function( error, text ) {
         expect(text).to.be.null;
         expect(error).to.be.an('object');
