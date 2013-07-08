@@ -36,18 +36,27 @@ var textract = require('textract');
 If you do not know the mime type of the file
 
 ```javascript
-textract(filePath, function( error, text ) {
-
-})
+textract(filePath, function( error, text ) {})
 ```
 
 If you know the mime type of the file
 
+```javascript
+textract(type, filePath, function( error, text ) {})
 ```
-textract(type, filePath, function( error, text ) {
 
-})
+If you wish to pass some config...and know the mime type...
+
+```javascript
+textract(type, filePath, config, function( error, text ) {})
+```
+
+If you wish to pass some config, but do not know the mime type
+
+```javascript
+textract(filePath, config, function( error, text ) {})
 ```
 
 Error will contain informative text about why the extraction failed. If textract does not currently extract files of the type provided, a `typeNotFound` flag will be tossed on the error object.
+
 
