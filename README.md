@@ -61,4 +61,11 @@ textract(filePath, config, function( error, text ) {})
 
 Error will contain informative text about why the extraction failed. If textract does not currently extract files of the type provided, a `typeNotFound` flag will be tossed on the error object.
 
+## Configuration
+
+Configuration can be passed into textract.  The following configuration options are available
+
+* `preserveLineBreaks`: By default textract does NOT preserve line breaks. Pass this in as `true` and textract will not strip any line breaks.
+
+
 
