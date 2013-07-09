@@ -88,12 +88,30 @@ describe('textract', function() {
     });
   });
 
-  describe('can handle all the different API variations', function() {
-    // textract(filePath, callback)
-    // textract(mimeType, filePath, callback)
-    // textract(filePath, options, callback)
-    // textract(mimeType, filePath, options, callback)
 
+  describe("with multi line files", function() {
+    it('strips line breaks', function(done) {
+      var filePath = path.join(__dirname, 'files', 'multi-line.txt');
+      textract(filePath, function( error, text ) {
+        expect(error).to.be.null;
+        expect(text).to.be.a('string');
+        expect(text).to.eql( "This file has a bunch of line breaks in it, and it also has some useful punctuation." );
+        done();
+      });
+    });
+
+    it('does not strip line breaks when configured as such', function(done) {
+      var filePath = path.join(__dirname, 'files', 'multi-line.txt');
+      textract(filePath, {preserveLineBreaks:true}, function( error, text ) {
+        expect(error).to.be.null;
+        expect(text).to.be.a('string');
+        expect(text).to.eql( "This file\nhas a bunch\nof line breaks\nin it, and it also\nhas some useful\npunctuation." );
+        done();
+      });
+    });
+  })
+
+  describe('can handle all the different API variations', function() {
 
     it('textract(filePath, callback) ', function(done) {
       var filePath = path.join(__dirname, 'files', 'new docx(1).docx');
