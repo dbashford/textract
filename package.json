@@ -25,7 +25,9 @@
   ],
   "dependencies": {
     "mime" : "1.2.9",
-    "pdf-text-extract" : "1.0.7"
+    "pdf-text-extract" : "1.0.7",
+    "xpath" : "0.0.5",
+    "xmldom" : "0.1.16"
   },
   "devDependencies": {
     "mocha": "1.9.0",

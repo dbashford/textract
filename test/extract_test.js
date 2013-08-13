@@ -64,7 +64,7 @@ describe('textract', function() {
         expect(text).to.be.null;
         expect(error).to.be.an('object');
         expect(error.message).to.be.a('string');
-        expect(error.message.substring(0,20)).to.eql( "No text found, error");
+        expect(error.message.substring(0,34)).to.eql("extractNewWordDocument exec error:");
         done();
       });
     });
