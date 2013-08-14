@@ -146,4 +146,36 @@ describe('textract', function() {
     });
   });
 
+  describe('for .xlsx files', function() {
+    it('will extract text and numbers from XLSX files', function(done) {
+      var filePath = path.join( __dirname, "files", "pi.xlsx" );
+      textract(filePath, function( error, text ) {
+        expect(error).to.be.null;
+        expect(text).to.be.an('string');
+        expect(text).to.eql('This is the value of PI: 3.141592');
+        done();
+      });
+    });
+
+    it('will extract text from XLSX files with multiple sheets', function(done) {
+      var filePath = path.join( __dirname, "files", "xlsx.xlsx" );
+      textract(filePath, function( error, text ) {
+        expect(error).to.be.null;
+        expect(text).to.be.an('string');
+        expect(text.substring(319,350)).to.eql('Available Deleted Domestication');
+        done();
+      });
+    });
+
+    it('will error when input file is not an actual xlsx file', function(done) {
+      var filePath = path.join( __dirname, "files", "notaxlsx.xlsx" );
+      textract(filePath, function( error ) {
+        expect(error).to.be.an('object');
+        expect(error.message).to.be.a('string');
+        expect(error.message.substring(0,35)).to.eql("extractNewExcelDocument exec error:");
+        done();
+      });
+    });
+
+  });
 });
