@@ -74,7 +74,7 @@ describe('textract', function() {
         expect(text).to.be.null;
         expect(error).to.be.an('object');
         expect(error.message).to.be.a('string');
-        expect(error.message.substring(0,20)).to.eql( "No text found, error");
+        expect(error.message.substring(0,34)).to.eql("extractNewWordDocument exec error:");
         done();
       });
     });
@@ -134,4 +134,58 @@ describe('textract', function() {
 
   });
 
+  describe('for .dxf files', function() {
+    it('will extract text from actual dxf files', function(done) {
+      var filePath = path.join( __dirname, "files", "dxf.dxf" );
+      textract(filePath, function( error, text ) {
+        expect(error).to.be.null;
+        expect(text).to.be.an('string');
+        expect(text).to.eql( " PART: FILE: {\\fTimes New Roman|b0|i0|c0|p18;(800) 433-1119} {\\fTimes New Roman|b0|i0|c0|p18;Barium Springs, NC 28010} {\\fTimes New Roman|b0|i0|c0|p18;MultiDrain Systems, Inc.} {\\fTimes New Roman|b0|i0|c0|p18;Manufacturers of MultiDrain & EconoDrain } to others for manufacturing or for any other purpose except as specifically authorized in writing by MultiDrain Systems, Inc. Proprietary rights of MultiDrain Systems, Inc. are included in the information disclosed herein. The recipient, by accepting this document, agrees that neither this document nor the information disclosed herein nor any part thereof shall be copied, reproduced or transferred 0 2\" 4\" 6\" 8\" 12\" 16\" GRAPHIC SCALE BAR \\A1;T \\A1;T \\A1;T \\A1;6.1\" 155mm \\A1;T \\A1;T \\A1;4.9\" 124mm \\A1;19.6\" 497mm FRAME AND GRATE LENGTH \\A1;5.5\" 140mm %%UCROSS SECTIONAL VIEW SOIL SUBGRADE CONCRETE THICKNESS AND REINFORCEMENT PER STRUCTURAL ENGINEER S SPECIFICATION FOR THE APPLICATION FLOOR SLAB THICKNESS, OR 4\" MIN. [100mm], OR SPECIFICATION (WHICHEVER IS GREATER) T = MONOLITHIC CONCRETE POUR (ACCEPTABLE) EXPANSION JOINT BOTH SIDES (PREFERRED) LOCK DOWN BOLT LOCK TOGGLE ANCHOR BOLT SEE ABOVE FOR ACTUAL FRAME & GRATE SECTIONS %%UPLAN %%USECTION 512AF %%UPLAN %%USECTION 513AF 514AF %%UPLAN %%USECTION 515AF %%UPLAN %%USECTION ANCHOR RIB INDEPENDENTLY ANCHORED FRAME ALFA CHANNEL \\A1;502 GRATE 510AF ANCHOR FRAME 503 GRATE 510AF ANCHOR FRAME 504 GRATE 505 GRATE FRAME AND GRATE ADD 1.2\" [31mm] TO OVERALL DEPTH OF CHANNEL \\LNOTE: GRATE WIDTH FRAME WIDTH AC-2510AF-00 2512AF 2513AF 2514AF 2515AF ALFA CHANNEL SYSTEM DUCTILE IRON FRAME & GRATES PRODUCT DRAWING 2006 MultiDrain Systems, Inc. ");
+        done();
+      });
+    });
+
+    it('will error when input file is not an actual dxf file', function(done) {
+      var filePath = path.join( __dirname, "files", "notadxf.dxf" );
+      textract(filePath, function( error, text ) {
+        expect(error).to.be.an('object');
+        expect(error.message).to.be.a('string');
+        expect(error.message.substring(0,20)).to.eql( "error extracting DXF");
+        done();
+      });
+    });
+  });
+
+  describe('for .xlsx files', function() {
+    it('will extract text and numbers from XLSX files', function(done) {
+      var filePath = path.join( __dirname, "files", "pi.xlsx" );
+      textract(filePath, function( error, text ) {
+        expect(error).to.be.null;
+        expect(text).to.be.an('string');
+        expect(text).to.eql('This is the value of PI: 3.141592');
+        done();
+      });
+    });
+
+    it('will extract text from XLSX files with multiple sheets', function(done) {
+      var filePath = path.join( __dirname, "files", "xlsx.xlsx" );
+      textract(filePath, function( error, text ) {
+        expect(error).to.be.null;
+        expect(text).to.be.an('string');
+        expect(text.substring(319,350)).to.eql('Available Deleted Domestication');
+        done();
+      });
+    });
+
+    it('will error when input file is not an actual xlsx file', function(done) {
+      var filePath = path.join( __dirname, "files", "notaxlsx.xlsx" );
+      textract(filePath, function( error ) {
+        expect(error).to.be.an('object');
+        expect(error.message).to.be.a('string');
+        expect(error.message.substring(0,35)).to.eql("extractNewExcelDocument exec error:");
+        done();
+      });
+    });
+
+  });
 });
