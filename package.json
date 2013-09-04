@@ -1,6 +1,6 @@
 {
   "name": "textract",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "homepage": "https://github.com/dbashford/textract",
   "author": "David Bashford",
   "description": "Extracting text from files of various type including pdf, doc, xls, docx, text/*.",
@@ -21,7 +21,9 @@
     "pdf",
     "docx",
     "doc",
-    "xls"
+    "xls",
+    "xlsx",
+    "dxf"
   ],
   "dependencies": {
     "mime" : "1.2.9",

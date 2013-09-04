@@ -7,8 +7,10 @@ A text extraction node module.
 
 * PDF
 * DOC
-* XLS
 * DOCX
+* XLS
+* XLSX
+* DXF
 * `application/javascript`
 * All `text/*` mime-types.
 
@@ -26,6 +28,8 @@ npm install textract
 * `DOC` extraction requires `catdoc` be installed [link](http://www.wagner.pp.ru/~vitus/software/catdoc/)
 * `XLS` extraction requires `xls2csv` be installed (it comes with `catdoc`) [link](http://www.wagner.pp.ru/~vitus/software/catdoc/)
 * `DOCX` extraction requires `unzip` be available
+* `XLSX` extraction requires `unzip` be available
+* `DXF` extraction requires `drawingtotext` be available [link](https://github.com/davidworkman9/drawingtotext)
 
 ## Import
 
@@ -66,6 +70,8 @@ Error will contain informative text about why the extraction failed. If textract
 Configuration can be passed into textract.  The following configuration options are available
 
 * `preserveLineBreaks`: By default textract does NOT preserve line breaks. Pass this in as `true` and textract will not strip any line breaks.
+* `exec`: Some extractors (xlsx, docx, dxf) use node's `exec` functionality. This setting allows for providing [config to `exec` execution](http://nodejs.org/api/child_process.html#child_process_child_process_exec_command_options_callback). One reason you might want to provide this config is if you are dealing with very large files. You might want to increase the `exec` `maxBuffer` setting.
+* `[ext].exec`: Each extractor can take specific exec config.
 
 
 
