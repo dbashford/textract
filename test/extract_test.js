@@ -162,17 +162,30 @@ describe('textract', function() {
       textract(filePath, function( error, text ) {
         expect(error).to.be.null;
         expect(text).to.be.an('string');
-        expect(text).to.eql('This is the value of PI: 3.141592');
+        expect(text).to.eql('This is the value of PI:, 3.141592');
+        done();
+      });
+    });
+
+    it('will error out on large XLSX with no buffer provided', function(done) {
+      var filePath = path.join( __dirname, "files", "xlsx.xlsx" );
+      textract(filePath, function( error, text ) {
+        expect(error.message).to.eql("extractNewExcelDocument exec error: Error: stdout maxBuffer exceeded.");
         done();
       });
     });
 
     it('will extract text from XLSX files with multiple sheets', function(done) {
       var filePath = path.join( __dirname, "files", "xlsx.xlsx" );
-      textract(filePath, function( error, text ) {
+      var options = {
+        exec: {
+          maxBuffer: 50000*1024
+        }
+      };
+      textract(filePath, options, function( error, text ) {
         expect(error).to.be.null;
         expect(text).to.be.an('string');
-        expect(text.substring(319,350)).to.eql('Available Deleted Domestication');
+        expect(text.substring(55,96)).to.eql("Color, Pattern, Sex, GeneralSizePotential");
         done();
       });
     });

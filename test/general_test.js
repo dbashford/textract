@@ -54,13 +54,13 @@ describe('textract', function() {
     });
 
     it('when file has unrecognized mime type', function(done) {
-      var filePath = path.join(__dirname, 'files', 'xls.xlsx');
+      var filePath = path.join(__dirname, 'files', 'MxAgCrProd.ppt');
       textract(filePath, function( error, text ) {
         expect(text).to.be.null;
         expect(error).to.be.an('object');
         expect(error.message).to.be.an('string');
         expect(error.typeNotFound).to.be.true;
-        expect(error.message).to.eql( "textract does not currently extract files of type [[ application/vnd.openxmlformats-officedocument.spreadsheetml.sheet ]]" );
+        expect(error.message).to.eql( "textract does not currently extract files of type [[ application/vnd.ms-powerpoint ]]" );
         done();
       });
     });
