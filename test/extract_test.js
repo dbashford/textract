@@ -89,6 +89,17 @@ describe('textract', function() {
       });
     });
 
+    it('can handle funky formatting', function(done) {
+      var filePath = path.join( __dirname, "files", "Untitleddocument.docx" );
+      textract(filePath, function( error, text ) {
+        expect(error).to.be.null;
+        expect(text).to.be.a('string');
+        console.log(text)
+        expect(text).to.eql( "this is a test document that won't be extracted properly." );
+        done();
+      });
+    });
+
   });
 
   describe('for text/* files', function() {
