@@ -31,13 +31,23 @@ npm install textract
 * `XLSX` extraction requires `unzip` be available
 * `DXF` extraction requires `drawingtotext` be available [link](https://github.com/davidworkman9/drawingtotext)
 
-## Import
+## Usage
+
+### Commmand Line
+
+If textract is installed gloablly, via `npm install -g textract`, then the following command will write the extracted text to the console.
+
+`textract pathToFile`
+
+### In your node app
+
+#### Import
 
 ```javascript
 var textract = require('textract');
 ```
 
-## Usage
+#### Execution
 
 If you do not know the mime type of the file
 
