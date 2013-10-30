@@ -1,6 +1,6 @@
 {
   "name": "textract",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "homepage": "https://github.com/dbashford/textract",
   "author": "David Bashford",
   "description": "Extracting text from files of various type including pdf, doc, xls, docx, text/*.",
@@ -41,6 +41,9 @@
   "license": "MIT",
   "engines": {
     "node": ">=0.8"
+  },
+  "bin": {
+    "textract": "./bin/textract"
   },
   "main": "./lib/index"
 }
