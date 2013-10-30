@@ -37,7 +37,9 @@ npm install textract
 
 If textract is installed gloablly, via `npm install -g textract`, then the following command will write the extracted text to the console.
 
-`textract pathToFile`
+```
+$ textract pathToFile
+```
 
 ### In your node app
 
