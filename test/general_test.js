@@ -77,7 +77,6 @@ describe('textract', function() {
     });
   });
 
-
   it('can handle a docx file with parens', function(done) {
     var filePath = path.join(__dirname, 'files', 'new docx(1).docx');
     textract(filePath, function( error, text ) {
@@ -87,7 +86,6 @@ describe('textract', function() {
       done();
     });
   });
-
 
   describe("with multi line files", function() {
     it('strips line breaks', function(done) {

@@ -10,6 +10,7 @@ A text extraction node module.
 * DOCX
 * XLS
 * XLSX
+* PPTX
 * DXF
 * `application/javascript`
 * All `text/*` mime-types.
@@ -29,6 +30,7 @@ npm install textract
 * `XLS` extraction requires `xls2csv` be installed (it comes with `catdoc`) [link](http://www.wagner.pp.ru/~vitus/software/catdoc/)
 * `DOCX` extraction requires `unzip` be available
 * `XLSX` extraction requires `unzip` be available
+* `PPTX` extraction requires `unzip` be available
 * `DXF` extraction requires `drawingtotext` be available [link](https://github.com/davidworkman9/drawingtotext)
 
 ## Usage

@@ -212,4 +212,18 @@ describe('textract', function() {
     });
 
   });
+
+  describe('for .pptx files', function() {
+    it('will extract text PPTX files', function(done) {
+      var filePath = path.join( __dirname, "files", "ppt.pptx" );
+      textract(filePath, function( error, text ) {
+        expect(error).to.be.null;
+        expect(text).to.be.an('string');
+        expect(text.substring(55,96)).to.eql('ullet 1 Bullet 2 Bullet 3 Number 1 Number');
+        done();
+      });
+    });
+  });
+
+
 });
