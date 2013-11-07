@@ -1,6 +1,9 @@
 textract
 ========
 
+[![NPM](https://nodei.co/npm/textract.png?compact=true)](https://nodei.co/npm/textract/)
+[![NPM](https://nodei.co/npm-dl/textract.png)](https://nodei.co/npm/textract/)
+
 A text extraction node module.
 
 ## Currently Extracts...
