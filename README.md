@@ -1,10 +1,10 @@
 textract
 ========
 
+A text extraction node module.
+
 [![NPM](https://nodei.co/npm/textract.png?compact=true)](https://nodei.co/npm/textract/)
 [![NPM](https://nodei.co/npm-dl/textract.png)](https://nodei.co/npm/textract/)
-
-A text extraction node module.
 
 ## Currently Extracts...
 
@@ -15,6 +15,8 @@ A text extraction node module.
 * XLSX
 * PPTX
 * DXF
+* PNG
+* JPG
 * `application/javascript`
 * All `text/*` mime-types.
 
@@ -28,13 +30,14 @@ npm install textract
 
 ## Requirements
 
-* `PDF` extraction requires `pdftotext` be installed [link](http://www.foolabs.com/xpdf/download.html)
-* `DOC` extraction requires `catdoc` be installed [link](http://www.wagner.pp.ru/~vitus/software/catdoc/)
-* `XLS` extraction requires `xls2csv` be installed (it comes with `catdoc`) [link](http://www.wagner.pp.ru/~vitus/software/catdoc/)
+* `PDF` extraction requires `pdftotext` be installed, [link](http://www.foolabs.com/xpdf/download.html)
+* `DOC` extraction requires `catdoc` be installed, [link](http://www.wagner.pp.ru/~vitus/software/catdoc/)
+* `XLS` extraction requires `xls2csv` be installed (it comes with `catdoc`), [link](http://www.wagner.pp.ru/~vitus/software/catdoc/)
 * `DOCX` extraction requires `unzip` be available
 * `XLSX` extraction requires `unzip` be available
 * `PPTX` extraction requires `unzip` be available
-* `DXF` extraction requires `drawingtotext` be available [link](https://github.com/davidworkman9/drawingtotext)
+* `PNG` and `JPG` require `tesseract` to be available, [link](http://code.google.com/p/tesseract-ocr/).  Images need to be pretty clear, high DPI and made almost entirely of just text for `tesseract` to be able to accurately extract the text.
+* `DXF` extraction requires `drawingtotext` be available, [link](https://github.com/davidworkman9/drawingtotext)
 
 ## Usage
 
