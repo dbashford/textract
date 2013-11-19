@@ -225,5 +225,36 @@ describe('textract', function() {
     });
   });
 
+  describe('for image files', function() {
+    it('will extract text from PNG files', function(done) {
+      var filePath = path.join( __dirname, "files", "testphoto.png" );
+      textract(filePath, function( error, text ) {
+        expect(error).to.be.null;
+        expect(text).to.be.an('string');
+        expect(text.substring(0,100)).to.eql("performance measure against standards and targets is increasingly used in the management of complex ");
+        done();
+      });
+    });
+
+    it('will extract text from JPG files', function(done) {
+      var filePath = path.join( __dirname, "files", "testphoto.jpg" );
+      textract(filePath, function( error, text ) {
+        expect(error).to.be.null;
+        expect(text).to.be.an('string');
+        expect(text.substring(0,100)).to.eql("performance measure against standards and targets is increasingly used in the management of complex ");
+        done();
+      });
+    });
+
+    it('will extract text from GIF files', function(done) {
+      var filePath = path.join( __dirname, "files", "testphoto.gif" );
+      textract(filePath, function( error, text ) {
+        expect(error).to.be.null;
+        expect(text).to.be.an('string');
+        expect(text.substring(0,100)).to.eql("performance measure against standards and targets is increasingly used in the management of complex ");
+        done();
+      });
+    });
+  });
 
 });
