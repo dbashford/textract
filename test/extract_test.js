@@ -246,6 +246,7 @@ describe('textract', function() {
       });
     });
 
+    /* won't work on mac
     it('will extract text from GIF files', function(done) {
       var filePath = path.join( __dirname, "files", "testphoto.gif" );
       textract(filePath, function( error, text ) {
@@ -255,6 +256,24 @@ describe('textract', function() {
         done();
       });
     });
-  });
+    */
 
+    it('will not be happy with gifs ON A MAC', function(done) {
+      var filePath = path.join( __dirname, "files", "testphoto.gif" );
+      textract(filePath, {macProcessGif:true}, function( error, text ) {
+        expect(error).to.not.be.null;
+        done();
+      });
+    });
+
+    it('will not let Macs do gifs by default', function(done) {
+      var filePath = path.join( __dirname, "files", "testphoto.gif" );
+      process.platform = "darwin";
+      textract(filePath, function( error, text ) {
+        expect(error).to.not.be.null;
+        expect(error.macProcessGif).to.be.true
+        done();
+      });
+    });
+  });
 });
