@@ -34,6 +34,7 @@ npm install textract
 
 * `PDF` extraction requires `pdftotext` be installed, [link](http://www.foolabs.com/xpdf/download.html)
 * `DOC` extraction requires `catdoc` be installed, [link](http://www.wagner.pp.ru/~vitus/software/catdoc/)
+* `RTF` extraction requires `catdoc` be installed
 * `XLS` extraction requires `xls2csv` be installed (it comes with `catdoc`), [link](http://www.wagner.pp.ru/~vitus/software/catdoc/)
 * `DOCX` extraction requires `unzip` be available
 * `XLSX` extraction requires `unzip` be available
