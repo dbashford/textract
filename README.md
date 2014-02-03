@@ -18,6 +18,7 @@ A text extraction node module.
 * PNG
 * JPG
 * GIF
+* RTF
 * `application/javascript`
 * All `text/*` mime-types.
 
