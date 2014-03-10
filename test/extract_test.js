@@ -45,6 +45,16 @@ describe('textract', function() {
       });
     });
 
+    it('will extract pdf text and preserve multiple lines', function(done) {
+      var filePath = path.join( __dirname, "files", "testpdf-multiline.pdf" );
+      textract(filePath, {preserveLineBreaks:true}, function( error, text ) {
+        expect(error).to.be.null;
+        expect(text).to.be.a('string');
+        expect(text).to.eql( "This is a test,\nA multi-line test,\nLets hope it works" );
+        done();
+      });
+    });
+
     it('will error out when pdf file isn\'t actually a pdf', function(done) {
       var filePath = path.join( __dirname, "files", "notapdf.pdf" );
       textract(filePath, function( error, text ) {
