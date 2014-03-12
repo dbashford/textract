@@ -1,6 +1,6 @@
 {
   "name": "textract",
-  "version": "0.10.1",
+  "version": "0.11.0",
   "homepage": "https://github.com/dbashford/textract",
   "author": "David Bashford",
   "description": "Extracting text from files of various type including pdf, doc, docx, xls, xlsx, pptx, png, jpg, gif, rtf, text/*.",
@@ -33,7 +33,8 @@
     "mime" : "1.2.9",
     "pdf-text-extract" : "1.0.7",
     "xpath" : "0.0.5",
-    "xmldom" : "0.1.16"
+    "xmldom" : "0.1.16",
+    "j": "0.2.13"
   },
   "devDependencies": {
     "mocha": "1.9.0",

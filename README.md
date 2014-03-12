@@ -13,6 +13,8 @@ A text extraction node module.
 * DOCX
 * XLS
 * XLSX
+* XLSB
+* XLSM
 * PPTX
 * DXF
 * PNG
@@ -35,9 +37,7 @@ npm install textract
 * `PDF` extraction requires `pdftotext` be installed, [link](http://www.foolabs.com/xpdf/download.html)
 * `DOC` extraction requires `catdoc` be installed, [link](http://www.wagner.pp.ru/~vitus/software/catdoc/)
 * `RTF` extraction requires `catdoc` be installed
-* `XLS` extraction requires `xls2csv` be installed (it comes with `catdoc`), [link](http://www.wagner.pp.ru/~vitus/software/catdoc/)
 * `DOCX` extraction requires `unzip` be available
-* `XLSX` extraction requires `unzip` be available
 * `PPTX` extraction requires `unzip` be available
 * `PNG`, `JPG` and `GIF` require `tesseract` to be available, [link](http://code.google.com/p/tesseract-ocr/).  Images need to be pretty clear, high DPI and made almost entirely of just text for `tesseract` to be able to accurately extract the text.
 * `DXF` extraction requires `drawingtotext` be available, [link](https://github.com/davidworkman9/drawingtotext)
@@ -99,5 +99,8 @@ Configuration can be passed into textract.  The following configuration options 
 * `[ext].exec`: Each extractor can take specific exec config.
 * `macProcessGif`: By default on OSX textract will not run tesseract on `.gif` files.  (See [this Stack Overflow post](http://superuser.com/questions/571002/unable-to-process-gifs-with-tesseract-in-osx))  If you've figured out to make it work, set this flag to `true` to turn `gif` processing back on.
 
+## Release Notes
 
-
+### 0.11.0
+* Using [j](https://github.com/SheetJS/j) to handle `xls` and `xlsx`, this removes the requirement on the `xls2csv` binary.
+* j also supports `xlsb` and `xlsm`

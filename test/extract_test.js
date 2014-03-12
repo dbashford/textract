@@ -24,13 +24,68 @@ describe('textract', function() {
     });
   });
 
-  it('will extract text from actual xls files', function(done) {
-    var docPath = path.join( __dirname, "files", "test.xls" );
-    textract(docPath, function( error, text ) {
-      expect(error).to.be.null;
-      expect(text).to.be.a('string');
-      expect(text.substring(0,20)).to.eql( "\"This\",\"is\",\"a\",\"spr" );
-      done();
+  describe('for .xls files', function() {
+
+    it('will extract text', function(done) {
+      var docPath = path.join( __dirname, "files", "test.xls" );
+      textract(docPath, function( error, text ) {
+        expect(error).to.be.null;
+        expect(text).to.be.a('string');
+        expect(text.substring(0,20)).to.eql( "This,is,a,spreadshee" );
+        done();
+      });
+    });
+
+    it('will extract text from multi-line files', function(done) {
+      var docPath = path.join( __dirname, "files", "test-multiline.xls" );
+      textract(docPath, function( error, text ) {
+        expect(error).to.be.null;
+        expect(text).to.be.a('string');
+        expect(text.substring(0,40)).to.eql( "This,is,a,spreadsheet,yay! And ,this,is," );
+        done();
+      });
+    });
+
+    it('will extract text from multi-line files and keep line breaks', function(done) {
+      var docPath = path.join( __dirname, "files", "test-multiline.xls" );
+      textract(docPath, {preserveLineBreaks:true}, function( error, text ) {
+        expect(error).to.be.null;
+        expect(text).to.be.a('string');
+        expect(text.substring(0,40)).to.eql( "This,is,a,spreadsheet,yay!\nAnd ,this,is," );
+        done();
+      });
+    });
+  });
+
+  describe('for .xlsx files', function() {
+    it('will extract text and numbers from XLSX files', function(done) {
+      var filePath = path.join( __dirname, "files", "pi.xlsx" );
+      textract(filePath, function( error, text ) {
+        expect(error).to.be.null;
+        expect(text).to.be.an('string');
+        expect(text).to.eql('This is the value of PI:,3.141592 ');
+        done();
+      });
+    });
+
+    it('will extract text from XLSX files with multiple sheets', function(done) {
+      var filePath = path.join( __dirname, "files", "xlsx.xlsx" );
+      textract(filePath, function( error, text ) {
+        expect(error).to.be.null;
+        expect(text).to.be.an('string');
+        expect(text.substring(49,96)).to.eql("Color,Pattern,Sex,GeneralSizePotential,GeneralA");
+        done();
+      });
+    });
+
+    it('will error when input file is not an actual xlsx file', function(done) {
+      var filePath = path.join( __dirname, "files", "notaxlsx.xlsx" );
+      textract(filePath, function( error ) {
+        expect(error).to.be.an('object');
+        expect(error.message).to.be.a('string');
+        expect(error.message.substring(0,45)).to.eql("Could not extract notaxlsx.xlsx, TypeError: C");
+        done();
+      });
     });
   });
 
@@ -175,52 +230,6 @@ describe('textract', function() {
         done();
       });
     });
-  });
-
-  describe('for .xlsx files', function() {
-    it('will extract text and numbers from XLSX files', function(done) {
-      var filePath = path.join( __dirname, "files", "pi.xlsx" );
-      textract(filePath, function( error, text ) {
-        expect(error).to.be.null;
-        expect(text).to.be.an('string');
-        expect(text).to.eql('This is the value of PI:, 3.141592');
-        done();
-      });
-    });
-
-    it('will error out on large XLSX with no buffer provided', function(done) {
-      var filePath = path.join( __dirname, "files", "xlsx.xlsx" );
-      textract(filePath, function( error, text ) {
-        expect(error.message).to.eql("extractNewExcelDocument exec error: Error: stdout maxBuffer exceeded.");
-        done();
-      });
-    });
-
-    it('will extract text from XLSX files with multiple sheets', function(done) {
-      var filePath = path.join( __dirname, "files", "xlsx.xlsx" );
-      var options = {
-        exec: {
-          maxBuffer: 50000*1024
-        }
-      };
-      textract(filePath, options, function( error, text ) {
-        expect(error).to.be.null;
-        expect(text).to.be.an('string');
-        expect(text.substring(55,96)).to.eql("Color, Pattern, Sex, GeneralSizePotential");
-        done();
-      });
-    });
-
-    it('will error when input file is not an actual xlsx file', function(done) {
-      var filePath = path.join( __dirname, "files", "notaxlsx.xlsx" );
-      textract(filePath, function( error ) {
-        expect(error).to.be.an('object');
-        expect(error.message).to.be.a('string');
-        expect(error.message.substring(0,35)).to.eql("extractNewExcelDocument exec error:");
-        done();
-      });
-    });
-
   });
 
   describe('for .pptx files', function() {
