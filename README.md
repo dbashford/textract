@@ -101,6 +101,12 @@ Configuration can be passed into textract.  The following configuration options 
 
 ## Release Notes
 
+### 0.11.2
+* Updated pdf-text-extract to latest, fixes [#20](https://github.com/dbashford/textract/issues/20).
+
+### 0.11.1
+* Addressed path escaping issues with tesseract, fixes [#18] (https://github.com/dbashford/textract/issues/18)
+
 ### 0.11.0
 * Using [j](https://github.com/SheetJS/j) to handle `xls` and `xlsx`, this removes the requirement on the `xls2csv` binary.
 * j also supports `xlsb` and `xlsm`
