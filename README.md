@@ -101,6 +101,9 @@ Configuration can be passed into textract.  The following configuration options 
 
 ## Release Notes
 
+### 0.12.0
+* [#21](https://github.com/dbashford/textract/issues/21), [#22](https://github.com/dbashford/textract/issues/22), Now using [j](https://www.npmjs.org/package/j) via its binaries rather than using it via node. This makes XLS/X extraction slower, but reduces memory consumption of textract signifcantly.
+
 ### 0.11.2
 * Updated pdf-text-extract to latest, fixes [#20](https://github.com/dbashford/textract/issues/20).
 
