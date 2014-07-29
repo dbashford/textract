@@ -83,7 +83,7 @@ describe('textract', function() {
       textract(filePath, function( error ) {
         expect(error).to.be.an('object');
         expect(error.message).to.be.a('string');
-        expect(error.message.substring(0,45)).to.eql("Could not extract notaxlsx.xlsx, TypeError: C");
+        expect(error.message.substring(0,41)).to.eql("Could not extract notaxlsx.xlsx, Error: C");
         done();
       });
     });
