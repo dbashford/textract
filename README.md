@@ -99,6 +99,10 @@ Configuration can be passed into textract.  The following configuration options 
 
 ## Release Notes
 
+### 0.13.1
+* [#25](https://github.com/dbashford/textract/issues/25), added language support for tesseract, see `tesseract.lang` property.
+* Updated regex that strips bad characters to not strip (some) chinese characters.  The regex will likely need updating by someonw more familiar with Chinese. =)
+
 ### 0.13.0
 * [#26](https://github.com/dbashford/textract/issues/26), using `os.tmpdir()` rather than a temp dir inside textract.
 * Upgraded to latest `j` (dependency)
