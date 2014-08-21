@@ -98,6 +98,11 @@ Configuration can be passed into textract.  The following configuration options 
 
 ## Release Notes
 
+### 0.13.0
+* [#26](https://github.com/dbashford/textract/issues/26), using `os.tmpdir()` rather than a temp dir inside textract.
+* Upgraded to latest `j` (dependency)
+* Removed `macProcessGif` option and tests as tesseract seems to work on Mac just fine now
+
 ### 0.12.0
 * [#21](https://github.com/dbashford/textract/issues/21), [#22](https://github.com/dbashford/textract/issues/22), Now using [j](https://www.npmjs.org/package/j) via its binaries rather than using it via node. This makes XLS/X extraction slower, but reduces memory consumption of textract signifcantly.
 
