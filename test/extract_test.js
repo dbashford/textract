@@ -274,5 +274,19 @@ describe('textract', function() {
         done();
       });
     });
+
+    // sudo port install tesseract-chi-sim
+    it('will extract text from language-d files', function(done) {
+      var filePath = path.join( __dirname, "files", "chi.png" );
+      textract(filePath, { tesseract: { lang:"chi_sim" } }, function( error, text ) {
+        expect(error).to.be.null;
+        expect(text).to.be.an('string');
+        expect(text.substring(0,5)).to.eql("臣卜虎藏龙");
+        done();
+      });
+    });
+
+
+
   });
 });
