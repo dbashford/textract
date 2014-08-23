@@ -99,6 +99,9 @@ Configuration can be passed into textract.  The following configuration options 
 
 ## Release Notes
 
+### 0.13.2
+* [#27](https://github.com/dbashford/textract/issues/27), addressed issues with page ordering in `pptx` extraction.
+
 ### 0.13.1
 * [#25](https://github.com/dbashford/textract/issues/25), added language support for tesseract, see `tesseract.lang` property.
 * Updated regex that strips bad characters to not strip (some) chinese characters.  The regex will likely need updating by someonw more familiar with Chinese. =)
