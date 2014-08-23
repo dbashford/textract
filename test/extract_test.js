@@ -242,6 +242,33 @@ describe('textract', function() {
         done();
       });
     });
+
+    it('will extract slides in the right order', function(done) {
+      var filePath = path.join( __dirname, "files", "order.pptx" );
+      textract(filePath,  {preserveLineBreaks:true}, function( error, text ) {
+        expect(error).to.be.null;
+        expect(text).to.be.an('string');
+        var lines = text.split("\n").filter( function( line ) {
+          return line.match(/^Slide/);
+        });
+
+        var linesAnswer = [
+          'Slide 1 Title',
+          'Slide 1 Subtitle',
+          'Slide 2: Title and Content',
+          'Slide 3: Section header',
+          'Slide 4: Two-Content',
+          'Slide 5: Comparison',
+          'Slide 8: Content w/Caption',
+          'Slide 9: picture with caption',
+          'Slide 10: Vertical Text',
+          'Slide 11: Vertical Title and text' ];
+
+        expect(lines).to.eql(linesAnswer)
+
+        done();
+      });
+    });
   });
 
   describe('for image files', function() {
