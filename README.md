@@ -99,6 +99,12 @@ Configuration can be passed into textract.  The following configuration options 
 
 ## Release Notes
 
+### 0.14.0
+* [#29](https://github.com/dbashford/textract/issues/29) which resulted in the following changes:
+1. writing info messages to `stderr` when extractors taking awhile to get going
+2. no longer removing …
+3. centralized some cleansing regexes, also no longer removing multiple back to back spaces using `\s` as it was removing any back to back newlines.  Now scoping back to back replacing to `[\t\v\u00A0]`.
+
 ### 0.13.2
 * [#27](https://github.com/dbashford/textract/issues/27), addressed issues with page ordering in `pptx` extraction.
 
