@@ -269,6 +269,19 @@ describe('textract', function() {
         done();
       });
     });
+
+
+    it('will keep preserved characters', function(done) {
+      var filePath = path.join( __dirname, "files", "order.pptx" );
+      textract(filePath,  {preserveLineBreaks:true}, function( error, text ) {
+        expect(error).to.be.null;
+        expect(text).to.be.an('string');
+        expect(text.indexOf("…")).to.eql(923);
+        done();
+      });
+    });
+
+
   });
 
   describe('for image files', function() {
