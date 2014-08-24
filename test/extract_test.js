@@ -159,7 +159,6 @@ describe('textract', function() {
       textract(filePath, function( error, text ) {
         expect(error).to.be.null;
         expect(text).to.be.a('string');
-        console.log(text)
         expect(text).to.eql( "this is a test document that won't be extracted properly." );
         done();
       });
@@ -276,7 +275,7 @@ describe('textract', function() {
       textract(filePath,  {preserveLineBreaks:true}, function( error, text ) {
         expect(error).to.be.null;
         expect(text).to.be.an('string');
-        expect(text.indexOf("…")).to.eql(923);
+        expect(text.indexOf("…")).to.eql(928);
         done();
       });
     });
