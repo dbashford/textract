@@ -2,6 +2,28 @@ var path = require('path');
 
 describe('textract', function() {
 
+  describe('for .rtf files', function() {
+    it('will extract text from rtf files', function(done) {
+      var docPath = path.join( __dirname, "files", "sample.rtf" );
+      textract(docPath, function( error, text ) {
+        expect(error).to.be.null;
+        expect(text).to.be.an('string');
+        expect(text.substring(144,220)).to.eql( "So we're going to end this paragraph here and go on to a nice little list: I" );
+        done();
+      });
+    });
+
+    it('will extract text from actual rtf files with lines left in', function(done) {
+      var docPath = path.join( __dirname, "files", "sample.rtf" );
+      textract(docPath, {preserveLineBreaks:true}, function( error, text ) {
+        expect(error).to.be.null;
+        expect(text).to.be.an('string');
+        expect(text.substring(144,230)).to.eql( "So we're going to end this paragraph here and go on to a nice little list:\n\n Item 1\n I" );
+        done();
+      });
+    });
+  });
+
   describe('for .doc files', function() {
     it('will extract text from actual doc files', function(done) {
       var docPath = path.join( __dirname, "files", "doc.doc" );
@@ -19,6 +41,16 @@ describe('textract', function() {
         expect(error).to.be.null;
         expect(text).to.be.an('string');
         expect(text).to.eql( "not a doc" );
+        done();
+      });
+    });
+
+    it('will extract text from large .doc', function(done) {
+      var docPath = path.join( __dirname, "files", "sample.doc" );
+      textract(docPath, function( error, text ) {
+        expect(error).to.be.null;
+        expect(text).to.be.an('string');
+        expect(text.length).to.eql( 32376 );
         done();
       });
     });
