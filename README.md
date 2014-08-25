@@ -10,6 +10,7 @@ A text extraction node module.
 
 * PDF
 * DOC
+* RTF
 * DOCX
 * XLS
 * XLSX
@@ -20,7 +21,6 @@ A text extraction node module.
 * PNG
 * JPG
 * GIF
-* RTF
 * `application/javascript`
 * All `text/*` mime-types.
 
@@ -35,8 +35,8 @@ npm install textract
 ## Requirements
 
 * `PDF` extraction requires `pdftotext` be installed, [link](http://www.foolabs.com/xpdf/download.html)
-* `DOC` extraction requires `catdoc` be installed, [link](http://www.wagner.pp.ru/~vitus/software/catdoc/)
-* `RTF` extraction requires `catdoc` be installed
+* `DOC` extraction requires `catdoc` be installed, [link](http://www.wagner.pp.ru/~vitus/software/catdoc/), unless on OSX in which case textutil (installed by default) is used.
+* `RTF` extraction requires `catdoc` be installed, unless on OSX in which case textutil (installed by default) is used.
 * `DOCX` extraction requires `unzip` be available
 * `PPTX` extraction requires `unzip` be available
 * `PNG`, `JPG` and `GIF` require `tesseract` to be available, [link](http://code.google.com/p/tesseract-ocr/).  Images need to be pretty clear, high DPI and made almost entirely of just text for `tesseract` to be able to accurately extract the text.
@@ -98,6 +98,11 @@ Configuration can be passed into textract.  The following configuration options 
 * `tesseract.lang`: A pass-through to tesseract allowing for setting of language for extraction. ex: `{ tesseract: { lang:"chi_sim" } }`
 
 ## Release Notes
+
+### 0.15.0
+* Addressed some lingering regex issues from previous release.
+* Added tests for RTF, more tests for DOC
+* [#29](https://github.com/dbashford/textract/issues/29) Introduced new extractor for `.doc` and `.rtf` __for OSX only__.  All non-OSX operating systems will continue to use `catdoc`. Going forward, because of issues getting `catdoc` installed on OSX, on OSX only `textutil` will be used. `textutil` comes default installed with OSX.
 
 ### 0.14.0
 * [#29](https://github.com/dbashford/textract/issues/29) which resulted in the following changes:
