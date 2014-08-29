@@ -8,14 +8,12 @@ A text extraction node module.
 
 ## Currently Extracts...
 
+* HTML
 * PDF
 * DOC
 * RTF
 * DOCX
 * XLS
-* XLSX
-* XLSB
-* XLSM
 * PPTX
 * DXF
 * PNG
@@ -23,6 +21,8 @@ A text extraction node module.
 * GIF
 * `application/javascript`
 * All `text/*` mime-types.
+
+In almost all cases above, what textract cares about is the mime type.  So `.html` and `.htm`, both possessing the same mime type, will be extracted.  Other extensions that share mime types with those above should also extract successfully. For example, `application/vnd.ms-excel` is the mime type for `.xls`, but also for 5 other mime types.
 
 Does textract not extract from files of the type you need?  Add an issue or submit a pull request.  It's super easy to add an extractor for a new mime type.
 
@@ -36,7 +36,7 @@ npm install textract
 
 * `PDF` extraction requires `pdftotext` be installed, [link](http://www.foolabs.com/xpdf/download.html)
 * `DOC` extraction requires `catdoc` be installed, [link](http://www.wagner.pp.ru/~vitus/software/catdoc/), unless on OSX in which case textutil (installed by default) is used.
-* `RTF` extraction requires `catdoc` be installed, unless on OSX in which case textutil (installed by default) is used.
+* `RTF` extraction requires `catdoc` be installed, unless on OSX in which case textutil (installed by default on OSX) is used.
 * `DOCX` extraction requires `unzip` be available
 * `PPTX` extraction requires `unzip` be available
 * `PNG`, `JPG` and `GIF` require `tesseract` to be available, [link](http://code.google.com/p/tesseract-ocr/).  Images need to be pretty clear, high DPI and made almost entirely of just text for `tesseract` to be able to accurately extract the text.
@@ -98,6 +98,10 @@ Configuration can be passed into textract.  The following configuration options 
 * `tesseract.lang`: A pass-through to tesseract allowing for setting of language for extraction. ex: `{ tesseract: { lang:"chi_sim" } }`
 
 ## Release Notes
+
+### 0.16.0
+* Added HTML extraction.
+* Added ability for extractors to register for specific extensions (not yet used).  This handles cases where extensions (like `.webarchive`) do not have recognized mime types.
 
 ### 0.15.0
 * Addressed some lingering regex issues from previous release.

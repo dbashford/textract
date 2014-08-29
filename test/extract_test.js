@@ -2,6 +2,36 @@ var path = require('path');
 
 describe('textract', function() {
 
+
+  describe('for .html files', function() {
+
+    // is some oddness testing html files, not sure what the deal is
+
+    it('will extract text from html files and insert newlines in the right places', function(done) {
+      var docPath = path.join( __dirname, "files", "test.html" );
+      textract(docPath, {preserveLineBreaks:true}, function( error, text ) {
+        expect(error).to.be.null;
+        expect(text).to.be.an('string');
+        expect(text.length).to.eql( 80 );
+        expect(text.substring(0, 80)).to.eql("\nThis is a\nlong string\nof text\nthat should get extracted\nwith new lines inserted")
+        done();
+      });
+    });
+
+
+    it('will extract text from html files', function(done) {
+      var docPath = path.join( __dirname, "files", "Google.html" );
+      textract(docPath, function( error, text ) {
+        expect(error).to.be.null;
+        expect(text).to.be.an('string');
+        expect(text.length).to.eql( 869 );
+        expect(text.substring(565, 620)).to.eql("you say next. Learn more No thanks Enable \"Ok Google\" I")
+        done();
+      });
+    });
+  });
+
+
   describe('for .rtf files', function() {
     it('will extract text from rtf files', function(done) {
       var docPath = path.join( __dirname, "files", "sample.rtf" );
