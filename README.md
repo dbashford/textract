@@ -99,6 +99,9 @@ Configuration can be passed into textract.  The following configuration options 
 
 ## Release Notes
 
+### 0.17.0
+* Updated character stripping regex to be more lenient.
+
 ### 0.16.0
 * Added HTML extraction.
 * Added ability for extractors to register for specific extensions (not yet used).  This handles cases where extensions (like `.webarchive`) do not have recognized mime types.
