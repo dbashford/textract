@@ -1,7 +1,20 @@
 #!/usr/bin/env node
+'use strict';
 
-var path = require('path'),
-    fs = require('fs');
+var path = require('path')
+  , fs = require('fs')
+  , meow = require('meow')
+  , help = "Usage: textract pathToFile\n";
 
-var lib = path.join(path.dirname(fs.realpathSync(__filename)), '..', 'lib', 'cli.js');
-require(lib);
+var cli = meow( {
+  help: help,
+  pkg: "../package.json"
+} );
+
+if( !cli.input || cli.input.length == 0 ) {
+  console.log( "\n" + help );
+} else {
+  var lib = path.join( path.dirname( fs.realpathSync( __filename ) ), '..', 'lib', 'cli.js' );
+  var textract = require( lib );
+  textract( cli.input[0], cli.flags );
+}
