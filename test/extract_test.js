@@ -195,6 +195,17 @@ describe('textract', function() {
       });
     });
 
+    it('will extract text from actual docx files and preserve line breaks', function(done) {
+      var filePath = path.join( __dirname, "files", "docx.docx" );
+      textract(filePath, {preserveLineBreaks:true}, function( error, text ) {
+        //console.log(text)
+        expect(error).to.be.null;
+        expect(text).to.be.a('string');
+        expect(text.substring(20,40)).to.eql( "so you know:\nLorem i" );
+        done();
+      });
+    });
+
     it('will error out when docx file isn\'t actually a docx', function(done) {
       var filePath = path.join( __dirname, "files", "notadocx.docx" );
       textract(filePath, function( error, text ) {
@@ -306,7 +317,7 @@ describe('textract', function() {
 
     it('will extract slides in the right order', function(done) {
       var filePath = path.join( __dirname, "files", "order.pptx" );
-      textract(filePath,  {preserveLineBreaks:true}, function( error, text ) {
+      textract(filePath, {preserveLineBreaks:true}, function( error, text ) {
         expect(error).to.be.null;
         expect(text).to.be.an('string');
         var lines = text.split("\n").filter( function( line ) {
@@ -334,7 +345,7 @@ describe('textract', function() {
 
     it('will keep preserved characters', function(done) {
       var filePath = path.join( __dirname, "files", "order.pptx" );
-      textract(filePath,  {preserveLineBreaks:true}, function( error, text ) {
+      textract(filePath, {preserveLineBreaks:true}, function( error, text ) {
         expect(error).to.be.null;
         expect(text).to.be.an('string');
         expect(text.indexOf("…")).to.eql(928);
@@ -386,6 +397,5 @@ describe('textract', function() {
         done();
       });
     });
-
   });
 });
