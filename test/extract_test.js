@@ -80,7 +80,7 @@ describe('textract', function() {
       textract(docPath, function( error, text ) {
         expect(error).to.be.null;
         expect(text).to.be.an('string');
-        expect(text.length).to.eql( 32376 );
+        expect(text.length).to.eql( 32398 );
         done();
       });
     });
@@ -386,8 +386,6 @@ describe('textract', function() {
         done();
       });
     });
-
-
 
   });
 });
