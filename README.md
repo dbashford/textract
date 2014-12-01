@@ -99,6 +99,10 @@ Configuration can be passed into textract.  The following configuration options 
 
 ## Release Notes
 
+### 0.18.0
+* [#36](https://github.com/dbashford/textract/issues/36) Fixed error with previous deploy.
+* [#32](https://github.com/dbashford/textract/issues/32) Fixed `docx` line break issue.
+
 ### 0.17.0
 * Updated character stripping regex to be more lenient.
 
