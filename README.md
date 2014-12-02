@@ -121,7 +121,7 @@ Error will contain informative text about why the extraction failed. If textract
 
 ## Release Notes
 
-### 0.19.0 (upcoming)
+### 0.19.0
 * [#30](https://github.com/dbashford/textract/issues/30), [#34](https://github.com/dbashford/textract/issues/34).  The command line has been improved, allowing for all the configuration options to be provided.
 
 ### 0.18.0
