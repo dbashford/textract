@@ -42,6 +42,15 @@ npm install textract
 * `PNG`, `JPG` and `GIF` require `tesseract` to be available, [link](http://code.google.com/p/tesseract-ocr/).  Images need to be pretty clear, high DPI and made almost entirely of just text for `tesseract` to be able to accurately extract the text.
 * `DXF` extraction requires `drawingtotext` be available, [link](https://github.com/davidworkman9/drawingtotext)
 
+## Configuration
+
+Configuration can be passed into textract.  The following configuration options are available
+
+* `preserveLineBreaks`: By default textract does NOT preserve line breaks. Pass this in as `true` and textract will not strip any line breaks.
+* `exec`: Some extractors (xlsx, docx, dxf) use node's `exec` functionality. This setting allows for providing [config to `exec` execution](http://nodejs.org/api/child_process.html#child_process_child_process_exec_command_options_callback). One reason you might want to provide this config is if you are dealing with very large files. You might want to increase the `exec` `maxBuffer` setting.
+* `[ext].exec`: Each extractor can take specific exec config.
+* `tesseract.lang`: A pass-through to tesseract allowing for setting of language for extraction. ex: `{ tesseract: { lang:"chi_sim" } }`
+
 ## Usage
 
 ### Commmand Line
@@ -52,7 +61,29 @@ If textract is installed gloablly, via `npm install -g textract`, then the follo
 $ textract pathToFile
 ```
 
-### In your node app
+#### Flags
+
+Configuration flags can be passed into textract via the command line.  
+
+Parameters like `preserveLineBreaks` (defaults to `true`) can be passed in directly.
+
+```
+textract pathToFile --preserveLineBreaks false
+```
+
+Parameters like `exec.maxBuffer` can be passed as you'd expect.
+
+```
+textract pathToFile --exec.maxBuffer 500000
+```
+
+And multiple flags can be used together.
+
+```
+textract pathToFile --preserveLineBreaks false --exec.maxBuffer 500000
+```
+
+### Node
 
 #### Import
 
@@ -87,15 +118,6 @@ textract(filePath, config, function( error, text ) {})
 ```
 
 Error will contain informative text about why the extraction failed. If textract does not currently extract files of the type provided, a `typeNotFound` flag will be tossed on the error object.
-
-## Configuration
-
-Configuration can be passed into textract.  The following configuration options are available
-
-* `preserveLineBreaks`: By default textract does NOT preserve line breaks. Pass this in as `true` and textract will not strip any line breaks.
-* `exec`: Some extractors (xlsx, docx, dxf) use node's `exec` functionality. This setting allows for providing [config to `exec` execution](http://nodejs.org/api/child_process.html#child_process_child_process_exec_command_options_callback). One reason you might want to provide this config is if you are dealing with very large files. You might want to increase the `exec` `maxBuffer` setting.
-* `[ext].exec`: Each extractor can take specific exec config.
-* `tesseract.lang`: A pass-through to tesseract allowing for setting of language for extraction. ex: `{ tesseract: { lang:"chi_sim" } }`
 
 ## Release Notes
 
