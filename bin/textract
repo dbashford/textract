@@ -8,6 +8,7 @@ var path = require('path')
            "  textract pathToFile\n\n" +
            "Flags:\n" +
            "  preserveLineBreaks: true/false (default: true)\n" +
+           "  catdocWordWrap: true/false (default: false)\n" +
            "  exec.?: allows for passing in node exec parameters, http://nodejs.org/api/child_process.html#child_process_child_process_exec_command_options_callback\n" +
            "  [ext].exec.?: allows for passing in node exec parameters for just a single extension\n" +
            "  tesseract.lang: A pass-through to tesseract allowing for setting of language for extraction\n\n"+
