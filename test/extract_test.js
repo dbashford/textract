@@ -84,6 +84,18 @@ describe('textract', function() {
         done();
       });
     });
+
+    it('will extract text preserving line breaks without word wrap', function(done) {
+      var docPath = path.join( __dirname, "files", "multiple-long-paragraphs.doc" );
+      textract(docPath, {
+        preserveLineBreaks: true,
+        catdocWordWrap: false
+      }, function( error, text ) {
+        expect(text.match(/\r\n|\n/g).length).to.eql(2);
+        expect(error).to.be.null;
+        done();
+      });
+    });
   });
 
   describe('for .xls files', function() {
