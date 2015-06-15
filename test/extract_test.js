@@ -89,7 +89,7 @@ describe('textract', function() {
       var docPath = path.join( __dirname, "files", "multiple-long-paragraphs.doc" );
       textract(docPath, {
         preserveLineBreaks: true,
-        catdocWordWrap: false
+        disableCatdocWordWrap: false
       }, function( error, text ) {
         expect(text.match(/\r\n|\n/g).length).to.eql(2);
         expect(error).to.be.null;
