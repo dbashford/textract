@@ -64,7 +64,7 @@ $ textract pathToFile
 
 #### Flags
 
-Configuration flags can be passed into textract via the command line.
+Configuration flags can be passed into textract via the command line.  
 
 Parameters like `preserveLineBreaks` (defaults to `true`) can be passed in directly.
 
