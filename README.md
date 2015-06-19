@@ -122,6 +122,9 @@ Error will contain informative text about why the extraction failed. If textract
 
 ## Release Notes
 
+### 0.20.0
+* Pull Request [#39](https://github.com/dbashford/textract/pull/39) added support for not work wrapping with catdoc.
+
 ### 0.19.0
 * [#30](https://github.com/dbashford/textract/issues/30), [#34](https://github.com/dbashford/textract/issues/34).  The command line has been improved, allowing for all the configuration options to be provided.
 
