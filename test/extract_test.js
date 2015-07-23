@@ -448,6 +448,29 @@ describe('textract', function() {
         done();
       });
     });
+  });
+
+  describe('for xml files', function() {
+    it('will extract text', function(done) {
+      var filePath = path.join( __dirname, "files", "xml.xml" );
+      fromFileWithPath(filePath, function( error, text ) {
+        expect(error).to.be.null;
+        expect(text).to.be.an('string');
+        expect(text.substring(0,100)).to.eql(" Empire Burlesque Bob Dylan USA Columbia 10.90 1985 Hide your heart Bonnie Tyler UK CBS Records 9.90");
+        done();
+      });
+    });
+
+    it('will extract text and preserve line breaks', function(done) {
+      var filePath = path.join( __dirname, "files", "xml.xml" );
+      fromFileWithPath(filePath, {preserveLineBreaks:true}, function( error, text ) {
+        expect(error).to.be.null;
+        expect(text).to.be.an('string');
+        expect(text.substring(0,100)).to.eql("\nEmpire Burlesque\nBob Dylan\nUSA\nColumbia\n10.90\n1985\nHide your heart\nBonnie Tyler\nUK\nCBS Records\n9.90");
+        done();
+      });
+    });
 
   });
+
 });

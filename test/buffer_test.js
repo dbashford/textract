@@ -177,7 +177,22 @@ var test = function(_testFunction, withMime) {
       done();
     });
   });
-}
+
+  it('will ods files', function(done) {
+    var docPath = path.join( __dirname, "files", "xml.xml" );
+    var textBuff = fs.readFileSync(docPath);
+
+    testFunction(
+      (withMime) ? mime.lookup( docPath ) : docPath,
+      textBuff, function( error, text ) {
+
+      expect(error).to.be.null;
+      expect(text).to.be.an('string');
+      expect(text.substring(0,100)).to.eql(" Empire Burlesque Bob Dylan USA Columbia 10.90 1985 Hide your heart Bonnie Tyler UK CBS Records 9.90");
+      done();
+    });
+  });
+};
 
 describe('textract fromBufferWithName', function() {
   test(function(){ return global.fromBufferWithName }, false);
