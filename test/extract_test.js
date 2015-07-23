@@ -351,7 +351,6 @@ describe('textract', function() {
       });
     });
 
-
     it('will keep preserved characters', function(done) {
       var filePath = path.join( __dirname, "files", "order.pptx" );
       fromFileWithPath(filePath, {preserveLineBreaks:true}, function( error, text ) {
@@ -361,7 +360,6 @@ describe('textract', function() {
         done();
       });
     });
-
 
   });
 
@@ -406,5 +404,28 @@ describe('textract', function() {
         done();
       });
     });
+  });
+
+  describe('for markdown files', function() {
+    it('will extract text from md files', function(done) {
+      var filePath = path.join( __dirname, "files", "test.md" );
+      fromFileWithPath(filePath, function( error, text ) {
+        expect(error).to.be.null;
+        expect(text).to.be.an('string');
+        expect(text.substring(0,100)).to.eql(" This is an h1 This is an h2 This text has been bolded and italicized ");
+        done();
+      });
+    });
+
+    it('will extract text from md files and preserve line breaks', function(done) {
+      var filePath = path.join( __dirname, "files", "test.md" );
+      fromFileWithPath(filePath, {preserveLineBreaks:true}, function( error, text ) {
+        expect(error).to.be.null;
+        expect(text).to.be.an('string');
+        expect(text.substring(0,100)).to.eql("\nThis is an h1\nThis is an h2\nThis text has been bolded and italicized\n");
+        done();
+      });
+    });
+
   });
 });

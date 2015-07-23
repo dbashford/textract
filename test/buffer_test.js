@@ -147,6 +147,21 @@ var test = function(_testFunction, withMime) {
       });
     });
   });
+
+  it('for md files', function(done) {
+    var docPath = path.join( __dirname, "files", "test.md" );
+    var textBuff = fs.readFileSync(docPath);
+
+    testFunction(
+      (withMime) ? mime.lookup( docPath ) : docPath,
+      textBuff, function( error, text ) {
+
+      expect(error).to.be.null;
+      expect(text).to.be.an('string');
+      expect(text.substring(0,100)).to.eql(" This is an h1 This is an h2 This text has been bolded and italicized ");
+      done();
+    });
+  });
 }
 
 describe('textract fromBufferWithName', function() {
