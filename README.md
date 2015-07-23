@@ -56,7 +56,7 @@ Configuration can be passed into textract.  The following configuration options 
 
 ### Commmand Line
 
-If textract is installed gloablly, via `npm install -g textract`, then the following command will write the extracted text to the console.
+If textract is installed gloablly, via `npm install -g textract`, then the following command will write the extracted text to the console for a file on the file system.
 
 ```
 $ textract pathToFile
@@ -94,33 +94,54 @@ var textract = require('textract');
 
 #### Execution
 
-If you do not know the mime type of the file
+There are several ways to extract text.  For all methods, the extracted text and an error object are passed to a callback.
+
+`error` will contain informative text about why the extraction failed. If textract does not currently extract files of the type provided, a `typeNotFound` flag will be tossed on the error object.
+
+##### File on disk
 
 ```javascript
-textract(filePath, function( error, text ) {})
+textract.fromFileWithPath(filePath, function( error, text ) {})
 ```
-
-If you know the mime type of the file
 
 ```javascript
-textract(type, filePath, function( error, text ) {})
+textract.fromFileWithPath(filePath, config, function( error, text ) {})
 ```
-
-If you wish to pass some config...and know the mime type...
+##### File on disk + mime type
 
 ```javascript
-textract(type, filePath, config, function( error, text ) {})
+textract.fromFileWithMimeAndPath(type, filePath, function( error, text ) {})
 ```
-
-If you wish to pass some config, but do not know the mime type
 
 ```javascript
-textract(filePath, config, function( error, text ) {})
+textract.fromFileWithMimeAndPath(type, filePath, config, function( error, text ) {})
 ```
 
-Error will contain informative text about why the extraction failed. If textract does not currently extract files of the type provided, a `typeNotFound` flag will be tossed on the error object.
+##### Buffer + mime type
+
+```javascript
+textract.fromBufferWithMime(type, buffer, function( error, text ) {})
+```
+
+```javascript
+textract.fromBufferWithMime(type, buffer, config, function( error, text ) {})
+```
+
+##### Buffer + file name/path
+
+```javascript
+textract.fromBufferWithName(name, buffer, function( error, text ) {})
+```
+
+```javascript
+textract.fromBufferWithName(name, buffer, config, function( error, text ) {})
+```
 
 ## Release Notes
+
+### 1.0.0 (pending)
+* Overhaul of interface. To simplify the code, the original `textract` function was broken into `textract.fromFileWithPath` and `textract.fromFileWithMimeAndPath`.
+* [#40](https://github.com/dbashford/textract/issues/40).  Added support for extracting text from a node `Buffer`.  This prevents you from having to write the file to disk first.  textract does have to write the file to disk itself, but because it is a textract requirement that files be on disk textract should be able to take care of that for you. Two new functions, `textract.fromBufferWithName` and `textract.fromBufferWithMime` have been added.  textract needs to either know the file name or the mime type to extract a buffer.
 
 ### 0.20.0
 * Pull Request [#39](https://github.com/dbashford/textract/pull/39) added support for not work wrapping with catdoc.
