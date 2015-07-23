@@ -162,6 +162,21 @@ var test = function(_testFunction, withMime) {
       done();
     });
   });
+
+  it('will ods files', function(done) {
+    var docPath = path.join( __dirname, "files", "ods.ods" );
+    var textBuff = fs.readFileSync(docPath);
+
+    testFunction(
+      (withMime) ? mime.lookup( docPath ) : docPath,
+      textBuff, function( error, text ) {
+
+      expect(error).to.be.null;
+      expect(text).to.be.an('string');
+      expect(text.substring(0,100)).to.eql("This,is,a,ods Really,it,is, I,promise,, ");
+      done();
+    });
+  });
 }
 
 describe('textract fromBufferWithName', function() {

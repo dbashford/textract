@@ -156,7 +156,7 @@ describe('textract', function() {
       fromFileWithPath(filePath, function( error ) {
         expect(error).to.be.an('object');
         expect(error.message).to.be.a('string');
-        expect(error.message.substring(0,41)).to.eql("Could not extract notaxlsx.xlsx, Error: C");
+        expect(error.message.substring(0,41)).to.eql("Could not extract notaxlsx.xlsx, Command ");
         done();
       });
     });
@@ -423,6 +423,28 @@ describe('textract', function() {
         expect(error).to.be.null;
         expect(text).to.be.an('string');
         expect(text.substring(0,100)).to.eql("\nThis is an h1\nThis is an h2\nThis text has been bolded and italicized\n");
+        done();
+      });
+    });
+  });
+
+  describe('for ods files', function() {
+    it('will extract text', function(done) {
+      var filePath = path.join( __dirname, "files", "ods.ods" );
+      fromFileWithPath(filePath, function( error, text ) {
+        expect(error).to.be.null;
+        expect(text).to.be.an('string');
+        expect(text.substring(0,100)).to.eql("This,is,a,ods Really,it,is, I,promise,, ");
+        done();
+      });
+    });
+
+    it('will extract text and preserve line breaks', function(done) {
+      var filePath = path.join( __dirname, "files", "ods.ods" );
+      fromFileWithPath(filePath, {preserveLineBreaks:true}, function( error, text ) {
+        expect(error).to.be.null;
+        expect(text).to.be.an('string');
+        expect(text.substring(0,100)).to.eql("This,is,a,ods\nReally,it,is,\nI,promise,,\n\n");
         done();
       });
     });
