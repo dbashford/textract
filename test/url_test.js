@@ -139,7 +139,7 @@ describe("fromUrl tests", function() {
     });
   });
 
-  it('will xml files', function(done) {
+  it('will odt files', function(done) {
     var url = "https://github.com/dbashford/textract/blob/master/test/files/odt.odt?raw=true";
 
     fromUrl(url, function( error, text ) {
@@ -149,4 +149,16 @@ describe("fromUrl tests", function() {
       done();
     });
   });
+
+  it('will potx files', function(done) {
+    var url = "https://github.com/dbashford/textract/blob/master/test/files/potx.potx?raw=true";
+
+    fromUrl(url, function( error, text ) {
+      expect(error).to.be.null;
+      expect(text).to.be.an('string');
+      expect(text.substring(0,100)).to.eql("This is a potx template Yep, a potx I had no idea These were even a thing ");
+      done();
+    });
+  });
+
 });

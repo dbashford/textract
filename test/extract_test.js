@@ -494,4 +494,27 @@ describe('textract', function() {
       });
     });
   });
+
+  describe('for potx files', function() {
+    it('will extract text', function(done) {
+      var filePath = path.join( __dirname, "files", "potx.potx" );
+      fromFileWithPath(filePath, function( error, text ) {
+        expect(error).to.be.null;
+        expect(text).to.be.an('string');
+        expect(text.substring(0,100)).to.eql("This is a potx template Yep, a potx I had no idea These were even a thing ");
+        done();
+      });
+    });
+
+    it('will extract text and preserve line breaks', function(done) {
+      var filePath = path.join( __dirname, "files", "potx.potx" );
+      fromFileWithPath(filePath, {preserveLineBreaks:true}, function( error, text ) {
+        expect(error).to.be.null;
+        expect(text).to.be.an('string');
+        expect(text.substring(0,100)).to.eql("This is a potx template\nYep, a potx\nI had no idea \nThese were even a thing\n");
+        done();
+      });
+    });
+  });
+
 });

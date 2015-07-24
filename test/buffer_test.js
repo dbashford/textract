@@ -207,6 +207,21 @@ var test = function(_testFunction, withMime) {
       done();
     });
   });
+
+  it('will potx files', function(done) {
+    var docPath = path.join( __dirname, "files", "potx.potx" );
+    var textBuff = fs.readFileSync(docPath);
+
+    testFunction(
+      (withMime) ? mime.lookup( docPath ) : docPath,
+      textBuff, function( error, text ) {
+
+      expect(error).to.be.null;
+      expect(text).to.be.an('string');
+      expect(text.substring(0,100)).to.eql("This is a potx template Yep, a potx I had no idea These were even a thing ");
+      done();
+    });
+  });
 };
 
 describe('textract fromBufferWithName', function() {
