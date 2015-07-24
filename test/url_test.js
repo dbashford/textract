@@ -128,13 +128,24 @@ describe("fromUrl tests", function() {
     });
   });
 
-  it('will ods files', function(done) {
+  it('will xml files', function(done) {
     var url = "https://github.com/dbashford/textract/blob/master/test/files/xml.xml?raw=true";
 
     fromUrl(url, function( error, text ) {
       expect(error).to.be.null;
       expect(text).to.be.an('string');
       expect(text.substring(0,100)).to.eql(" Empire Burlesque Bob Dylan USA Columbia 10.90 1985 Hide your heart Bonnie Tyler UK CBS Records 9.90");
+      done();
+    });
+  });
+
+  it('will xml files', function(done) {
+    var url = "https://github.com/dbashford/textract/blob/master/test/files/odt.odt?raw=true";
+
+    fromUrl(url, function( error, text ) {
+      expect(error).to.be.null;
+      expect(text).to.be.an('string');
+      expect(text.substring(0,100)).to.eql("This is an ODT THIS IS A HEADING More ODT");
       done();
     });
   });

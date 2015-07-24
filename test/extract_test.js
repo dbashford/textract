@@ -479,7 +479,7 @@ describe('textract', function() {
       fromFileWithPath(filePath, function( error, text ) {
         expect(error).to.be.null;
         expect(text).to.be.an('string');
-        expect(text.substring(0,100)).to.eql("");
+        expect(text.substring(0,100)).to.eql("This is an ODT THIS IS A HEADING More ODT");
         done();
       });
     });
@@ -489,7 +489,7 @@ describe('textract', function() {
       fromFileWithPath(filePath, {preserveLineBreaks:true}, function( error, text ) {
         expect(error).to.be.null;
         expect(text).to.be.an('string');
-        expect(text.substring(0,100)).to.eql("");
+        expect(text.substring(0,100)).to.eql("This is an ODT\nTHIS IS A HEADING\nMore ODT");
         done();
       });
     });

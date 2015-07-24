@@ -192,6 +192,21 @@ var test = function(_testFunction, withMime) {
       done();
     });
   });
+
+  it('will odt files', function(done) {
+    var docPath = path.join( __dirname, "files", "odt.odt" );
+    var textBuff = fs.readFileSync(docPath);
+
+    testFunction(
+      (withMime) ? mime.lookup( docPath ) : docPath,
+      textBuff, function( error, text ) {
+
+      expect(error).to.be.null;
+      expect(text).to.be.an('string');
+      expect(text.substring(0,100)).to.eql("This is an ODT THIS IS A HEADING More ODT");
+      done();
+    });
+  });
 };
 
 describe('textract fromBufferWithName', function() {
