@@ -13,6 +13,7 @@ describe('textract', function() {
     expect(typeof fromFileWithMimeAndPath).to.eql("function");
     expect(typeof fromBufferWithName).to.eql("function");
     expect(typeof fromBufferWithMime).to.eql("function");
+    expect(typeof fromUrl).to.eql("function");
   });
 
   describe('will error out gracefully', function() {
@@ -137,6 +138,16 @@ describe('textract', function() {
       var filePath = path.join(__dirname, 'files', 'new docx(1).docx');
       var textBuff = fs.readFileSync(filePath);
       fromBufferWithName(filePath, textBuff, test(done));
+    });
+
+    it('fromUrl(url, options, callback)', function(done) {
+      var url = "https://github.com/dbashford/textract/blob/master/test/files/new%20docx(1).docx?raw=true";
+      fromUrl(url, {}, test(done));
+    });
+
+    it('fromUrl1(url,callback)', function(done) {
+      var url = "https://github.com/dbashford/textract/blob/master/test/files/new%20docx(1).docx?raw=true";
+      fromUrl(url, test(done));
     });
   });
 });

@@ -8,7 +8,8 @@ A text extraction node module.
 
 ## Currently Extracts...
 
-* HTML
+* HTML, HTM
+* Markdown
 * XML, XSL
 * PDF
 * DOC, DOCX
@@ -16,14 +17,13 @@ A text extraction node module.
 * XLS, XLSX, XLSB, XLSM, ODS
 * PPTX
 * PNG, JPG, GIF
-* Markdown
 * DXF
 * `application/javascript`
 * All `text/*` mime-types.
 
 In almost all cases above, what textract cares about is the mime type.  So `.html` and `.htm`, both possessing the same mime type, will be extracted.  Other extensions that share mime types with those above should also extract successfully. For example, `application/vnd.ms-excel` is the mime type for `.xls`, but also for 5 other mime types.
 
-Does textract not extract from files of the type you need?  Add an issue or submit a pull request.  It's super easy to add an extractor for a new mime type.
+_Does textract not extract from files of the type you need?_  Add an issue or submit a pull request. It many cases textract is already capable, it is just not paying attention to the mime type you may be interested in.
 
 ## Install
 
@@ -91,13 +91,13 @@ textract pathToFile --preserveLineBreaks false --exec.maxBuffer 500000
 var textract = require('textract');
 ```
 
-#### Execution
+#### APIs
 
 There are several ways to extract text.  For all methods, the extracted text and an error object are passed to a callback.
 
 `error` will contain informative text about why the extraction failed. If textract does not currently extract files of the type provided, a `typeNotFound` flag will be tossed on the error object.
 
-##### File on disk
+##### File
 
 ```javascript
 textract.fromFileWithPath(filePath, function( error, text ) {})
@@ -106,7 +106,7 @@ textract.fromFileWithPath(filePath, function( error, text ) {})
 ```javascript
 textract.fromFileWithPath(filePath, config, function( error, text ) {})
 ```
-##### File on disk + mime type
+##### File + mime type
 
 ```javascript
 textract.fromFileWithMimeAndPath(type, filePath, function( error, text ) {})
@@ -136,10 +136,21 @@ textract.fromBufferWithName(name, buffer, function( error, text ) {})
 textract.fromBufferWithName(name, buffer, config, function( error, text ) {})
 ```
 
+##### URL
+
+```javascript
+textract.fromUrl(url, function( error, text ) {})
+```
+
+```javascript
+textract.fromUrl(url, config, function( error, text ) {})
+```
+
 ## Release Notes
 
 ### 1.0.0 (pending)
 * Overhaul of interface. To simplify the code, the original `textract` function was broken into `textract.fromFileWithPath` and `textract.fromFileWithMimeAndPath`.
+* [#41](https://github.com/dbashford/textract/issues/41)
 * [#40](https://github.com/dbashford/textract/issues/40).  Added support for extracting text from a node `Buffer`.  This prevents you from having to write the file to disk first.  textract does have to write the file to disk itself, but because it is a textract requirement that files be on disk textract should be able to take care of that for you. Two new functions, `textract.fromBufferWithName` and `textract.fromBufferWithMime` have been added.  textract needs to either know the file name or the mime type to extract a buffer.
 * [#38](https://github.com/dbashford/textract/issues/38).  Added markdown support.
 * Added support for ODS.
