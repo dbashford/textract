@@ -14,7 +14,8 @@ A text extraction node module.
 * PDF
 * DOC, DOCX
 * RTF
-* XLS, XLSX, XLSB, XLSM, ODS
+* XLS, XLSX, XLSB, XLSM
+* ODS
 * PPTX
 * PNG, JPG, GIF
 * DXF
@@ -150,7 +151,7 @@ textract.fromUrl(url, config, function( error, text ) {})
 
 ### 1.0.0 (pending)
 * Overhaul of interface. To simplify the code, the original `textract` function was broken into `textract.fromFileWithPath` and `textract.fromFileWithMimeAndPath`.
-* [#41](https://github.com/dbashford/textract/issues/41)
+* [#41](https://github.com/dbashford/textract/issues/41). Added support for pulling files from a URL.
 * [#40](https://github.com/dbashford/textract/issues/40).  Added support for extracting text from a node `Buffer`.  This prevents you from having to write the file to disk first.  textract does have to write the file to disk itself, but because it is a textract requirement that files be on disk textract should be able to take care of that for you. Two new functions, `textract.fromBufferWithName` and `textract.fromBufferWithMime` have been added.  textract needs to either know the file name or the mime type to extract a buffer.
 * [#38](https://github.com/dbashford/textract/issues/38).  Added markdown support.
 * Added support for ODS.

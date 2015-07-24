@@ -473,4 +473,25 @@ describe('textract', function() {
 
   });
 
+  describe('for odt files', function() {
+    it('will extract text', function(done) {
+      var filePath = path.join( __dirname, "files", "odt.odt" );
+      fromFileWithPath(filePath, function( error, text ) {
+        expect(error).to.be.null;
+        expect(text).to.be.an('string');
+        expect(text.substring(0,100)).to.eql("");
+        done();
+      });
+    });
+
+    it('will extract text and preserve line breaks', function(done) {
+      var filePath = path.join( __dirname, "files", "odt.odt" );
+      fromFileWithPath(filePath, {preserveLineBreaks:true}, function( error, text ) {
+        expect(error).to.be.null;
+        expect(text).to.be.an('string');
+        expect(text.substring(0,100)).to.eql("");
+        done();
+      });
+    });
+  });
 });
