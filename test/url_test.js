@@ -183,5 +183,15 @@ describe("fromUrl tests", function() {
     });
   });
 
+  it('will ots files', function(done) {
+    var url = "https://github.com/dbashford/textract/blob/master/test/files/ots.ots?raw=true";
+
+    fromUrl(url, function( error, text ) {
+      expect(error).to.be.null;
+      expect(text).to.be.an('string');
+      expect(text.substring(0,100)).to.eql("This,is , template, an,open,office,template isn't,it,awesome?, you,know,it,is ");
+      done();
+    });
+  });
 
 });

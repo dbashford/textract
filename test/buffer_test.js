@@ -253,7 +253,24 @@ var test = function(_testFunction, withMime) {
     });
   });
 
+  it('will ots files', function(done) {
+    var docPath = path.join( __dirname, "files", "ots.ots" );
+    var textBuff = fs.readFileSync(docPath);
+
+    testFunction(
+      (withMime) ? mime.lookup( docPath ) : docPath,
+      textBuff, function( error, text ) {
+
+      expect(error).to.be.null;
+      expect(text).to.be.an('string');
+      expect(text.substring(0,100)).to.eql("This,is , template, an,open,office,template isn't,it,awesome?, you,know,it,is ");
+      done();
+    });
+  });
+
 };
+
+
 
 describe('textract fromBufferWithName', function() {
   test(function(){ return global.fromBufferWithName }, false);
