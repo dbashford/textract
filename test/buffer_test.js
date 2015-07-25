@@ -222,6 +222,22 @@ var test = function(_testFunction, withMime) {
       done();
     });
   });
+
+  it('will xltx files', function(done) {
+    var docPath = path.join( __dirname, "files", "xltx.xltx" );
+    var textBuff = fs.readFileSync(docPath);
+
+    testFunction(
+      (withMime) ? mime.lookup( docPath ) : docPath,
+      textBuff, function( error, text ) {
+
+      expect(error).to.be.null;
+      expect(text).to.be.an('string');
+      expect(text.substring(0,100)).to.eql(",,,,,, Packing Slip ,Your Company Name,,,,\"July 24, 2015\", , Your Company Slogan,,,,, ,,,,,, ,Addres");
+      done();
+    });
+  });
+
 };
 
 describe('textract fromBufferWithName', function() {

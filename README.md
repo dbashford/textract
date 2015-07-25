@@ -15,7 +15,7 @@ A text extraction node module.
 * DOC, DOCX
 * ODT (experimental, feedback needed!)
 * RTF
-* XLS, XLSX, XLSB, XLSM
+* XLS, XLSX, XLSB, XLSM, XLTX
 * ODS
 * PPTX, POTX
 * PNG, JPG, GIF
@@ -158,6 +158,7 @@ textract.fromUrl(url, config, function( error, text ) {})
 * Added support for ODS.
 * Added support for XML, XSL.
 * Added support for POTX.
+* Added support for XLTX, XLTS.
 
 ### 0.20.0
 * Pull Request [#39](https://github.com/dbashford/textract/pull/39) added support for not work wrapping with catdoc.

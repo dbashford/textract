@@ -161,4 +161,15 @@ describe("fromUrl tests", function() {
     });
   });
 
+  it('will xltx files', function(done) {
+    var url = "https://github.com/dbashford/textract/blob/master/test/files/xltx.xltx?raw=true";
+
+    fromUrl(url, function( error, text ) {
+      expect(error).to.be.null;
+      expect(text).to.be.an('string');
+      expect(text.substring(0,100)).to.eql(",,,,,, Packing Slip ,Your Company Name,,,,\"July 24, 2015\", , Your Company Slogan,,,,, ,,,,,, ,Addres");
+      done();
+    });
+  });
+
 });

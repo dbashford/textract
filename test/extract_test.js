@@ -517,4 +517,26 @@ describe('textract', function() {
     });
   });
 
+  describe('for xltx files', function() {
+    it('will extract text', function(done) {
+      var filePath = path.join( __dirname, "files", "xltx.xltx" );
+      fromFileWithPath(filePath, function( error, text ) {
+        expect(error).to.be.null;
+        expect(text).to.be.an('string');
+        expect(text.substring(0,100)).to.eql(",,,,,, Packing Slip ,Your Company Name,,,,\"July 24, 2015\", , Your Company Slogan,,,,, ,,,,,, ,Addres");
+        done();
+      });
+    });
+
+    it('will extract text and preserve line breaks', function(done) {
+      var filePath = path.join( __dirname, "files", "xltx.xltx" );
+      fromFileWithPath(filePath, {preserveLineBreaks:true}, function( error, text ) {
+        expect(error).to.be.null;
+        expect(text).to.be.an('string');
+        expect(text.substring(0,100)).to.eql(",,,,,, Packing Slip\n,Your Company Name,,,,\"July 24, 2015\",\n, Your Company Slogan,,,,,\n,,,,,,\n,Addres");
+        done();
+      });
+    });
+  });
+
 });
