@@ -539,4 +539,27 @@ describe('textract', function() {
     });
   });
 
+  describe('for ott files', function() {
+    it('will extract text', function(done) {
+      var filePath = path.join( __dirname, "files", "ott.ott" );
+      fromFileWithPath(filePath, function( error, text ) {
+        expect(error).to.be.null;
+        expect(text).to.be.an('string');
+        expect(text.substring(0,100)).to.eql("This is a document template, yay templates! Woo templates get me so excited! Woo templates get me so");
+        done();
+      });
+    });
+
+    it('will extract text and preserve line breaks', function(done) {
+      var filePath = path.join( __dirname, "files", "ott.ott" );
+      fromFileWithPath(filePath, {preserveLineBreaks:true}, function( error, text ) {
+        expect(error).to.be.null;
+        expect(text).to.be.an('string');
+        expect(text.substring(0,100)).to.eql("This is a document template, yay templates!\nWoo templates get me so excited!\nWoo templates get me so");
+        done();
+      });
+    });
+  });
+
+
 });

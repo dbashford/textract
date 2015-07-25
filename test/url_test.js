@@ -172,4 +172,16 @@ describe("fromUrl tests", function() {
     });
   });
 
+  it('will ott files', function(done) {
+    var url = "https://github.com/dbashford/textract/blob/master/test/files/ott.ott?raw=true";
+
+    fromUrl(url, function( error, text ) {
+      expect(error).to.be.null;
+      expect(text).to.be.an('string');
+      expect(text.substring(0,100)).to.eql("This is a document template, yay templates! Woo templates get me so excited! Woo templates get me so");
+      done();
+    });
+  });
+
+
 });
