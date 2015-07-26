@@ -117,4 +117,10 @@ describe("fromUrl tests", function() {
     "This is a drawing template A drawing template. Who would really ever need to extract from one of the"
   );
 
+  test(
+    "odp",
+    "odp.odp",
+    "This is a title This is a slide's text This is a 2nd page And a 2nd page's content"
+  );
+
 });

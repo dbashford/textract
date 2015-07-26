@@ -500,4 +500,11 @@ describe('textract', function() {
     "This is a drawing template\nA drawing template.\nWho would really ever need to extract from one of the"
   );
 
+  test(
+    "odp",
+    "odp.odp",
+    "This is a title This is a slide's text This is a 2nd page And a 2nd page's content",
+    "This is a title\nThis is a slide's text\nThis is a 2nd page\nAnd a 2nd page's content"
+  );
+
 });
