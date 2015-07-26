@@ -40,7 +40,7 @@ npm install textract
 * `PDF` extraction requires `pdftotext` be installed, [link](http://www.foolabs.com/xpdf/download.html)
 * `DOC` extraction requires `catdoc` be installed, [link](http://www.wagner.pp.ru/~vitus/software/catdoc/), unless on OSX in which case textutil (installed by default) is used.
 * `RTF` extraction requires `catdoc` be installed, unless on OSX in which case textutil (installed by default on OSX) is used.
-* `DOCX`, `PPTX`, `POTX`, `OTT`, `ODT`, `ODG`, `OTG`, `ODP`, `OTP` require `unzip` be available
+* `DOCX`, `PPTX`, `POTX` require `unzip` be available
 * `PNG`, `JPG` and `GIF` require `tesseract` to be available, [link](http://code.google.com/p/tesseract-ocr/).  Images need to be pretty clear, high DPI and made almost entirely of just text for `tesseract` to be able to accurately extract the text.
 * `DXF` extraction requires `drawingtotext` be available, [link](https://github.com/davidworkman9/drawingtotext)
 
