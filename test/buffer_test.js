@@ -268,6 +268,21 @@ var test = function(_testFunction, withMime) {
     });
   });
 
+  it('will odg files', function(done) {
+    var docPath = path.join( __dirname, "files", "odg.odg" );
+    var textBuff = fs.readFileSync(docPath);
+
+    testFunction(
+      (withMime) ? mime.lookup( docPath ) : docPath,
+      textBuff, function( error, text ) {
+
+      expect(error).to.be.null;
+      expect(text).to.be.an('string');
+      expect(text.substring(0,100)).to.eql("This is a drawing? A drawing, a drawing! This is a drawing, Aren't you mad envious?");
+      done();
+    });
+  });
+
 };
 
 

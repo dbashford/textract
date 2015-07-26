@@ -583,4 +583,26 @@ describe('textract', function() {
     });
   });
 
+  describe('for odg files', function() {
+    it('will extract text', function(done) {
+      var filePath = path.join( __dirname, "files", "odg.odg" );
+      fromFileWithPath(filePath, function( error, text ) {
+        expect(error).to.be.null;
+        expect(text).to.be.an('string');
+        expect(text.substring(0,100)).to.eql("This is a drawing? A drawing, a drawing! This is a drawing, Aren't you mad envious?");
+        done();
+      });
+    });
+
+    it('will extract text and preserve line breaks', function(done) {
+      var filePath = path.join( __dirname, "files", "odg.odg" );
+      fromFileWithPath(filePath, {preserveLineBreaks:true}, function( error, text ) {
+        expect(error).to.be.null;
+        expect(text).to.be.an('string');
+        expect(text.substring(0,100)).to.eql("This is a drawing?\nA drawing, a drawing!\nThis is a drawing,\nAren't you mad envious?");
+        done();
+      });
+    });
+  });
+
 });
