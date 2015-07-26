@@ -2,207 +2,119 @@ var path = require("path");
 
 describe("fromUrl tests", function() {
 
-  describe('for .html files', function() {
-
-    it('will extract text', function(done) {
-      var url = "https://github.com/dbashford/textract/blob/master/test/files/test.html?raw=true";
-      fromUrl(url, {preserveLineBreaks:true}, function( error, text ) {
-        expect(error).to.be.null;
-        expect(text).to.be.an('string');
-        expect(text.length).to.eql( 80 );
-        expect(text.substring(0, 80)).to.eql("\nThis is a\nlong string\nof text\nthat should get extracted\nwith new lines inserted")
-        done();
-      });
-    });
-  });
-
-  describe('for .doc files', function() {
-    it('will extract text from actual doc files', function(done) {
-      var url = "https://github.com/dbashford/textract/blob/master/test/files/doc.doc?raw=true";
-      fromUrl(url, function( error, text ) {
-        expect(error).to.be.null;
-        expect(text).to.be.an('string');
-        expect(text).to.eql( "This is a doc, I promise.");
-        done();
-      });
-    });
-  });
-
-  describe('for .xls files', function() {
-
-    it('will extract text', function(done) {
-      var url = "https://github.com/dbashford/textract/blob/master/test/files/test.xls?raw=true";
-      fromUrl(url, function( error, text ) {
-        expect(error).to.be.null;
-        expect(text).to.be.a('string');
-        expect(text.substring(0,20)).to.eql( "This,is,a,spreadshee" );
-        done();
-      });
-    });
-  });
-
-  describe('for .xlsx files', function() {
-    it('will extract text and numbers from XLSX files', function(done) {
-      var url = "https://github.com/dbashford/textract/blob/master/test/files/pi.xlsx?raw=true";
+  var test = function(ext, name, _text) {
+    it('will ' + ext + ' files', function(done) {
+      var url = "https://github.com/dbashford/textract/blob/master/test/files/" + name + "?raw=true";
 
       fromUrl(url, function( error, text ) {
         expect(error).to.be.null;
         expect(text).to.be.an('string');
-        expect(text).to.eql('This is the value of PI:,3.141592 ');
+        expect(text.substring(0,100)).to.eql(_text);
         done();
       });
     });
-  });
+  };
 
-  describe('for .pdf files', function() {
-    it('will extract text from actual pdf files', function(done) {
-      var url = "https://github.com/dbashford/textract/blob/master/test/files/pdf.pdf?raw=true";
+  test(
+    "doc",
+    "doc.doc",
+    "This is a doc, I promise."
+  );
 
-      fromUrl(url, function( error, text ) {
-        expect(error).to.be.null;
-        expect(text).to.be.a('string');
-        expect(text).to.eql( "This is a test. Please ignore." );
-        done();
-      });
-    });
-  });
+  test(
+    "xls",
+    "test.xls",
+    "This,is,a,spreadsheet,yay! "
+  );
 
-  describe('for .docx files', function() {
-    it('will extract text from actual docx files', function(done) {
-      var url = "https://github.com/dbashford/textract/blob/master/test/files/docx.docx?raw=true";
+  test(
+    "xlsx",
+    "pi.xlsx",
+    'This is the value of PI:,3.141592 '
+  );
 
-      fromUrl(url, function( error, text ) {
-        expect(error).to.be.null;
-        expect(text).to.be.a('string');
-        expect(text.substring(0,20)).to.eql( "This is a test Just " );
-        done();
-      });
-    });
-  });
+  test(
+    "pdf",
+    "pdf.pdf",
+    "This is a test. Please ignore."
+  );
 
-  describe('for text/* files', function() {
-    it('will extract text from specifically a .txt file', function(done) {
-      var url = "https://github.com/dbashford/textract/blob/master/test/files/txt.txt?raw=true";
+  test(
+    "docx",
+    "docx.docx",
+    "This is a test Just so you know: Lorem ipsum dolor sit amet, consecutuer adipiscing elit, sed diam n"
+  );
 
-      fromUrl(url, function( error, text ) {
-        expect(error).to.be.null;
-        expect(text).to.be.a('string');
-        expect(text).to.eql( "This is a plain old text file." );
-        done();
-      });
-    });
-  });
+  test(
+    "text/*",
+    "txt.txt",
+    "This is a plain old text file."
+  );
 
-  describe('for .pptx files', function() {
-    it('will extract text PPTX files', function(done) {
-      var url = "https://github.com/dbashford/textract/blob/master/test/files/ppt.pptx?raw=true";
+  test(
+    "pptx",
+    "ppt.pptx",
+    "This is some title Text And a sub-title Text in Lists Bullet 1 Bullet 2 Bullet 3 Number 1 Number 2 N"
+  );
 
-      fromUrl(url, function( error, text ) {
-        expect(error).to.be.null;
-        expect(text).to.be.an('string');
-        expect(text.substring(55,96)).to.eql('ullet 1 Bullet 2 Bullet 3 Number 1 Number');
-        done();
-      });
-    });
-  });
+  test(
+    "markdown",
+    "test.md",
+    " This is an h1 This is an h2 This text has been bolded and italicized "
+  );
 
-  it('for md files', function(done) {
-    var url = "https://github.com/dbashford/textract/blob/master/test/files/test.md?raw=true";
+  test(
+    "ods",
+    "ods.ods",
+    "This,is,a,ods Really,it,is, I,promise,, "
+  );
 
-    fromUrl(url, function( error, text ) {
-      expect(error).to.be.null;
-      expect(text).to.be.an('string');
-      expect(text.substring(0,100)).to.eql(" This is an h1 This is an h2 This text has been bolded and italicized ");
-      done();
-    });
-  });
+  test(
+    "xml",
+    "xml.xml",
+    " Empire Burlesque Bob Dylan USA Columbia 10.90 1985 Hide your heart Bonnie Tyler UK CBS Records 9.90"
+  );
 
-  it('will ods files', function(done) {
-    var url = "https://github.com/dbashford/textract/blob/master/test/files/ods.ods?raw=true";
+  test(
+    "odt",
+    "odt.odt",
+    "This is an ODT THIS IS A HEADING More ODT"
+  );
 
-    fromUrl(url, function( error, text ) {
-      expect(error).to.be.null;
-      expect(text).to.be.an('string');
-      expect(text.substring(0,100)).to.eql("This,is,a,ods Really,it,is, I,promise,, ");
-      done();
-    });
-  });
+  test(
+    "potx",
+    "potx.potx",
+    "This is a potx template Yep, a potx I had no idea These were even a thing "
+  );
 
-  it('will xml files', function(done) {
-    var url = "https://github.com/dbashford/textract/blob/master/test/files/xml.xml?raw=true";
+  test(
+    "xltx",
+    "xltx.xltx",
+    ",,,,,, Packing Slip ,Your Company Name,,,,\"July 24, 2015\", , Your Company Slogan,,,,, ,,,,,, ,Addres"
+  );
 
-    fromUrl(url, function( error, text ) {
-      expect(error).to.be.null;
-      expect(text).to.be.an('string');
-      expect(text.substring(0,100)).to.eql(" Empire Burlesque Bob Dylan USA Columbia 10.90 1985 Hide your heart Bonnie Tyler UK CBS Records 9.90");
-      done();
-    });
-  });
+  test(
+    "ott",
+    "ott.ott",
+    "This is a document template, yay templates! Woo templates get me so excited! Woo templates get me so"
+  );
 
-  it('will odt files', function(done) {
-    var url = "https://github.com/dbashford/textract/blob/master/test/files/odt.odt?raw=true";
+  test(
+    "ots",
+    "ots.ots",
+    "This,is , template, an,open,office,template isn't,it,awesome?, you,know,it,is "
+  );
 
-    fromUrl(url, function( error, text ) {
-      expect(error).to.be.null;
-      expect(text).to.be.an('string');
-      expect(text.substring(0,100)).to.eql("This is an ODT THIS IS A HEADING More ODT");
-      done();
-    });
-  });
+  test(
+    "odg",
+    "odg.odg",
+    "This is a drawing? A drawing, a drawing! This is a drawing, Aren't you mad envious?"
+  );
 
-  it('will potx files', function(done) {
-    var url = "https://github.com/dbashford/textract/blob/master/test/files/potx.potx?raw=true";
-
-    fromUrl(url, function( error, text ) {
-      expect(error).to.be.null;
-      expect(text).to.be.an('string');
-      expect(text.substring(0,100)).to.eql("This is a potx template Yep, a potx I had no idea These were even a thing ");
-      done();
-    });
-  });
-
-  it('will xltx files', function(done) {
-    var url = "https://github.com/dbashford/textract/blob/master/test/files/xltx.xltx?raw=true";
-
-    fromUrl(url, function( error, text ) {
-      expect(error).to.be.null;
-      expect(text).to.be.an('string');
-      expect(text.substring(0,100)).to.eql(",,,,,, Packing Slip ,Your Company Name,,,,\"July 24, 2015\", , Your Company Slogan,,,,, ,,,,,, ,Addres");
-      done();
-    });
-  });
-
-  it('will ott files', function(done) {
-    var url = "https://github.com/dbashford/textract/blob/master/test/files/ott.ott?raw=true";
-
-    fromUrl(url, function( error, text ) {
-      expect(error).to.be.null;
-      expect(text).to.be.an('string');
-      expect(text.substring(0,100)).to.eql("This is a document template, yay templates! Woo templates get me so excited! Woo templates get me so");
-      done();
-    });
-  });
-
-  it('will ots files', function(done) {
-    var url = "https://github.com/dbashford/textract/blob/master/test/files/ots.ots?raw=true";
-
-    fromUrl(url, function( error, text ) {
-      expect(error).to.be.null;
-      expect(text).to.be.an('string');
-      expect(text.substring(0,100)).to.eql("This,is , template, an,open,office,template isn't,it,awesome?, you,know,it,is ");
-      done();
-    });
-  });
-
-  it('will odg files', function(done) {
-    var url = "https://github.com/dbashford/textract/blob/master/test/files/odg.odg?raw=true";
-
-    fromUrl(url, function( error, text ) {
-      expect(error).to.be.null;
-      expect(text).to.be.an('string');
-      expect(text.substring(0,100)).to.eql("This is a drawing? A drawing, a drawing! This is a drawing, Aren't you mad envious?");
-      done();
-    });
-  });
+  test(
+    "otg",
+    "otg.otg",
+    "This is a drawing template A drawing template. Who would really ever need to extract from one of the"
+  );
 
 });

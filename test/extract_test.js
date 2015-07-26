@@ -406,203 +406,98 @@ describe('textract', function() {
     });
   });
 
-  describe('for markdown files', function() {
-    it('will extract text from md files', function(done) {
-      var filePath = path.join( __dirname, "files", "test.md" );
-      fromFileWithPath(filePath, function( error, text ) {
-        expect(error).to.be.null;
-        expect(text).to.be.an('string');
-        expect(text.substring(0,100)).to.eql(" This is an h1 This is an h2 This text has been bolded and italicized ");
-        done();
+  var test = function(ext, name, text1, text2) {
+    describe('for ' + ext + ' files', function() {
+      it('will extract text', function(done) {
+        var filePath = path.join( __dirname, "files", name );
+        fromFileWithPath(filePath, function( error, text ) {
+          expect(error).to.be.null;
+          expect(text).to.be.an('string');
+          expect(text.substring(0,100)).to.eql(text1);
+          done();
+        });
+      });
+
+      it('will extract text and preserve line breaks', function(done) {
+        var filePath = path.join( __dirname, "files", name );
+        fromFileWithPath(filePath, {preserveLineBreaks:true}, function( error, text ) {
+          expect(error).to.be.null;
+          expect(text).to.be.an('string');
+          expect(text.substring(0,100)).to.eql(text2);
+          done();
+        });
       });
     });
+  };
 
-    it('will extract text from md files and preserve line breaks', function(done) {
-      var filePath = path.join( __dirname, "files", "test.md" );
-      fromFileWithPath(filePath, {preserveLineBreaks:true}, function( error, text ) {
-        expect(error).to.be.null;
-        expect(text).to.be.an('string');
-        expect(text.substring(0,100)).to.eql("\nThis is an h1\nThis is an h2\nThis text has been bolded and italicized\n");
-        done();
-      });
-    });
-  });
+  test(
+    "markdown",
+    "test.md",
+    " This is an h1 This is an h2 This text has been bolded and italicized ",
+    "\nThis is an h1\nThis is an h2\nThis text has been bolded and italicized\n"
+  );
 
-  describe('for ods files', function() {
-    it('will extract text', function(done) {
-      var filePath = path.join( __dirname, "files", "ods.ods" );
-      fromFileWithPath(filePath, function( error, text ) {
-        expect(error).to.be.null;
-        expect(text).to.be.an('string');
-        expect(text.substring(0,100)).to.eql("This,is,a,ods Really,it,is, I,promise,, ");
-        done();
-      });
-    });
+  test(
+    "ods",
+    "ods.ods",
+    "This,is,a,ods Really,it,is, I,promise,, ",
+    "This,is,a,ods\nReally,it,is,\nI,promise,,\n\n"
+  );
 
-    it('will extract text and preserve line breaks', function(done) {
-      var filePath = path.join( __dirname, "files", "ods.ods" );
-      fromFileWithPath(filePath, {preserveLineBreaks:true}, function( error, text ) {
-        expect(error).to.be.null;
-        expect(text).to.be.an('string');
-        expect(text.substring(0,100)).to.eql("This,is,a,ods\nReally,it,is,\nI,promise,,\n\n");
-        done();
-      });
-    });
-  });
+  test(
+    "xml",
+    "xml.xml",
+    " Empire Burlesque Bob Dylan USA Columbia 10.90 1985 Hide your heart Bonnie Tyler UK CBS Records 9.90",
+    "\nEmpire Burlesque\nBob Dylan\nUSA\nColumbia\n10.90\n1985\nHide your heart\nBonnie Tyler\nUK\nCBS Records\n9.90"
+  );
 
-  describe('for xml files', function() {
-    it('will extract text', function(done) {
-      var filePath = path.join( __dirname, "files", "xml.xml" );
-      fromFileWithPath(filePath, function( error, text ) {
-        expect(error).to.be.null;
-        expect(text).to.be.an('string');
-        expect(text.substring(0,100)).to.eql(" Empire Burlesque Bob Dylan USA Columbia 10.90 1985 Hide your heart Bonnie Tyler UK CBS Records 9.90");
-        done();
-      });
-    });
+  test(
+    "odt",
+    "odt.odt",
+    "This is an ODT THIS IS A HEADING More ODT",
+    "This is an ODT\nTHIS IS A HEADING\nMore ODT"
+  );
 
-    it('will extract text and preserve line breaks', function(done) {
-      var filePath = path.join( __dirname, "files", "xml.xml" );
-      fromFileWithPath(filePath, {preserveLineBreaks:true}, function( error, text ) {
-        expect(error).to.be.null;
-        expect(text).to.be.an('string');
-        expect(text.substring(0,100)).to.eql("\nEmpire Burlesque\nBob Dylan\nUSA\nColumbia\n10.90\n1985\nHide your heart\nBonnie Tyler\nUK\nCBS Records\n9.90");
-        done();
-      });
-    });
+  test(
+    "potx",
+    "potx.potx",
+    "This is a potx template Yep, a potx I had no idea These were even a thing ",
+    "This is a potx template\nYep, a potx\nI had no idea \nThese were even a thing\n"
+  );
 
-  });
+  test(
+    "xltx",
+    "xltx.xltx",
+    ",,,,,, Packing Slip ,Your Company Name,,,,\"July 24, 2015\", , Your Company Slogan,,,,, ,,,,,, ,Addres",
+    ",,,,,, Packing Slip\n,Your Company Name,,,,\"July 24, 2015\",\n, Your Company Slogan,,,,,\n,,,,,,\n,Addres"
+  );
 
-  describe('for odt files', function() {
-    it('will extract text', function(done) {
-      var filePath = path.join( __dirname, "files", "odt.odt" );
-      fromFileWithPath(filePath, function( error, text ) {
-        expect(error).to.be.null;
-        expect(text).to.be.an('string');
-        expect(text.substring(0,100)).to.eql("This is an ODT THIS IS A HEADING More ODT");
-        done();
-      });
-    });
+  test(
+    "ott",
+    "ott.ott",
+    "This is a document template, yay templates! Woo templates get me so excited! Woo templates get me so",
+    "This is a document template, yay templates!\nWoo templates get me so excited!\nWoo templates get me so"
+  );
 
-    it('will extract text and preserve line breaks', function(done) {
-      var filePath = path.join( __dirname, "files", "odt.odt" );
-      fromFileWithPath(filePath, {preserveLineBreaks:true}, function( error, text ) {
-        expect(error).to.be.null;
-        expect(text).to.be.an('string');
-        expect(text.substring(0,100)).to.eql("This is an ODT\nTHIS IS A HEADING\nMore ODT");
-        done();
-      });
-    });
-  });
+  test(
+    "ots",
+    "ots.ots",
+    "This,is , template, an,open,office,template isn't,it,awesome?, you,know,it,is ",
+    "This,is , template,\nan,open,office,template\nisn't,it,awesome?,\nyou,know,it,is\n\n"
+  );
 
-  describe('for potx files', function() {
-    it('will extract text', function(done) {
-      var filePath = path.join( __dirname, "files", "potx.potx" );
-      fromFileWithPath(filePath, function( error, text ) {
-        expect(error).to.be.null;
-        expect(text).to.be.an('string');
-        expect(text.substring(0,100)).to.eql("This is a potx template Yep, a potx I had no idea These were even a thing ");
-        done();
-      });
-    });
+  test(
+    "odg",
+    "odg.odg",
+    "This is a drawing? A drawing, a drawing! This is a drawing, Aren't you mad envious?",
+    "This is a drawing?\nA drawing, a drawing!\nThis is a drawing,\nAren't you mad envious?"
+  );
 
-    it('will extract text and preserve line breaks', function(done) {
-      var filePath = path.join( __dirname, "files", "potx.potx" );
-      fromFileWithPath(filePath, {preserveLineBreaks:true}, function( error, text ) {
-        expect(error).to.be.null;
-        expect(text).to.be.an('string');
-        expect(text.substring(0,100)).to.eql("This is a potx template\nYep, a potx\nI had no idea \nThese were even a thing\n");
-        done();
-      });
-    });
-  });
-
-  describe('for xltx files', function() {
-    it('will extract text', function(done) {
-      var filePath = path.join( __dirname, "files", "xltx.xltx" );
-      fromFileWithPath(filePath, function( error, text ) {
-        expect(error).to.be.null;
-        expect(text).to.be.an('string');
-        expect(text.substring(0,100)).to.eql(",,,,,, Packing Slip ,Your Company Name,,,,\"July 24, 2015\", , Your Company Slogan,,,,, ,,,,,, ,Addres");
-        done();
-      });
-    });
-
-    it('will extract text and preserve line breaks', function(done) {
-      var filePath = path.join( __dirname, "files", "xltx.xltx" );
-      fromFileWithPath(filePath, {preserveLineBreaks:true}, function( error, text ) {
-        expect(error).to.be.null;
-        expect(text).to.be.an('string');
-        expect(text.substring(0,100)).to.eql(",,,,,, Packing Slip\n,Your Company Name,,,,\"July 24, 2015\",\n, Your Company Slogan,,,,,\n,,,,,,\n,Addres");
-        done();
-      });
-    });
-  });
-
-  describe('for ott files', function() {
-    it('will extract text', function(done) {
-      var filePath = path.join( __dirname, "files", "ott.ott" );
-      fromFileWithPath(filePath, function( error, text ) {
-        expect(error).to.be.null;
-        expect(text).to.be.an('string');
-        expect(text.substring(0,100)).to.eql("This is a document template, yay templates! Woo templates get me so excited! Woo templates get me so");
-        done();
-      });
-    });
-
-    it('will extract text and preserve line breaks', function(done) {
-      var filePath = path.join( __dirname, "files", "ott.ott" );
-      fromFileWithPath(filePath, {preserveLineBreaks:true}, function( error, text ) {
-        expect(error).to.be.null;
-        expect(text).to.be.an('string');
-        expect(text.substring(0,100)).to.eql("This is a document template, yay templates!\nWoo templates get me so excited!\nWoo templates get me so");
-        done();
-      });
-    });
-  });
-
-  describe('for ots files', function() {
-    it('will extract text', function(done) {
-      var filePath = path.join( __dirname, "files", "ots.ots" );
-      fromFileWithPath(filePath, function( error, text ) {
-        expect(error).to.be.null;
-        expect(text).to.be.an('string');
-        expect(text.substring(0,100)).to.eql("This,is , template, an,open,office,template isn't,it,awesome?, you,know,it,is ");
-        done();
-      });
-    });
-
-    it('will extract text and preserve line breaks', function(done) {
-      var filePath = path.join( __dirname, "files", "ots.ots" );
-      fromFileWithPath(filePath, {preserveLineBreaks:true}, function( error, text ) {
-        expect(error).to.be.null;
-        expect(text).to.be.an('string');
-        expect(text.substring(0,100)).to.eql("This,is , template,\nan,open,office,template\nisn't,it,awesome?,\nyou,know,it,is\n\n");
-        done();
-      });
-    });
-  });
-
-  describe('for odg files', function() {
-    it('will extract text', function(done) {
-      var filePath = path.join( __dirname, "files", "odg.odg" );
-      fromFileWithPath(filePath, function( error, text ) {
-        expect(error).to.be.null;
-        expect(text).to.be.an('string');
-        expect(text.substring(0,100)).to.eql("This is a drawing? A drawing, a drawing! This is a drawing, Aren't you mad envious?");
-        done();
-      });
-    });
-
-    it('will extract text and preserve line breaks', function(done) {
-      var filePath = path.join( __dirname, "files", "odg.odg" );
-      fromFileWithPath(filePath, {preserveLineBreaks:true}, function( error, text ) {
-        expect(error).to.be.null;
-        expect(text).to.be.an('string');
-        expect(text.substring(0,100)).to.eql("This is a drawing?\nA drawing, a drawing!\nThis is a drawing,\nAren't you mad envious?");
-        done();
-      });
-    });
-  });
+  test(
+    "otg",
+    "otg.otg",
+    "This is a drawing template A drawing template. Who would really ever need to extract from one of the",
+    "This is a drawing template\nA drawing template.\nWho would really ever need to extract from one of the"
+  );
 
 });
