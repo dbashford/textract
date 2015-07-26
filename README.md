@@ -18,7 +18,7 @@ A text extraction node module.
 * XLS, XLSX, XLSB, XLSM, XLTX
 * ODS, OTS
 * PPTX, POTX
-* ODP
+* ODP, OTP
 * ODG, OTG
 * PNG, JPG, GIF
 * DXF
@@ -40,7 +40,7 @@ npm install textract
 * `PDF` extraction requires `pdftotext` be installed, [link](http://www.foolabs.com/xpdf/download.html)
 * `DOC` extraction requires `catdoc` be installed, [link](http://www.wagner.pp.ru/~vitus/software/catdoc/), unless on OSX in which case textutil (installed by default) is used.
 * `RTF` extraction requires `catdoc` be installed, unless on OSX in which case textutil (installed by default on OSX) is used.
-* `DOCX`, `PPTX`, `POTX`, `OTT`, `ODT`, `ODG`, `OTG`, `ODP` require `unzip` be available
+* `DOCX`, `PPTX`, `POTX`, `OTT`, `ODT`, `ODG`, `OTG`, `ODP`, `OTP` require `unzip` be available
 * `PNG`, `JPG` and `GIF` require `tesseract` to be available, [link](http://code.google.com/p/tesseract-ocr/).  Images need to be pretty clear, high DPI and made almost entirely of just text for `tesseract` to be able to accurately extract the text.
 * `DXF` extraction requires `drawingtotext` be available, [link](https://github.com/davidworkman9/drawingtotext)
 
@@ -163,7 +163,7 @@ textract.fromUrl(url, config, function( error, text ) {})
 * Added support for POTX.
 * Added support for XLTX, XLTS.
 * Added support for ODG, OTG.
-* Added support for ODP.
+* Added support for ODP, OTP.
 
 ### 0.20.0
 * Pull Request [#39](https://github.com/dbashford/textract/pull/39) added support for not work wrapping with catdoc.

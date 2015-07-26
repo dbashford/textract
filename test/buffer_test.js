@@ -142,6 +142,12 @@ var test = function(_testFunction, withMime) {
     "This is a title This is a slide's text This is a 2nd page And a 2nd page's content"
   );
 
+  test(
+    'otp',
+    'otp.otp',
+    "This is a template title Template page text 2nd prezo text"
+  );
+
 };
 
 describe('textract fromBufferWithName', function() {

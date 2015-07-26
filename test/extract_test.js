@@ -507,4 +507,11 @@ describe('textract', function() {
     "This is a title\nThis is a slide's text\nThis is a 2nd page\nAnd a 2nd page's content"
   );
 
+  test(
+    "otp",
+    "otp.otp",
+    "This is a template title Template page text 2nd prezo text",
+    "This is a template title\nTemplate page text\n2nd prezo text"
+  );
+
 });
