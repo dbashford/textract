@@ -222,7 +222,7 @@ describe('textract', function() {
         expect(text).to.be.null;
         expect(error).to.be.an('object');
         expect(error.message).to.be.a('string');
-        expect(error.message.substring(0,34)).to.eql("extract docx unzip exec error nota");
+        expect(error.message.substring(0,34)).to.eql("File not correctly recognized as z");
         done();
       });
     });
