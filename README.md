@@ -8,23 +8,26 @@ A text extraction node module.
 
 ## Currently Extracts...
 
-* HTML
+* HTML, HTM
+* Markdown
+* XML, XSL
 * PDF
-* DOC
+* DOC, DOCX
+* ODT, OTT (experimental, feedback needed!)
 * RTF
-* DOCX
-* XLS
-* PPTX
+* XLS, XLSX, XLSB, XLSM, XLTX
+* ODS, OTS
+* PPTX, POTX
+* ODP, OTP
+* ODG, OTG
+* PNG, JPG, GIF
 * DXF
-* PNG
-* JPG
-* GIF
 * `application/javascript`
 * All `text/*` mime-types.
 
 In almost all cases above, what textract cares about is the mime type.  So `.html` and `.htm`, both possessing the same mime type, will be extracted.  Other extensions that share mime types with those above should also extract successfully. For example, `application/vnd.ms-excel` is the mime type for `.xls`, but also for 5 other mime types.
 
-Does textract not extract from files of the type you need?  Add an issue or submit a pull request.  It's super easy to add an extractor for a new mime type.
+_Does textract not extract from files of the type you need?_  Add an issue or submit a pull request. It many cases textract is already capable, it is just not paying attention to the mime type you may be interested in.
 
 ## Install
 
@@ -35,10 +38,7 @@ npm install textract
 ## Requirements
 
 * `PDF` extraction requires `pdftotext` be installed, [link](http://www.foolabs.com/xpdf/download.html)
-* `DOC` extraction requires `catdoc` be installed, [link](http://www.wagner.pp.ru/~vitus/software/catdoc/), unless on OSX in which case textutil (installed by default) is used.
-* `RTF` extraction requires `catdoc` be installed, unless on OSX in which case textutil (installed by default on OSX) is used.
-* `DOCX` extraction requires `unzip` be available
-* `PPTX` extraction requires `unzip` be available
+* `DOC`, `RTF` extraction requires `catdoc` be installed, [link](http://www.wagner.pp.ru/~vitus/software/catdoc/), unless on OSX in which case textutil (installed by default) is used.
 * `PNG`, `JPG` and `GIF` require `tesseract` to be available, [link](http://code.google.com/p/tesseract-ocr/).  Images need to be pretty clear, high DPI and made almost entirely of just text for `tesseract` to be able to accurately extract the text.
 * `DXF` extraction requires `drawingtotext` be available, [link](https://github.com/davidworkman9/drawingtotext)
 
@@ -49,14 +49,14 @@ Configuration can be passed into textract.  The following configuration options 
 * `preserveLineBreaks`: By default textract does NOT preserve line breaks. Pass this in as `true` and textract will not strip any line breaks.
 * `disableCatdocWordWrap`: catdoc used to extract .doc/docx files by default formats output for console by breaking lines after 72 characters. Set this to `true` and with `preserveLineBreaks` you will get clean paragraphs.
 * `exec`: Some extractors (xlsx, docx, dxf) use node's `exec` functionality. This setting allows for providing [config to `exec` execution](http://nodejs.org/api/child_process.html#child_process_child_process_exec_command_options_callback). One reason you might want to provide this config is if you are dealing with very large files. You might want to increase the `exec` `maxBuffer` setting.
-* `[ext].exec`: Each extractor can take specific exec config.
+* `[ext].exec`: Each extractor can take specific exec config. Keep in mind many extractors are responsible for extracting multiple types, so, for instance, the `odt` extractor is what you would configure for `odt` and `odg`/`odt` etc.  Check [the extractors](https://github.com/dbashford/textract/tree/master/lib/extractors) to see which you want to specifically configure. At the bottom of each is a list of `types` for which the extractor is responsible.
 * `tesseract.lang`: A pass-through to tesseract allowing for setting of language for extraction. ex: `{ tesseract: { lang:"chi_sim" } }`
 
 ## Usage
 
 ### Commmand Line
 
-If textract is installed gloablly, via `npm install -g textract`, then the following command will write the extracted text to the console.
+If textract is installed gloablly, via `npm install -g textract`, then the following command will write the extracted text to the console for a file on the file system.
 
 ```
 $ textract pathToFile
@@ -92,35 +92,77 @@ textract pathToFile --preserveLineBreaks false --exec.maxBuffer 500000
 var textract = require('textract');
 ```
 
-#### Execution
+#### APIs
 
-If you do not know the mime type of the file
+There are several ways to extract text.  For all methods, the extracted text and an error object are passed to a callback.
 
-```javascript
-textract(filePath, function( error, text ) {})
-```
+`error` will contain informative text about why the extraction failed. If textract does not currently extract files of the type provided, a `typeNotFound` flag will be tossed on the error object.
 
-If you know the mime type of the file
+##### File
 
 ```javascript
-textract(type, filePath, function( error, text ) {})
+textract.fromFileWithPath(filePath, function( error, text ) {})
 ```
-
-If you wish to pass some config...and know the mime type...
 
 ```javascript
-textract(type, filePath, config, function( error, text ) {})
+textract.fromFileWithPath(filePath, config, function( error, text ) {})
 ```
-
-If you wish to pass some config, but do not know the mime type
+##### File + mime type
 
 ```javascript
-textract(filePath, config, function( error, text ) {})
+textract.fromFileWithMimeAndPath(type, filePath, function( error, text ) {})
 ```
 
-Error will contain informative text about why the extraction failed. If textract does not currently extract files of the type provided, a `typeNotFound` flag will be tossed on the error object.
+```javascript
+textract.fromFileWithMimeAndPath(type, filePath, config, function( error, text ) {})
+```
+
+##### Buffer + mime type
+
+```javascript
+textract.fromBufferWithMime(type, buffer, function( error, text ) {})
+```
+
+```javascript
+textract.fromBufferWithMime(type, buffer, config, function( error, text ) {})
+```
+
+##### Buffer + file name/path
+
+```javascript
+textract.fromBufferWithName(name, buffer, function( error, text ) {})
+```
+
+```javascript
+textract.fromBufferWithName(name, buffer, config, function( error, text ) {})
+```
+
+##### URL
+
+```javascript
+textract.fromUrl(url, function( error, text ) {})
+```
+
+```javascript
+textract.fromUrl(url, config, function( error, text ) {})
+```
 
 ## Release Notes
+
+### 1.0.0 (pending)
+* Overhaul of interface. To simplify the code, the original `textract` function was broken into `textract.fromFileWithPath` and `textract.fromFileWithMimeAndPath`.
+* [#41](https://github.com/dbashford/textract/issues/41). Added support for pulling files from a URL.
+* [#40](https://github.com/dbashford/textract/issues/40).  Added support for extracting text from a node `Buffer`.  This prevents you from having to write the file to disk first.  textract does have to write the file to disk itself, but because it is a textract requirement that files be on disk textract should be able to take care of that for you. Two new functions, `textract.fromBufferWithName` and `textract.fromBufferWithMime` have been added.  textract needs to either know the file name or the mime type to extract a buffer.
+* Added entity decoding, so encoded items like `&lt;`, `&gt;`, `&quot;`, `&apos;`, and `&amp;` will show up appropriately in the text.
+* Removed external dependency on `unzip`
+* [#38](https://github.com/dbashford/textract/issues/38).  Added markdown support.
+* [#31](https://github.com/dbashford/textract/issues/31).  Added initial ODT support.  Feedback needed if there is any trouble.  Also added OTT support.
+* Added support for ODS, OTS.
+* Added support for XML, XSL.
+* Added support for POTX.
+* Added support for XLTX, XLTS.
+* Added support for ODG, OTG.
+* Added support for ODP, OTP.
 
 ### 0.20.0
 * Pull Request [#39](https://github.com/dbashford/textract/pull/39) added support for not work wrapping with catdoc.
