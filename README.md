@@ -25,7 +25,7 @@ A text extraction node module.
 * `application/javascript`
 * All `text/*` mime-types.
 
-In almost all cases above, what textract cares about is the mime type.  So `.html` and `.htm`, both possessing the same mime type, will be extracted.  Other extensions that share mime types with those above should also extract successfully. For example, `application/vnd.ms-excel` is the mime type for `.xls`, but also for 5 other mime types.
+In almost all cases above, what textract cares about is the mime type.  So `.html` and `.htm`, both possessing the same mime type, will be extracted.  Other extensions that share mime types with those above should also extract successfully. For example, `application/vnd.ms-excel` is the mime type for `.xls`, but also for 5 other file types.
 
 _Does textract not extract from files of the type you need?_  Add an issue or submit a pull request. It many cases textract is already capable, it is just not paying attention to the mime type you may be interested in.
 
