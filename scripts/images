@@ -1,0 +1,17 @@
+#!/usr/bin/env node
+var exec = require("child_process").exec;
+exec('tesseract',
+  function (error, stdout, stderr) {
+    if (error && error.toString().indexOf("tesseract") > -1 || stderr && stderr.toString().indexOf("tesseract") > -1) {
+      console.log("Found tesseract, textract should be able to use it.")
+    } else {
+      console.log("tesseract cannot be found/executed by this script, errors to follow.")
+      console.log("**************ERROR*****************");
+      console.log(error);
+      console.log("**************stderr*****************")
+      console.log(stderr);
+      console.log("**************stdout*****************")
+      console.log(stdout);
+    }
+  }
+);
