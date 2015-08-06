@@ -149,6 +149,10 @@ textract.fromUrl(url, config, function( error, text ) {})
 
 ## Release Notes
 
+### 1.0.1/1.0.2
+* Updated messages when extractors are not available to be purely informational, since textract will work just fine without some of its extractors.
+* Updated way in which catdoc was detected to not rely on file being test extracted.
+
 ### 1.0.0
 * Overhaul of interface. To simplify the code, the original `textract` function was broken into `textract.fromFileWithPath` and `textract.fromFileWithMimeAndPath`.
 * [#41](https://github.com/dbashford/textract/issues/41). Added support for pulling files from a URL.
