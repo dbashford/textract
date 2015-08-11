@@ -86,10 +86,7 @@ describe('textract', function() {
 
     it('will extract text preserving line breaks without word wrap', function(done) {
       var docPath = path.join( __dirname, "files", "multiple-long-paragraphs.doc" );
-      fromFileWithPath(docPath, {
-        preserveLineBreaks: true,
-        disableCatdocWordWrap: false
-      }, function( error, text ) {
+      fromFileWithPath(docPath, {preserveLineBreaks: true}, function( error, text ) {
         expect(text.match(/\r\n|\n/g).length).to.eql(3);
         expect(error).to.be.null;
         done();
