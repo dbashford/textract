@@ -35,7 +35,9 @@ _Does textract not extract from files of the type you need?_  Add an issue or su
 npm install textract
 ```
 
-## Requirements
+## Extraction Requirements
+
+Note, if any of the requirements below are missing, textract will run and extract all files for types it is capable.  Not having these items installed does not prevent you from using textract, it just prevents you from extracting those specific files.
 
 * `PDF` extraction requires `pdftotext` be installed, [link](http://www.foolabs.com/xpdf/download.html)
 * `DOC`, `RTF` extraction requires `catdoc` be installed, [link](http://www.wagner.pp.ru/~vitus/software/catdoc/), unless on OSX in which case textutil (installed by default) is used.
@@ -149,9 +151,12 @@ textract.fromUrl(url, config, function( error, text ) {})
 
 ## Release Notes
 
+### 1.0.3
+* [#51](https://github.com/dbashford/textract/issues/51).  Fixed issue with large files using unzip returning blank string.
+
 ### 1.0.1/1.0.2
-* Updated messages when extractors are not available to be purely informational, since textract will work just fine without some of its extractors.
-* Updated way in which catdoc was detected to not rely on file being test extracted.
+* [#49](https://github.com/dbashford/textract/issues/49) Updated messages when extractors are not available to be purely informational, since textract will work just fine without some of its extractors.
+* [#50](https://github.com/dbashford/textract/issues/50). Updated way in which catdoc was detected to not rely on file being test extracted.
 
 ### 1.0.0
 * Overhaul of interface. To simplify the code, the original `textract` function was broken into `textract.fromFileWithPath` and `textract.fromFileWithMimeAndPath`.
