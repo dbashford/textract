@@ -151,6 +151,9 @@ textract.fromUrl(url, config, function( error, text ) {})
 
 ## Release Notes
 
+### 1.0.4
+* [#52](https://github.com/dbashford/textract/issues/52). PR fixed CLI post big API changes.
+
 ### 1.0.3
 * [#51](https://github.com/dbashford/textract/issues/51).  Fixed issue with large files using unzip returning blank string.
 
