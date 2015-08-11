@@ -247,6 +247,16 @@ describe('textract', function() {
       });
     });
 
+    it('can handle a huge docx', function(done) {
+      var filePath = path.join( __dirname, "files", "LargeLorem.docx" );
+      fromFileWithPath(filePath, function( error, text ) {
+        expect(error).to.be.null;
+        expect(text).to.be.a('string');
+        expect(text.substring(0, 100)).to.eql( "Hashtag chambray XOXO PBR&B chia small batch. Before they sold out banh mi raw denim, fap synth hell" );
+        done();
+      });
+    });
+
   });
 
   describe('for text/* files', function() {
