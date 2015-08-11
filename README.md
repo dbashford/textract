@@ -149,7 +149,8 @@ textract.fromUrl(url, config, function( error, text ) {})
 ## Release Notes
 
 ### 1.1.0 (pending)
-* [#53](https://github.com/dbashford/textract/issues/53). Cleared up documentation around CLI and line breaks.
+* [#53](https://github.com/dbashford/textract/pull/53). Cleared up documentation around CLI and line breaks.
+* [#54](https://github.com/dbashford/textract/pull/54). PR removed `disableCatdocWordWrap` as an option, instead always disabling catdoc's word wrapping. 
 
 ### 1.0.4
 * [#52](https://github.com/dbashford/textract/issues/52). PR fixed CLI post big API changes.
