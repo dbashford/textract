@@ -22,6 +22,7 @@ A text extraction node module.
 * ODG, OTG
 * PNG, JPG, GIF
 * DXF
+* `application/csv`
 * `application/javascript`
 * All `text/*` mime-types.
 
