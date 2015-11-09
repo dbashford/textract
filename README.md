@@ -16,13 +16,13 @@ A text extraction node module.
 * ODT, OTT (experimental, feedback needed!)
 * RTF
 * XLS, XLSX, XLSB, XLSM, XLTX
+* CSV
 * ODS, OTS
 * PPTX, POTX
 * ODP, OTP
 * ODG, OTG
 * PNG, JPG, GIF
 * DXF
-* `application/csv`
 * `application/javascript`
 * All `text/*` mime-types.
 
@@ -148,6 +148,9 @@ textract.fromUrl(url, config, function( error, text ) {})
 ```
 
 ## Release Notes
+
+### 1.1.2
+* [#63](https://github.com/dbashford/textract/pull/63). PR added support for CSV.
 
 ### 1.1.1
 * [#58](https://github.com/dbashford/textract/pull/58)/[#59](https://github.com/dbashford/textract/issues/59). PR fixed issue with removing line breaks when more than 1 break present.
