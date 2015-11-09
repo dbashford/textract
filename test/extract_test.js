@@ -2,6 +2,36 @@ var path = require('path');
 
 describe('textract', function() {
 
+  describe('for .csv files ', function() {
+
+    // is some oddness testing html files, not sure what the deal is
+
+    it('from csv files', function(done) {
+      var docPath = path.join( __dirname, "files", "csv.csv" );
+      fromFileWithPath(docPath, function( error, text ) {
+        expect(error).to.be.null;
+        expect(text).to.be.an('string');
+        expect(text.length).to.eql( 18 );
+        expect(text.substring(0, 80)).to.eql("Foo,Bar Foo2,Bar2 ")
+        done();
+      });
+    });
+
+    it('it will extract text from csv files and insert newlines in the right places', function(done) {
+      var docPath = path.join( __dirname, "files", "csv.csv" );
+      fromFileWithPath(docPath, {preserveLineBreaks:true}, function( error, text ) {
+        expect(error).to.be.null;
+        expect(text).to.be.an('string');
+        expect(text.length).to.eql( 18 );
+        expect(text.substring(0, 80)).to.eql("Foo,Bar\nFoo2,Bar2\n")
+        done();
+      });
+    });
+
+
+    
+  });
+
   describe('for .html files', function() {
 
     // is some oddness testing html files, not sure what the deal is
