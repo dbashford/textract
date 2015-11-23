@@ -269,7 +269,7 @@ describe('textract', function() {
       fromFileWithPath(filePath, function( error, text ) {
         expect(error).to.be.null;
         expect(text).to.be.a('string');
-        expect(text).to.eql( "this is a test document that won't be extracted properly." );
+        expect(text).to.eql( "this is a test document that won't be extracted properly. " );
         done();
       });
     });

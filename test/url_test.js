@@ -1,6 +1,7 @@
 var path = require("path");
 
 describe("fromUrl tests", function() {
+  this.timeout(3000);
 
   var test = function(ext, name, _text) {
     it('will ' + ext + ' files', function(done) {
