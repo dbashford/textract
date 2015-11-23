@@ -54,6 +54,10 @@ Configuration can be passed into textract.  The following configuration options 
 * `[ext].exec`: Each extractor can take specific exec config. Keep in mind many extractors are responsible for extracting multiple types, so, for instance, the `odt` extractor is what you would configure for `odt` and `odg`/`odt` etc.  Check [the extractors](https://github.com/dbashford/textract/tree/master/lib/extractors) to see which you want to specifically configure. At the bottom of each is a list of `types` for which the extractor is responsible.
 * `tesseract.lang`: A pass-through to tesseract allowing for setting of language for extraction. ex: `{ tesseract: { lang:"chi_sim" } }`
 
+To use this configuration at the command line, prefix each open with a `--`.
+
+Ex: `textract image.png --tesseract.lang=deu`
+
 ## Usage
 
 ### Commmand Line
