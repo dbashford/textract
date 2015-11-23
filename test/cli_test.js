@@ -8,7 +8,8 @@ describe("cli", function(){
   it("will extract text", function(done) {
     exec( cliPath + " " + testFilePath,
       function( error, stdout, stderr ) {
-        expect(stdout.indexOf(".foo {color:red}")).to.be.gt(90);
+        console.log(stdout)
+        expect(stdout).to.eql(".foo {color:red}\n");
         done();
       }
     );

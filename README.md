@@ -153,6 +153,9 @@ textract.fromUrl(url, config, function( error, text ) {})
 
 ## Release Notes
 
+### 1.2.0
+* [#66](https://github.com/dbashford/textract/issues/66). textract will no longer put the info text to stdout about the extractors not being available or installed correctly.  Instead, if you attempt to use a supported extractor that did not initialize correctly, you will get an updated error message indicating that the type is supported by textract but that external dependencies were not located. As part of this update, error messages were updated a bit to list both the type and the file.
+
 ### 1.1.2
 * [#63](https://github.com/dbashford/textract/pull/63). PR added support for CSV.
 

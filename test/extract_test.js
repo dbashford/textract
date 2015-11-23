@@ -12,7 +12,7 @@ describe('textract', function() {
         expect(error).to.be.null;
         expect(text).to.be.an('string');
         expect(text.length).to.eql( 18 );
-        expect(text.substring(0, 80)).to.eql("Foo,Bar Foo2,Bar2 ")
+        expect(text).to.eql("Foo,Bar Foo2,Bar2 ");
         done();
       });
     });
@@ -23,13 +23,13 @@ describe('textract', function() {
         expect(error).to.be.null;
         expect(text).to.be.an('string');
         expect(text.length).to.eql( 18 );
-        expect(text.substring(0, 80)).to.eql("Foo,Bar\nFoo2,Bar2\n")
+        expect(text).to.eql("Foo,Bar\nFoo2,Bar2\n");
         done();
       });
     });
 
 
-    
+
   });
 
   describe('for .html files', function() {
@@ -344,7 +344,7 @@ describe('textract', function() {
       fromFileWithPath(filePath, function( error, text ) {
         expect(error).to.be.an('object');
         expect(error.message).to.be.a('string');
-        expect(error.message.substring(0,20)).to.eql( "error extracting DXF");
+        expect(error.message.substring(0,40)).to.eql( "Error for type: [[ image/vnd.dxf ]], fil");
         done();
       });
     });
