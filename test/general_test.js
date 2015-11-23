@@ -63,6 +63,16 @@ describe('textract', function() {
     });
   });
 
+  it('can handle cyrillic', function(done) {
+    var filePath = path.join(__dirname, 'files', 'cyrillic.docx');
+    fromFileWithPath(filePath, function( error, text ) {
+      expect(error).to.be.null;
+      expect(text).to.be.a('string');
+      expect(text.substring(0,100)).to.eql( "Актуальность диссертационного исследования определяется необходимостью развития методологического об" );
+      done();
+    });
+  });
+
   describe("with multi line files", function() {
     it('strips line breaks', function(done) {
       var filePath = path.join(__dirname, 'files', 'multi-line.txt');
