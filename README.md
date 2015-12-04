@@ -153,6 +153,9 @@ textract.fromUrl(url, config, function( error, text ) {})
 
 ## Release Notes
 
+### 1.2.1
+* [#68](https://github.com/dbashford/textract/pull/68). PR captured unzip errors.
+
 ### 1.2.0
 * [#66](https://github.com/dbashford/textract/issues/66). textract will no longer put the info text to stdout about the extractors not being available or installed correctly.  Instead, if you attempt to use a supported extractor that did not initialize correctly, you will get an updated error message indicating that the type is supported by textract but that external dependencies were not located. As part of this update, error messages were updated a bit to list both the type and the file.
 * [#65](https://github.com/dbashford/textract/issues/65). Fixed issue where for `.odt` and `.docx` files with varying non-Latin characters (ex: cyrillic) were being stripped entirely of their content.
