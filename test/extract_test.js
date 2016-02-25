@@ -109,7 +109,8 @@ describe('textract', function() {
       fromFileWithPath(docPath, function( error, text ) {
         expect(error).to.be.null;
         expect(text).to.be.an('string');
-        expect(text.length).to.eql( 32398 );
+        console.log(text)
+        expect(text.length).to.eql( 32705 );
         done();
       });
     });
@@ -326,6 +327,17 @@ describe('textract', function() {
         done();
       });
     });
+
+    it('will not remove fancy quotes from a .txt file', function(done) {
+      var filePath = path.join( __dirname, "files", "fancyquote.txt" );
+      fromFileWithPath(filePath, function( error, text ) {
+        expect(error).to.be.null;
+        expect(text).to.be.a('string');
+        expect(text).to.eql( "this has \"fancy\" quotes" );
+        done();
+      });
+    });
+
   });
 
   describe('for .dxf files', function() {

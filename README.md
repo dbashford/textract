@@ -153,6 +153,9 @@ textract.fromUrl(url, config, function( error, text ) {})
 
 ## Release Notes
 
+### 1.3.0 (In progress)
+* [#74](https://github.com/dbashford/textract/pull/74). PR fixing fancy double quotes -> “.
+
 ### 1.2.1
 * [#68](https://github.com/dbashford/textract/pull/68). PR captured unzip errors.
 
