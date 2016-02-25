@@ -109,7 +109,6 @@ describe('textract', function() {
       fromFileWithPath(docPath, function( error, text ) {
         expect(error).to.be.null;
         expect(text).to.be.an('string');
-        console.log(text)
         expect(text.length).to.eql( 32705 );
         done();
       });
