@@ -220,6 +220,18 @@ describe('textract', function() {
         done();
       });
     });
+
+    it('will properly handle multiple columns', function(done) {
+      var filePath = path.join( __dirname, "files", "two_columns.pdf" );
+      fromFileWithPath(filePath, {preserveLineBreaks:true}, function( error, text ) {
+        expect(error).to.be.null;
+        expect(text).to.be.a('string');
+        expect(text.indexOf(
+          "Abstract This work deals with a multi-cell topology based\non current-source converters based power cells."
+        ) > 500).to.be.true;
+        done();
+      });
+    });
   });
 
   describe('for .docx files', function() {
