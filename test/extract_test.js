@@ -309,6 +309,16 @@ describe('textract', function() {
       });
     });
 
+    it('will extract text from specifically a non utf8 .txt file', function(done) {
+      var filePath = path.join( __dirname, "files", "non-utf8.txt" );
+      fromFileWithPath(filePath, function( error, text ) {
+        expect(error).to.be.null;
+        expect(text).to.be.a('string');
+        expect(text).to.eql( "これは非UTF8 テキストファイルです " );
+        done();
+      });
+    });
+
     it('will extract text specifically from a .css file', function(done) {
       var filePath = path.join( __dirname, "files", "css.css" );
       fromFileWithPath(filePath, function( error, text ) {
