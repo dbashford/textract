@@ -155,6 +155,7 @@ textract.fromUrl(url, config, function( error, text ) {})
 ## Release Notes
 
 ### 1.3.0 (In progress)
+* [#77](https://github.com/dbashford/textract/pull/77). PR fixes decoding of non-utf8 encoded files.
 * [#74](https://github.com/dbashford/textract/pull/74). PR fixing fancy double quotes -> “.
 
 ### 1.2.1
