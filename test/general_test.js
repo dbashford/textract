@@ -43,6 +43,17 @@ describe('textract', function() {
 
   });
 
+  it('can handle types of varying cases', function(done) {
+    var filePath = path.join(__dirname, 'files', 'new docx(1).docx');
+    fromFileWithMimeAndPath('appLication/vnd.openXMLformats-Officedocument.WordProcessingml.Document', filePath, function(error, text) {
+      expect(error).to.be.null;
+      expect(text).to.be.a('string');
+      expect(text.substring(0, 38)).to.eql( "This is a test Just so you know: Lorem" );
+      done();
+    });
+  });
+
+
   it('can handle a text file with parens', function(done) {
     var filePath = path.join(__dirname, 'files', 'new doc(1).txt');
     fromFileWithPath(filePath, function( error, text ) {
