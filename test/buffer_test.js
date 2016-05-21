@@ -11,7 +11,7 @@ var test = function(_testFunction, withMime) {
     testFunction = _testFunction();
   });
 
-  var test = function(ext, name, _text) {
+  var _test = function(ext, name, _text) {
     it('will ' + ext + ' files', function(done) {
       var docPath = path.join( __dirname, "files", name);
       var textBuff = fs.readFileSync(docPath);
@@ -28,121 +28,121 @@ var test = function(_testFunction, withMime) {
     });
   };
 
-  test(
+  _test(
     "html",
     "test.html",
     " This is a long string of text that should get extracted with new lines inserted"
   )
 
-  test(
+  _test(
     "doc",
     "doc.doc",
     "This is a doc, I promise."
   );
 
-  test(
+  _test(
     "xls",
     "test.xls",
     "This,is,a,spreadsheet,yay! "
   );
 
-  test(
+  _test(
     "xlsx",
     "pi.xlsx",
     'This is the value of PI:,3.141592 '
   );
 
-  test(
+  _test(
     "pdf",
     "pdf.pdf",
     "This is a test. Please ignore."
   );
 
-  test(
+  _test(
     "docx",
     "docx.docx",
     "This is a test Just so you know: Lorem ipsum dolor sit amet, consecutuer adipiscing elit, sed diam n"
   );
 
-  test(
+  _test(
     "text/*",
     "txt.txt",
     "This is a plain old text file."
   );
 
-  test(
+  _test(
     "pptx",
     "ppt.pptx",
     "This is some title Text And a sub-title Text in Lists Bullet 1 Bullet 2 Bullet 3 Number 1 Number 2 N"
   );
 
-  test(
+  _test(
     "markdown",
     "test.md",
     " This is an h1 This is an h2 This text has been bolded and italicized "
   );
 
-  test(
+  _test(
     "ods",
     "ods.ods",
     "This,is,a,ods Really,it,is, I,promise,, "
   );
 
-  test(
+  _test(
     "xml",
     "xml.xml",
     " Empire Burlesque Bob Dylan USA Columbia 10.90 1985 Hide your heart Bonnie Tyler UK CBS Records 9.90"
   );
 
-  test(
+  _test(
     "odt",
     "odt.odt",
     "This is an ODT THIS IS A HEADING More ODT"
   );
 
-  test(
+  _test(
     "potx",
     "potx.potx",
     "This is a potx template Yep, a potx I had no idea These were even a thing "
   );
 
-  test(
+  _test(
     "xltx",
     "xltx.xltx",
     ",,,,,, Packing Slip ,Your Company Name,,,,\"July 24, 2015\", , Your Company Slogan,,,,, ,,,,,, ,Addres"
   );
 
-  test(
+  _test(
     "ott",
     "ott.ott",
     "This is a document template, yay templates! Woo templates get me so excited! Woo templates get me so"
   );
 
-  test(
+  _test(
     "ots",
     "ots.ots",
     "This,is , template, an,open,office,template isn't,it,awesome?, you,know,it,is "
   );
 
-  test(
+  _test(
     'odg',
     'odg.odg',
     "This is a drawing? A drawing, a drawing! This is a drawing, Aren't you mad envious?"
   );
 
-  test(
+  _test(
     'otg',
     'otg.otg',
     "This is a drawing template A drawing template. Who would really ever need to extract from one of the"
   );
 
-  test(
+  _test(
     'odp',
     'odp.odp',
     "This is a title This is a slide's text This is a 2nd page And a 2nd page's content"
   );
 
-  test(
+  _test(
     'otp',
     'otp.otp',
     "This is a template title Template page text 2nd prezo text"

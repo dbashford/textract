@@ -53,7 +53,6 @@ describe('textract', function() {
     });
   });
 
-
   it('can handle a text file with parens', function(done) {
     var filePath = path.join(__dirname, 'files', 'new doc(1).txt');
     fromFileWithPath(filePath, function( error, text ) {

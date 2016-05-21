@@ -28,8 +28,6 @@ describe('textract', function() {
       });
     });
 
-
-
   });
 
   describe('for .html files', function() {
@@ -64,6 +62,16 @@ describe('textract', function() {
   describe('for .rtf files', function() {
     it('will extract text from rtf files', function(done) {
       var docPath = path.join( __dirname, "files", "sample.rtf" );
+      fromFileWithPath(docPath, function( error, text ) {
+        expect(error).to.be.null;
+        expect(text).to.be.an('string');
+        expect(text.substring(144,220)).to.eql( "So we're going to end this paragraph here and go on to a nice little list: I" );
+        done();
+      });
+    });
+
+    it('will extract when there are spaces in the name', function(done) {
+      var docPath = path.join( __dirname, "files", "sample rtf.rtf" );
       fromFileWithPath(docPath, function( error, text ) {
         expect(error).to.be.null;
         expect(text).to.be.an('string');
@@ -226,6 +234,18 @@ describe('textract', function() {
       fromFileWithPath(filePath, {preserveLineBreaks:true}, function( error, text ) {
         expect(error).to.be.null;
         expect(text).to.be.a('string');
+        expect(text.indexOf(
+          "Abstract This work deals with a multi-cell topology based\non current-source converters based power cells."
+        ) > 500).to.be.true;
+        done();
+      });
+    });
+
+    it('can handle files with spaces in the name', function(done) {
+      var filePath = path.join( __dirname, "files", "two columns.pdf" );
+      fromFileWithPath(filePath, {preserveLineBreaks:true}, function( error, text ) {
+        expect(error).to.be.null;
+        expect(text).to.be.a('string');s
         expect(text.indexOf(
           "Abstract This work deals with a multi-cell topology based\non current-source converters based power cells."
         ) > 500).to.be.true;
@@ -466,11 +486,13 @@ describe('textract', function() {
 
     // sudo port install tesseract-chi-sim
     it('will extract text from language-d files', function(done) {
+      this.timeout(5000);
       var filePath = path.join( __dirname, "files", "chi.png" );
       fromFileWithPath(filePath, { tesseract: { lang:"chi_sim" } }, function( error, text ) {
         expect(error).to.be.null;
         expect(text).to.be.an('string');
-        expect(text.substring(0,5)).to.eql("臣卜虎藏龙");
+        console.log(text)
+        expect(text.substring(0,6)).to.eql("卧虎藏龙 卧");
         done();
       });
     });
