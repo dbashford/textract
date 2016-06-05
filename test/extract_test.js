@@ -125,8 +125,8 @@ describe('textract', function() {
     it('will extract text preserving line breaks without word wrap', function(done) {
       var docPath = path.join( __dirname, "files", "multiple-long-paragraphs.doc" );
       fromFileWithPath(docPath, {preserveLineBreaks: true}, function( error, text ) {
-        expect(text.match(/\r\n|\n/g).length).to.eql(3);
         expect(error).to.be.null;
+        expect(text.match(/\r\n|\n/g).length).to.eql(3);
         done();
       });
     });
@@ -245,7 +245,7 @@ describe('textract', function() {
       var filePath = path.join( __dirname, "files", "two columns.pdf" );
       fromFileWithPath(filePath, {preserveLineBreaks:true}, function( error, text ) {
         expect(error).to.be.null;
-        expect(text).to.be.a('string');s
+        expect(text).to.be.a('string');
         expect(text.indexOf(
           "Abstract This work deals with a multi-cell topology based\non current-source converters based power cells."
         ) > 500).to.be.true;
