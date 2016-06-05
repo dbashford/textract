@@ -491,7 +491,6 @@ describe('textract', function() {
       fromFileWithPath(filePath, { tesseract: { lang:"chi_sim" } }, function( error, text ) {
         expect(error).to.be.null;
         expect(text).to.be.an('string');
-        console.log(text)
         expect(text.substring(0,6)).to.eql("卧虎藏龙 卧");
         done();
       });
