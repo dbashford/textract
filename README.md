@@ -71,7 +71,7 @@ $ textract pathToFile
 
 #### Flags
 
-Configuration flags can be passed into textract via the command line.  
+Configuration flags can be passed into textract via the command line.
 
 ```
 textract pathToFile --preserveLineBreaks false
@@ -154,9 +154,15 @@ textract.fromUrl(url, config, function( error, text ) {})
 
 ## Release Notes
 
-### 1.3.0 (In progress)
-* [#77](https://github.com/dbashford/textract/pull/77). PR fixes decoding of non-utf8 encoded files.
+### 2.0.0 (In progress)
+* Codebase is now properly eslinted.
+* Fixed testing issue, `.csv` was `.gitignore`d preventing `.csv` test file from making into repo.
+* [#57](https://github.com/dbashford/textract/issues/57), [#75](https://github.com/dbashford/textract/issues/75). Added a `pdftotextOptions` in textract options. This is a proxy to the [pdf-text-extract](https://github.com/nisaacson/pdf-text-extract) options.
 * [#74](https://github.com/dbashford/textract/pull/74). PR fixing fancy double quotes -> “.
+* [#77](https://github.com/dbashford/textract/pull/77). PR fixes decoding of non-utf8 encoded files.
+* [#78](https://github.com/dbashford/textract/issues/78). Force all mime types to lowercase for comparison.
+* [#82](https://github.com/dbashford/textract/issues/82), [#83](https://github.com/dbashford/textract/pull/83). PR updated cheerio to fix a cheerio regression.
+* Fixed regression issue with above two PRs in combination. Pure `text/*` extraction left encoded characters for stylized quotes and true elipsis in the text.
 
 ### 1.2.1
 * [#68](https://github.com/dbashford/textract/pull/68). PR captured unzip errors.
