@@ -97,17 +97,16 @@ describe('textract', function() {
       fromFileWithPath(docPath, function( error, text ) {
         expect(error).to.be.null;
         expect(text).to.be.an('string');
-        expect(text).to.eql( "This is a doc, I promise." );
+        expect(text.substring(0,100)).to.eql( " Word Specification Sample Working Draft 04, 16 August 2002 Document identifier: wd-spectools-word-s" );
         done();
       });
     });
 
-    it('will extract text from text files masquerading as doc files', function(done) {
+    it('will not extract text from text files masquerading as doc files', function(done) {
       var docPath = path.join( __dirname, "files", "notadoc.doc" );
       fromFileWithPath(docPath, function( error, text ) {
-        expect(error).to.be.null;
-        expect(text).to.be.an('string');
-        expect(text).to.eql( "not a doc" );
+        expect(text).to.be.null;
+        expect(error.toString().indexOf("does not appear to really be a .doc file")).to.eql( 36 );
         done();
       });
     });
@@ -117,7 +116,7 @@ describe('textract', function() {
       fromFileWithPath(docPath, function( error, text ) {
         expect(error).to.be.null;
         expect(text).to.be.an('string');
-        expect(text.length).to.eql( 32705 );
+        expect(text.length).to.eql( 32658 );
         done();
       });
     });
@@ -126,7 +125,7 @@ describe('textract', function() {
       var docPath = path.join( __dirname, "files", "multiple-long-paragraphs.doc" );
       fromFileWithPath(docPath, {preserveLineBreaks: true}, function( error, text ) {
         expect(error).to.be.null;
-        expect(text.match(/\r\n|\n/g).length).to.eql(3);
+        expect(text.match(/\r\n|\n/g).length).to.eql(21);
         done();
       });
     });

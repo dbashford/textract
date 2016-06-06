@@ -37,7 +37,7 @@ var test = function(_testFunction, withMime) {
   _test(
     "doc",
     "doc.doc",
-    "This is a doc, I promise."
+    " Word Specification Sample Working Draft 04, 16 August 2002 Document identifier: wd-spectools-word-s"
   );
 
   _test(
