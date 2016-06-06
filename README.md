@@ -161,6 +161,7 @@ textract.fromUrl(url, config, function( error, text ) {})
 * [#74](https://github.com/dbashford/textract/pull/74). PR fixing fancy double quotes -> “.
 * [#77](https://github.com/dbashford/textract/pull/77). PR fixes decoding of non-utf8 encoded files.
 * [#78](https://github.com/dbashford/textract/issues/78). Force all mime types to lowercase for comparison.
+* [#81](https://github.com/dbashford/textract/issues/81). Moved `.doc` (old MSWord) extraction to [antiword](http://www.winfield.demon.nl/) from catdoc. catdoc is no longer supported on OSX making it extremely difficult for me to support updates that require testing of `.doc` files.  One major difference that'll be seen with `.doc`s of certain types is [explained here](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=307657). If "I'm afraid the text stream of this file is too small to handle." is an error message you see, see that post.
 * [#82](https://github.com/dbashford/textract/issues/82), [#83](https://github.com/dbashford/textract/pull/83). PR updated cheerio to fix a cheerio regression.
 * Fixed regression issue with above two PRs in combination. Pure `text/*` extraction left encoded characters for stylized quotes and true elipsis in the text.
 
