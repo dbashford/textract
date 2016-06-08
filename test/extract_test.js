@@ -65,7 +65,7 @@ describe('textract', function() {
       fromFileWithPath(docPath, function( error, text ) {
         expect(error).to.be.null;
         expect(text).to.be.an('string');
-        expect(text.substring(144,220)).to.eql( "So we're going to end this paragraph here and go on to a nice little list: I" );
+        expect(text.substring(144,220)).to.eql( "bit of hidden text. So we're going to end this paragraph here and go on to a" );
         done();
       });
     });
@@ -75,7 +75,7 @@ describe('textract', function() {
       fromFileWithPath(docPath, function( error, text ) {
         expect(error).to.be.null;
         expect(text).to.be.an('string');
-        expect(text.substring(144,220)).to.eql( "So we're going to end this paragraph here and go on to a nice little list: I" );
+        expect(text.substring(144,220)).to.eql( "bit of hidden text. So we're going to end this paragraph here and go on to a" );
         done();
       });
     });
@@ -85,7 +85,7 @@ describe('textract', function() {
       fromFileWithPath(docPath, {preserveLineBreaks:true}, function( error, text ) {
         expect(error).to.be.null;
         expect(text).to.be.an('string');
-        expect(text.substring(144,230)).to.eql( "So we're going to end this paragraph here and go on to a nice little list:\n\n Item 1\n I" );
+        expect(text.substring(144,230)).to.eql( "bit of hidden text. So we're going to end this paragraph here and go on to a nice litt" );
         done();
       });
     });
