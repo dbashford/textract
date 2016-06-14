@@ -251,6 +251,18 @@ describe('textract', function() {
         done();
       });
     });
+
+    it('will extract text with OCR when configured to do so', function(done) {
+      this.timeout(30000);
+      var filePath = path.join( __dirname, "files", "testphoto.pdf" );
+      fromFileWithPath(filePath, {pdf:{type:"fallback"}}, function( error, text ) {
+        console.log('extracted text is: ' + text)
+        expect(error).to.be.null;
+        expect(text).to.be.a('string');
+        expect(text).to.eql( "simple test text" );
+        done();
+      });
+    });
   });
 
   describe('for .docx files', function() {

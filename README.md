@@ -53,7 +53,11 @@ Configuration can be passed into textract.  The following configuration options 
 * `exec`: Some extractors (dxf) use node's `exec` functionality. This setting allows for providing [config to `exec` execution](http://nodejs.org/api/child_process.html#child_process_child_process_exec_command_options_callback). One reason you might want to provide this config is if you are dealing with very large files. You might want to increase the `exec` `maxBuffer` setting.
 * `[ext].exec`: Each extractor can take specific exec config. Keep in mind many extractors are responsible for extracting multiple types, so, for instance, the `odt` extractor is what you would configure for `odt` and `odg`/`odt` etc.  Check [the extractors](https://github.com/dbashford/textract/tree/master/lib/extractors) to see which you want to specifically configure. At the bottom of each is a list of `types` for which the extractor is responsible.
 * `tesseract.lang`: A pass-through to tesseract allowing for setting of language for extraction. ex: `{ tesseract: { lang:"chi_sim" } }`
-* `pdftotextOptions`: This is a proxy options object to the library textract uses for pdf extraction: [pdf-text-extract](https://github.com/nisaacson/pdf-text-extract). IMPORTANT: textract modifies the pdf-text-extract `layout` default so that, instead of `layout: layout`, it uses `layout:raw`. It is not suggested you modify this without understanding what trouble that might get you in. See [this GH issue](https://github.com/dbashford/textract/issues/75) for why textract overrides that library's default.
+* `pdf.type`: A pass-through to the pdf extractor setting the extraction method. Valid options are:
+  * `text`(_default_): Only the pdftotext library will be used to extract text. No text can be extracted from any embedded images in the pdf. ex: `{ pdf: { type:"pdftotext" } }`
+  * `fallback`: If pdftotext doesn't extract any text then tesseract will be used to perform OCR text extraction.
+  * `combined`: The output of pdftotext extraction will be concatenated with the output of tesseract OCR extraction. Any text extracted by tesseract will be appended to the text extracted by pdftotext.
+  * `ocr`: Only tesseract will be used to extract text. *NB:* OCR text extraction is extremely slow (including when used in the above fallback and combined modes)
 
 To use this configuration at the command line, prefix each open with a `--`.
 
