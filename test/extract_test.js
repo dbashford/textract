@@ -190,7 +190,7 @@ describe('textract', function() {
       fromFileWithPath(filePath, function( error ) {
         expect(error).to.be.an('object');
         expect(error.message).to.be.a('string');
-        expect(error.message.substring(0,41)).to.eql("Could not extract notaxlsx.xlsx, Command ");
+        expect(error.message.substring(0,43)).to.eql("Could not extract notaxlsx.xlsx, Error: PRN");
         done();
       });
     });
