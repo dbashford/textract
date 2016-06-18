@@ -164,6 +164,8 @@ textract.fromUrl(url, config, function( error, text ) {})
 * [#81](https://github.com/dbashford/textract/issues/81). Moved `.doc` (old MSWord) extraction to [antiword](http://www.winfield.demon.nl/) from catdoc. catdoc is no longer supported on OSX making it extremely difficult for me to support updates that require testing of `.doc` files.  One major difference that'll be seen with `.doc`s of certain types is [explained here](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=307657). If "I'm afraid the text stream of this file is too small to handle." is an error message you see, see that post.
 * [#82](https://github.com/dbashford/textract/issues/82), [#83](https://github.com/dbashford/textract/pull/83). PR updated cheerio to fix a cheerio regression.
 * Fixed regression issue with above two PRs in combination. Pure `text/*` extraction left encoded characters for stylized quotes and true elipsis in the text.
+* [#88](https://github.com/dbashford/textract/pull/88). Fixed detection/messaging of missing binaries for `.doc`, images and `.pdf`.
+* [#90](https://github.com/dbashford/textract/pull/90). Improved content type detection when extracting from URLs.
 
 ### 1.2.1
 * [#68](https://github.com/dbashford/textract/pull/68). PR captured unzip errors.
