@@ -3,6 +3,16 @@ var path = require("path");
 describe("fromUrl tests", function() {
   this.timeout(3000);
 
+  it("will properly extract files from sites with extensions that are misleading", function(done) {
+    var url = "http://apps.leg.wa.gov/billinfo/summary.aspx?bill=1276";
+      fromUrl(url, function( error, text ) {
+      expect(error).to.be.null;
+      expect(text).to.be.an('string');
+      expect(text.substring(0,100)).to.eql("");
+      done();
+    });
+  });
+
   var test = function(ext, name, _text) {
     it('will ' + ext + ' files', function(done) {
       var url = "https://github.com/dbashford/textract/blob/master/test/files/" + name + "?raw=true";
