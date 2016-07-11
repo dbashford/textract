@@ -165,6 +165,7 @@ textract.fromUrl(url, config, function( error, text ) {})
 * [#82](https://github.com/dbashford/textract/issues/82), [#83](https://github.com/dbashford/textract/pull/83). PR updated cheerio to fix a cheerio regression.
 * Fixed regression issue with above two PRs in combination. Pure `text/*` extraction left encoded characters for stylized quotes and true elipsis in the text.
 * [#88](https://github.com/dbashford/textract/pull/88). Fixed detection/messaging of missing binaries for `.doc`, images and `.pdf`.
+* [#89](https://github.com/dbashford/textract/pull/89). Returned to using j as a module rather than a binary. 
 * [#90](https://github.com/dbashford/textract/pull/90). Improved content type detection when extracting from URLs.
 
 ### 1.2.1
