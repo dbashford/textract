@@ -531,7 +531,7 @@ describe('textract', function() {
     "ods",
     "ods.ods",
     "This,is,a,ods Really,it,is, I,promise,, ",
-    "This,is,a,ods\nReally,it,is,\nI,promise,,\n\n"
+    "This,is,a,ods\nReally,it,is,\nI,promise,,\n"
   );
 
   test(
@@ -573,7 +573,7 @@ describe('textract', function() {
     "ots",
     "ots.ots",
     "This,is , template, an,open,office,template isn't,it,awesome?, you,know,it,is ",
-    "This,is , template,\nan,open,office,template\nisn't,it,awesome?,\nyou,know,it,is\n\n"
+    "This,is , template,\nan,open,office,template\nisn't,it,awesome?,\nyou,know,it,is\n"
   );
 
   test(
