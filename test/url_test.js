@@ -15,8 +15,7 @@ describe("fromUrl tests", function() {
 
     var test = function(ext, name, _text) {
         it('will ' + ext + ' files', function(done) {
-            var url = "https://github.com/dbashford/textract/blob/master/test/files/" + name + "?raw=true";
-
+            var url = "https://cdn.rawgit.com/dbashford/textract/master/test/files/" + name + "?raw=true";
             fromUrl(url, function(error, text) {
                 expect(error).to.be.null;
                 expect(text).to.be.an('string');
