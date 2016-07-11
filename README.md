@@ -158,6 +158,7 @@ textract.fromUrl(url, config, function( error, text ) {})
 * Codebase is now properly eslinted.
 * Fixed testing issue, `.csv` was `.gitignore`d preventing `.csv` test file from making into repo.
 * [#57](https://github.com/dbashford/textract/issues/57), [#75](https://github.com/dbashford/textract/issues/75). Added a `pdftotextOptions` in textract options. This is a proxy to the [pdf-text-extract](https://github.com/nisaacson/pdf-text-extract) options.
+* [#69](https://github.com/dbashford/textract/issues/78). Escaping paths for all `exec` and `spawn`.
 * [#74](https://github.com/dbashford/textract/pull/74). PR fixing fancy double quotes -> “.
 * [#77](https://github.com/dbashford/textract/pull/77). PR fixes decoding of non-utf8 encoded files.
 * [#78](https://github.com/dbashford/textract/issues/78). Force all mime types to lowercase for comparison.
