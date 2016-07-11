@@ -55,6 +55,7 @@ Configuration can be passed into textract.  The following configuration options 
 * `[ext].exec`: Each extractor can take specific exec config. Keep in mind many extractors are responsible for extracting multiple types, so, for instance, the `odt` extractor is what you would configure for `odt` and `odg`/`odt` etc.  Check [the extractors](https://github.com/dbashford/textract/tree/master/lib/extractors) to see which you want to specifically configure. At the bottom of each is a list of `types` for which the extractor is responsible.
 * `tesseract.lang`: A pass-through to tesseract allowing for setting of language for extraction. ex: `{ tesseract: { lang:"chi_sim" } }`
 * `pdftotextOptions`: This is a proxy options object to the library textract uses for pdf extraction: [pdf-text-extract](https://github.com/nisaacson/pdf-text-extract). IMPORTANT: textract modifies the pdf-text-extract `layout` default so that, instead of `layout: layout`, it uses `layout:raw`. It is not suggested you modify this without understanding what trouble that might get you in. See [this GH issue](https://github.com/dbashford/textract/issues/75) for why textract overrides that library's default.
+* `typeOverride`: Used with `fromUrl`, if set, rather than using the `content-type` from the URL request, will use the provided `typeOverride`.
 
 To use this configuration at the command line, prefix each open with a `--`.
 
@@ -155,7 +156,7 @@ textract.fromUrl(url, config, function( error, text ) {})
 
 ## Release Notes
 
-### 2.0.0 (In progress)
+### 2.0.0
 * Codebase is now properly eslinted.
 * Fixed testing issue, `.csv` was `.gitignore`d preventing `.csv` test file from making into repo.
 * [#57](https://github.com/dbashford/textract/issues/57), [#75](https://github.com/dbashford/textract/issues/75). Added a `pdftotextOptions` in textract options. This is a proxy to the [pdf-text-extract](https://github.com/nisaacson/pdf-text-extract) options.
