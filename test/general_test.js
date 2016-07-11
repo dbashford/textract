@@ -161,12 +161,12 @@ describe('textract', function() {
     });
 
     it('fromUrl(url, options, callback)', function(done) {
-      var url = "https://github.com/dbashford/textract/blob/master/test/files/new%20docx(1).docx?raw=true";
+      var url = "https://cdn.rawgit.com/dbashford/textract/master/test/files/new%20docx(1).docx?raw=true";
       fromUrl(url, {}, test(done));
     });
 
     it('fromUrl1(url,callback)', function(done) {
-      var url = "https://github.com/dbashford/textract/blob/master/test/files/new%20docx(1).docx?raw=true";
+      var url = "https://cdn.rawgit.com/dbashford/textract/master/test/files/new%20docx(1).docx?raw=true";
       fromUrl(url, test(done));
     });
   });
