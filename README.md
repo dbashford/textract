@@ -156,6 +156,8 @@ textract.fromUrl(url, config, function( error, text ) {})
 
 ## Release Notes
 
+### 2.1.0 (pending)
+
 ### 2.0.0
 * Codebase is now properly eslinted.
 * Fixed testing issue, `.csv` was `.gitignore`d preventing `.csv` test file from making into repo.
@@ -168,7 +170,7 @@ textract.fromUrl(url, config, function( error, text ) {})
 * [#82](https://github.com/dbashford/textract/issues/82), [#83](https://github.com/dbashford/textract/pull/83). PR updated cheerio to fix a cheerio regression.
 * Fixed regression issue with above two PRs in combination. Pure `text/*` extraction left encoded characters for stylized quotes and true elipsis in the text.
 * [#88](https://github.com/dbashford/textract/pull/88). PR fixed detection/messaging of missing binaries for `.doc`, images and `.pdf`.
-* [#89](https://github.com/dbashford/textract/pull/89). PR returned textract to using j as a module rather than a binary. 
+* [#89](https://github.com/dbashford/textract/pull/89). PR returned textract to using j as a module rather than a binary.
 * [#90](https://github.com/dbashford/textract/pull/90). PR improved content type detection when extracting from URLs. Also updated tests to pull test files using proper content-type.
 
 ### 1.2.1
