@@ -146,6 +146,8 @@ textract.fromBufferWithName(name, buffer, config, function( error, text ) {})
 
 ##### URL
 
+When passing a URL, the URL can either be a string, or a [node.js URL object](https://nodejs.org/api/url.html). Using the URL object allows fine grained control over the URL being used.
+
 ```javascript
 textract.fromUrl(url, function( error, text ) {})
 ```
