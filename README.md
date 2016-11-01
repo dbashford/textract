@@ -156,7 +156,7 @@ textract.fromUrl(url, config, function( error, text ) {})
 
 ## Release Notes
 
-### 2.1.0 (pending)
+### 2.1.0 (early/mid November '16)
 
 ### 2.0.0
 * Codebase is now properly eslinted.
