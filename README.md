@@ -158,7 +158,7 @@ textract.fromUrl(url, config, function( error, text ) {})
 
 ## Release Notes
 
-### 2.1.0 (early/mid November '16)
+### 2.1.0 (January '17)
 * [#93](https://github.com/dbashford/textract/pull/93). PR added better error handling for `fromUrl` requests.
 * [#95](https://github.com/dbashford/textract/pull/95). PR added support for monetary symbols.
 * [#98](https://github.com/dbashford/textract/pull/98). PR shortened needlessly long file paths for temp files.
