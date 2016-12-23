@@ -163,6 +163,7 @@ textract.fromUrl(url, config, function( error, text ) {})
 * [#95](https://github.com/dbashford/textract/pull/95). PR added support for monetary symbols.
 * [#98](https://github.com/dbashford/textract/pull/98). PR shortened needlessly long file paths for temp files.
 * [#101](https://github.com/dbashford/textract/pull/101). PR added UTF-8 support for antiword requests.
+* [#102](https://github.com/dbashford/textract/pull/102). Added ability to provide raw [node.js URL object](https://nodejs.org/api/url.html) to the `fromUrl` call which bypasses URL parsing/mangling.
 
 ### 2.0.0
 * Codebase is now properly eslinted.
