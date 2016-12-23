@@ -14,7 +14,7 @@ describe( 'fromUrl tests', function() {
       expect( error ).to.be.null;
       expect( text ).to.be.an( 'string' );
       expect( text.substring( 0, 100 ) ).to.eql(
-        ' HB 1276 - 2015-16 Test 1 " Test 2 " Test 3 Legislature Home " Senate " House of Representatives " C' );
+        ' Washington State Legislature Bill Summary 2017-2018 2015-2016 2013-2014 2011-2012 2009-2010 2007-20' );
       done();
     });
   });
@@ -27,7 +27,7 @@ describe( 'fromUrl tests', function() {
     fromUrl( urlObj, function( error, text ) {
       expect( error ).to.be.null;
       expect( text ).to.be.an( 'string' );
-      expect( text.substring( 0, 100 ) ).to.eql( 'Word Specification Sample Working Draft 04, 16 August 2002 Document identifier: wd-spectools-word-sa' );
+      expect( text.substring( 0, 100 ) ).to.eql( ' Word Specification Sample Working Draft 04, 16 August 2002 Document identifier: wd-spectools-word-s' );
       done();
     });
   });
@@ -47,7 +47,7 @@ describe( 'fromUrl tests', function() {
   test(
     'doc',
     'doc.doc',
-    'Word Specification Sample Working Draft 04, 16 August 2002 Document identifier: wd-spectools-word-sa'
+    ' Word Specification Sample Working Draft 04, 16 August 2002 Document identifier: wd-spectools-word-s'
   );
 
   test(
