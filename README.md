@@ -165,6 +165,7 @@ textract.fromUrl(url, config, function( error, text ) {})
 * [#99](https://github.com/dbashford/textract/pull/99). Now handling Chinese comma.
 * [#101](https://github.com/dbashford/textract/pull/101). PR added UTF-8 support for antiword requests.
 * [#102](https://github.com/dbashford/textract/pull/102). Added ability to provide raw [node.js URL object](https://nodejs.org/api/url.html) to the `fromUrl` call which bypasses URL parsing/mangling.
+* [#109](https://github.com/dbashford/textract/pull/102). Properly handle RTF files with spaces in the name on OSX
 
 ### 2.0.0
 * Codebase is now properly eslinted.
