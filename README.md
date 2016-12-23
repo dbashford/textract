@@ -172,10 +172,10 @@ textract.fromUrl(url, config, function( error, text ) {})
 * [#93](https://github.com/dbashford/textract/pull/93). PR added better error handling for `fromUrl` requests.
 * [#95](https://github.com/dbashford/textract/pull/95). PR added support for monetary symbols.
 * [#96](https://github.com/dbashford/textract/issues/96). Fixed various issues with doc handling on Windows.
+* [#97](https://github.com/dbashford/textract/pull/102), [#102](https://github.com/dbashford/textract/pull/102). Added ability to provide raw [node.js URL object](https://nodejs.org/api/url.html) to the `fromUrl` call which bypasses URL parsing/mangling.
 * [#98](https://github.com/dbashford/textract/pull/98). PR shortened needlessly long file paths for temp files.
 * [#99](https://github.com/dbashford/textract/issues/99). Now handling Chinese comma.
 * [#101](https://github.com/dbashford/textract/pull/101). PR added UTF-8 support for antiword requests.
-* [#102](https://github.com/dbashford/textract/pull/102). PR added ability to provide raw [node.js URL object](https://nodejs.org/api/url.html) to the `fromUrl` call which bypasses URL parsing/mangling.
 * [#105](https://github.com/dbashford/textract/issues/105). Added `tesseract.cmd` option which allows for providing an exact tesseract command-line string.
 * [#109](https://github.com/dbashford/textract/issues/109). Properly handle RTF files with spaces in the name on OSX
 
