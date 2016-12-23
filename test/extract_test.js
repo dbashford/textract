@@ -103,6 +103,16 @@ describe( 'textract', function() {
       });
     });
 
+    it( 'will extract text from actual doc files with spaces in the name', function( done ) {
+      var docPath = path.join( __dirname, 'files', 'doc space.doc' );
+      fromFileWithPath( docPath, function( error, text ) {
+        expect( error ).to.be.null;
+        expect( text ).to.be.an( 'string' );
+        expect( text.substring( 0, 100 ) ).to.eql( ' Word Specification Sample Working Draft 04, 16 August 2002 Document identifier: wd-spectools-word-s' );
+        done();
+      });
+    });
+
     it( 'will not extract text from text files masquerading as doc files', function( done ) {
       var docPath = path.join( __dirname, 'files', 'notadoc.doc' );
       fromFileWithPath( docPath, function( error, text ) {

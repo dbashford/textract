@@ -171,6 +171,7 @@ textract.fromUrl(url, config, function( error, text ) {})
 * Updated all dependencies to latest, except for [got](https://github.com/sindresorhus/got), which was updated, but not to the latest because of lack of support for older node versions.
 * [#93](https://github.com/dbashford/textract/pull/93). PR added better error handling for `fromUrl` requests.
 * [#95](https://github.com/dbashford/textract/pull/95). PR added support for monetary symbols.
+* [#96](https://github.com/dbashford/textract/issues/96). Fixed various issues with doc handling on Windows.
 * [#98](https://github.com/dbashford/textract/pull/98). PR shortened needlessly long file paths for temp files.
 * [#99](https://github.com/dbashford/textract/issues/99). Now handling Chinese comma.
 * [#101](https://github.com/dbashford/textract/pull/101). PR added UTF-8 support for antiword requests.
