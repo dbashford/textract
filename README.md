@@ -163,7 +163,7 @@ textract.fromUrl(url, config, function( error, text ) {})
 - `sudo port install tesseract-chi-sim`
 - `sudo port install tesseract-eng`
 - You will also want to disable textract's usage of textutil as the tests are based on output from antiword.
-- Go into `/lib/extractors/{doc|doc-osx|rtf}` and modify the code under `if ( os.platform() === 'darwin' ) {`. Uncommented the commented lines in these sections.
+  - Go into `/lib/extractors/{doc|doc-osx|rtf}` and modify the code under `if ( os.platform() === 'darwin' ) {`. Uncommented the commented lines in these sections.
 
 ## Release Notes
 
