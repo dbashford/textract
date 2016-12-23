@@ -493,6 +493,18 @@ describe( 'textract', function() {
         done();
       });
     });
+
+    // sudo port install tesseract-eng
+    it( 'will take tesseract.cmd option', function( done ) {
+      var filePath = path.join( __dirname, 'files', 'testpng.png' );
+      this.timeout( 5000 );
+      fromFileWithPath( filePath, { tesseract: { cmd: '-l eng -psm 3' } }, function( error, text ) {
+        expect( error ).to.be.null;
+        expect( text ).to.be.an( 'string' );
+        expect( text.substring( 0, 100 ) ).to.eql( 'The (quick) [brown] {fox} jumps! Over the $43,456.78 <lazy> #90 dog & duck/goose, as 12.5% of E-mail' );
+        done();
+      });
+    });
   });
 
   test = function( ext, name, text1, text2 ) {

@@ -54,6 +54,7 @@ Configuration can be passed into textract.  The following configuration options 
 * `exec`: Some extractors (dxf) use node's `exec` functionality. This setting allows for providing [config to `exec` execution](http://nodejs.org/api/child_process.html#child_process_child_process_exec_command_options_callback). One reason you might want to provide this config is if you are dealing with very large files. You might want to increase the `exec` `maxBuffer` setting.
 * `[ext].exec`: Each extractor can take specific exec config. Keep in mind many extractors are responsible for extracting multiple types, so, for instance, the `odt` extractor is what you would configure for `odt` and `odg`/`odt` etc.  Check [the extractors](https://github.com/dbashford/textract/tree/master/lib/extractors) to see which you want to specifically configure. At the bottom of each is a list of `types` for which the extractor is responsible.
 * `tesseract.lang`: A pass-through to tesseract allowing for setting of language for extraction. ex: `{ tesseract: { lang:"chi_sim" } }`
+* `tesseract.cmd`: `tesseract.lang` allows a quick means to provide the most popular tesseract option, but if you need to configure more options, you can simply pass `cmd`. `cmd` is the string that matches the command-line options you want to pass to tesseract. For instance, to provide language and `psm`, you would pass `{ tesseract: { cmd:"-l chi_sim -psm 10" } }`
 * `pdftotextOptions`: This is a proxy options object to the library textract uses for pdf extraction: [pdf-text-extract](https://github.com/nisaacson/pdf-text-extract). IMPORTANT: textract modifies the pdf-text-extract `layout` default so that, instead of `layout: layout`, it uses `layout:raw`. It is not suggested you modify this without understanding what trouble that might get you in. See [this GH issue](https://github.com/dbashford/textract/issues/75) for why textract overrides that library's default.
 * `typeOverride`: Used with `fromUrl`, if set, rather than using the `content-type` from the URL request, will use the provided `typeOverride`.
 
@@ -156,16 +157,25 @@ textract.fromUrl(url, function( error, text ) {})
 textract.fromUrl(url, config, function( error, text ) {})
 ```
 
+## Testing Notes
+
+### Running Tests on a Mac?
+- `sudo port install tesseract-chi-sim`
+- `sudo port install tesseract-eng`
+- You will also want to disable textract's usage of textutil as the tests are based on output from antiword.
+- Go into `/lib/extractors/{doc|doc-osx|rtf}` and modify the code under `if ( os.platform() === 'darwin' ) {`. Uncommented the commented lines in these sections.
+
 ## Release Notes
 
 ### 2.1.0 (January '17)
 * [#93](https://github.com/dbashford/textract/pull/93). PR added better error handling for `fromUrl` requests.
 * [#95](https://github.com/dbashford/textract/pull/95). PR added support for monetary symbols.
 * [#98](https://github.com/dbashford/textract/pull/98). PR shortened needlessly long file paths for temp files.
-* [#99](https://github.com/dbashford/textract/pull/99). Now handling Chinese comma.
+* [#99](https://github.com/dbashford/textract/issues/99). Now handling Chinese comma.
 * [#101](https://github.com/dbashford/textract/pull/101). PR added UTF-8 support for antiword requests.
-* [#102](https://github.com/dbashford/textract/pull/102). Added ability to provide raw [node.js URL object](https://nodejs.org/api/url.html) to the `fromUrl` call which bypasses URL parsing/mangling.
-* [#109](https://github.com/dbashford/textract/pull/102). Properly handle RTF files with spaces in the name on OSX
+* [#102](https://github.com/dbashford/textract/pull/102). PR added ability to provide raw [node.js URL object](https://nodejs.org/api/url.html) to the `fromUrl` call which bypasses URL parsing/mangling.
+* [#105](https://github.com/dbashford/textract/issues/105). Added `tesseract.cmd` option which allows for providing an exact tesseract command-line string.
+* [#109](https://github.com/dbashford/textract/issues/109). Properly handle RTF files with spaces in the name on OSX
 
 ### 2.0.0
 * Codebase is now properly eslinted.
