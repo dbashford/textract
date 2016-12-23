@@ -19,7 +19,7 @@ var cli = meow( {
   pkg: "../package.json"
 } );
 
-if( !cli.input || cli.input.length == 0 ) {
+if ( !cli.input || cli.input.length === 0 ) {
   console.log( "\n" + help );
 } else {
   var lib = path.join( path.dirname( fs.realpathSync( __filename ) ), '..', 'lib', 'cli.js' );
