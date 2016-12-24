@@ -172,7 +172,7 @@ textract.fromUrl(url, config, function( error, text ) {})
 * [#93](https://github.com/dbashford/textract/pull/93). PR added better error handling for `fromUrl` requests.
 * [#95](https://github.com/dbashford/textract/pull/95). PR added support for monetary symbols.
 * [#96](https://github.com/dbashford/textract/issues/96). Fixed various issues with doc handling on Windows.
-* [#97](https://github.com/dbashford/textract/pull/102), [#102](https://github.com/dbashford/textract/pull/102). Added ability to provide raw [node.js URL object](https://nodejs.org/api/url.html) to the `fromUrl` call which bypasses URL parsing/mangling.
+* [#97](https://github.com/dbashford/textract/issues/97), [#102](https://github.com/dbashford/textract/pull/102). Added ability to provide raw [node.js URL object](https://nodejs.org/api/url.html) to the `fromUrl` call which bypasses URL parsing/mangling.
 * [#98](https://github.com/dbashford/textract/pull/98). PR shortened needlessly long file paths for temp files.
 * [#99](https://github.com/dbashford/textract/issues/99). Now handling Chinese comma.
 * [#101](https://github.com/dbashford/textract/pull/101). PR added UTF-8 support for antiword requests.
@@ -183,7 +183,7 @@ textract.fromUrl(url, config, function( error, text ) {})
 * Codebase is now properly eslinted.
 * Fixed testing issue, `.csv` was `.gitignore`d preventing `.csv` test file from making into repo.
 * [#57](https://github.com/dbashford/textract/issues/57), [#75](https://github.com/dbashford/textract/issues/75). Added a `pdftotextOptions` in textract options. This is a proxy to the [pdf-text-extract](https://github.com/nisaacson/pdf-text-extract) options.
-* [#69](https://github.com/dbashford/textract/issues/78). Escaping paths for all `exec` and `spawn`.
+* [#69](https://github.com/dbashford/textract/issues/69). Escaping paths for all `exec` and `spawn`.
 * [#74](https://github.com/dbashford/textract/pull/74). PR fixing fancy double quotes -> “.
 * [#77](https://github.com/dbashford/textract/pull/77). PR fixes decoding of non-utf8 encoded files.
 * [#78](https://github.com/dbashford/textract/issues/78). Force all mime types to lowercase for comparison.
