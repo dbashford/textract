@@ -167,6 +167,10 @@ textract.fromUrl(url, config, function( error, text ) {})
 
 ## Release Notes
 
+### 2.1.1
+* [#111](https://github.com/dbashford/textract/issues/111). Callback was being called two times when URL errored out.
+* [#112](https://github.com/dbashford/textract/pull/112). PR added handling errors returned by decoding text files.
+
 ### 2.1.0
 * Updated all dependencies to latest, except for [got](https://github.com/sindresorhus/got), which was updated, but not to the latest because of lack of support for older node versions.
 * [#93](https://github.com/dbashford/textract/pull/93). PR added better error handling for `fromUrl` requests.
