@@ -167,6 +167,10 @@ textract.fromUrl(url, config, function( error, text ) {})
 
 ## Release Notes
 
+### 2.1.2
+* [#114](https://github.com/dbashford/textract/pull/114). Not stripping Microsoft dashes.
+* [#116](https://github.com/dbashford/textract/pull/116). Better handling image binary check.
+
 ### 2.1.1
 * [#111](https://github.com/dbashford/textract/issues/111). Callback was being called two times when URL errored out.
 * [#112](https://github.com/dbashford/textract/pull/112). PR added handling errors returned by decoding text files.
