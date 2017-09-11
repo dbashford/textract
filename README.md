@@ -167,6 +167,12 @@ textract.fromUrl(url, config, function( error, text ) {})
 
 ## Release Notes
 
+### 2.2.0 (pending)
+* [#119](https://github.com/dbashford/textract/pull/119). Passing exec options into RTF extraction.
+* [#119](https://github.com/dbashford/textract/pull/119). Preserving № character.
+
+https://github.com/dbashford/textract/pull/119
+
 ### 2.1.2
 * [#114](https://github.com/dbashford/textract/pull/114). Not stripping Microsoft dashes.
 * [#116](https://github.com/dbashford/textract/pull/116). Better handling image binary check.
