@@ -59,6 +59,53 @@ describe( 'textract', function() {
     });
   });
 
+  describe( 'for .rss files', function() {
+    it( 'will extract text from rss files', function( done ) {
+      var docPath = path.join( __dirname, 'files', 'rss.rss' );
+      fromFileWithPath( docPath, function( error, text ) {
+        expect( error ).to.be.null;
+        expect( text ).to.be.an( 'string' );
+        expect( text.length ).to.eql( 5399 );
+        expect( text.substring( 0, 100 ) ).to.eql( ' FeedForAll Sample Feed RSS is a fascinating technology. The uses for RSS are expanding daily. Take ' );
+        done();
+      });
+    });
+
+    it( 'will extract text from rss files and preserve line breaks', function( done ) {
+      var docPath = path.join( __dirname, 'files', 'rss.rss' );
+      fromFileWithPath( docPath, { preserveLineBreaks: true }, function( error, text ) {
+        expect( error ).to.be.null;
+        expect( text ).to.be.an( 'string' );
+        expect( text.length ).to.eql( 5534 );
+        expect( text.substring( 0, 100 ) ).to.eql( '\n FeedForAll Sample Feed\n RSS is a fascinating technology. The uses for RSS are expanding daily. Tak' );
+        done();
+      });
+    });
+  });
+
+  describe( 'for .atom files', function() {
+    it( 'will extract text from atom files', function( done ) {
+      var docPath = path.join( __dirname, 'files', 'atom.atom' );
+      fromFileWithPath( docPath, function( error, text ) {
+        expect( error ).to.be.null;
+        expect( text ).to.be.an( 'string' );
+        expect( text.length ).to.eql( 26726 );
+        expect( text.substring( 0, 100 ) ).to.eql( ' tag:theregister.co.uk,2005:feed/theregister.co.uk/data_centre/storage/ The Register - Data Centre: ' );
+        done();
+      });
+    });
+
+    it( 'will extract text from atom files and preserve line breaks', function( done ) {
+      var docPath = path.join( __dirname, 'files', 'atom.atom' );
+      fromFileWithPath( docPath, { preserveLineBreaks: true }, function( error, text ) {
+        expect( error ).to.be.null;
+        expect( text ).to.be.an( 'string' );
+        expect( text.length ).to.eql( 27436 );
+        expect( text.substring( 0, 100 ) ).to.eql( '\n tag:theregister.co.uk,2005:feed/theregister.co.uk/data_centre/storage/\n The Register - Data Centre' );
+        done();
+      });
+    });
+  });
 
   describe( 'for .rtf files', function() {
     it( 'will extract text from rtf files', function( done ) {

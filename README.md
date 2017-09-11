@@ -9,6 +9,7 @@ A text extraction node module.
 ## Currently Extracts...
 
 * HTML, HTM
+* ATOM, RSS
 * Markdown
 * XML, XSL
 * PDF
@@ -171,6 +172,8 @@ textract.fromUrl(url, config, function( error, text ) {})
 * [#119](https://github.com/dbashford/textract/pull/119). Passing exec options into RTF extraction.
 * [#119](https://github.com/dbashford/textract/pull/119). Preserving № character.
 * [#122](https://github.com/dbashford/textract/pull/122). Passing exec options into DOC extraction.
+* [#123](https://github.com/dbashford/textract/pull/123). Adding ATOM and RSS extraction.
+
 
 ### 2.1.2
 * [#114](https://github.com/dbashford/textract/pull/114). Not stripping Microsoft dashes.

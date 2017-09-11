@@ -1,0 +1,567 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+  <id>tag:theregister.co.uk,2005:feed/theregister.co.uk/data_centre/storage/</id>
+  <title>The Register - Data Centre: Storage</title>
+  <link rel="self" type="application/atom+xml" href="https://www.theregister.co.uk/data_centre/storage/headlines.atom"/>
+  <link rel="alternate" type="text/html" href="https://www.theregister.co.uk/data_centre/storage/"/>
+  <rights>Copyright Â© 2017, Situation Publishing</rights>
+  <author>
+    <name>Team Register</name>
+    <email>webmaster@theregister.co.uk</email>
+    <uri>https://www.theregister.co.uk/odds/about/contact/</uri>
+  </author>
+  <icon>https://www.theregister.co.uk/Design/graphics/icons/favicon.png</icon>
+  <subtitle>Biting the hand that feeds IT â€” sci/tech news and views for the world</subtitle>
+  <logo>https://www.theregister.co.uk/Design/graphics/Reg_default/The_Register_r.png</logo>
+  <updated>2017-09-11T23:36:16Z</updated>
+  <entry>
+    <id>tag:theregister.co.uk,2005:story/2017/09/11/rubrik_thinks_it_is_on_a_data_management_winner/</id>
+    <updated>2017-09-11T23:36:46Z</updated>
+    <author>
+      <name>Chris Mellor</name>
+      <uri>https://search.theregister.co.uk/?author=Chris%20Mellor</uri>
+    </author>
+    <link rel="alternate" type="text/html" href="http://go.theregister.com/feed/www.theregister.co.uk/2017/09/11/rubrik_thinks_it_is_on_a_data_management_winner/"/>
+    <title type="html">Rubrik to hit enterprise with double whammy</title>
+    <summary type="html" xml:base="http://www.theregister.co.uk/">&lt;h4&gt;Metadata platform combined with data definition&lt;/h4&gt; &lt;p&gt;&lt;strong&gt;Analysis&lt;/strong&gt;Â  &lt;a target="_blank" href="https://www.theregister.co.uk/2017/08/03/gartner_backup_magic_quadrant/"&gt;Rubrik&lt;/a&gt; CEO Bipul Sinha says there are two ways of looking at backup and recovery: loosely they are hardware or storage-centric and software-centric.â€¦&lt;/p&gt;</summary>
+  </entry>
+  <entry>
+    <id>tag:theregister.co.uk,2005:story/2017/09/11/esoptra_thin_file_contents_provisioning/</id>
+    <updated>2017-09-11T19:40:08Z</updated>
+    <author>
+      <name>Chris Mellor</name>
+      <uri>https://search.theregister.co.uk/?author=Chris%20Mellor</uri>
+    </author>
+    <link rel="alternate" type="text/html" href="http://go.theregister.com/feed/www.theregister.co.uk/2017/09/11/esoptra_thin_file_contents_provisioning/"/>
+    <title type="html">Esoptra pimps pluglets for thin file contents provisioning</title>
+    <summary type="html" xml:base="http://www.theregister.co.uk/">&lt;h4&gt;Object storage founders unveil virtualised filer front end&lt;/h4&gt; &lt;p&gt;Esoptra has invented a thin content provisioned virtualized filer sitting in front of object storage.â€¦&lt;/p&gt;</summary>
+  </entry>
+  <entry>
+    <id>tag:theregister.co.uk,2005:story/2017/09/11/storage_odds_and_sods_box/</id>
+    <updated>2017-09-11T09:57:12Z</updated>
+    <author>
+      <name>Chris Mellor</name>
+      <uri>https://search.theregister.co.uk/?author=Chris%20Mellor</uri>
+    </author>
+    <link rel="alternate" type="text/html" href="http://go.theregister.com/feed/www.theregister.co.uk/2017/09/11/storage_odds_and_sods_box/"/>
+    <title type="html">What's a storage burrito, you ask? Why all the newsy tidbits chopped, cooked and wrapped up</title>
+    <summary type="html" xml:base="http://www.theregister.co.uk/">&lt;h4&gt;This is not foil-bagged street food... It's a knife-fork-and-plater&lt;/h4&gt; &lt;p&gt;&lt;strong&gt;+Comment&lt;/strong&gt;Â  Good morning, storage fans. Last week we were buzz-bombed with a barrage of storage updates, but we kept quite a few aside to wrap up into something easily digestible. It's a bit more substantial than the blob-dropping treat you might grab at the food truck, though, so get a napkin, plate, and some cutlery, find a quiet room and spend 15 minutes ingesting this stuff.â€¦&lt;/p&gt; &lt;p&gt;&lt;!--#include virtual='/data_centre/_whitepaper_textlinks_top.html' --&gt;&lt;/p&gt;</summary>
+  </entry>
+  <entry>
+    <id>tag:theregister.co.uk,2005:story/2017/09/08/looking_into_huawei_storage_hw_future/</id>
+    <updated>2017-09-08T08:43:04Z</updated>
+    <author>
+      <name>Chris Mellor</name>
+      <uri>https://search.theregister.co.uk/?author=Chris%20Mellor</uri>
+    </author>
+    <link rel="alternate" type="text/html" href="http://go.theregister.com/feed/www.theregister.co.uk/2017/09/08/looking_into_huawei_storage_hw_future/"/>
+    <title type="html">Huawei's storage hardware future: Fancy some cosy NVMe over Fabrics this winter?</title>
+    <summary type="html" xml:base="http://www.theregister.co.uk/">&lt;h4&gt;JBOF ... or perhaps you'd prefer to look into a Barreleye&lt;/h4&gt; &lt;p&gt;&lt;strong&gt;Analysis&lt;/strong&gt;Â  Will NVMe over Fabrics &lt;a target="_blank" href="https://www.theregister.co.uk/2017/08/21/nvme_fabrics_comment/"&gt;nuke the storage array&lt;/a&gt; into a JBOF winter or will array technology extend itself into new combinations of compute controllers, media and network links? Huawei has both technology strands in development with a high density 1U JBOF and a 4U x 16-blade Barreleye system.â€¦&lt;/p&gt;</summary>
+  </entry>
+  <entry>
+    <id>tag:theregister.co.uk,2005:story/2017/09/06/tintri_ec6000_all_flash/</id>
+    <updated>2017-09-06T13:41:12Z</updated>
+    <author>
+      <name>Chris Mellor</name>
+      <uri>https://search.theregister.co.uk/?author=Chris%20Mellor</uri>
+    </author>
+    <link rel="alternate" type="text/html" href="http://go.theregister.com/feed/www.theregister.co.uk/2017/09/06/tintri_ec6000_all_flash/"/>
+    <title type="html">Tintri havin' it large with all-flash EC6000 boxen</title>
+    <summary type="html" xml:base="http://www.theregister.co.uk/">&lt;h4&gt;Fills storage tank with full-fat 3D NAND SSDs&lt;/h4&gt; &lt;p&gt;Tintri has refreshed its all-flash arrays with a four-model EC6000 series.â€¦&lt;/p&gt;</summary>
+  </entry>
+  <entry>
+    <id>tag:theregister.co.uk,2005:story/2017/09/06/elastifile_16m_funding_round/</id>
+    <updated>2017-09-06T11:52:10Z</updated>
+    <author>
+      <name>Chris Mellor</name>
+      <uri>https://search.theregister.co.uk/?author=Chris%20Mellor</uri>
+    </author>
+    <link rel="alternate" type="text/html" href="http://go.theregister.com/feed/www.theregister.co.uk/2017/09/06/elastifile_16m_funding_round/"/>
+    <title type="html">File software-flinger Elastifile stretches funding further to $65m</title>
+    <summary type="html" xml:base="http://www.theregister.co.uk/">&lt;h4&gt;WDC leads bijou $16m round for infrastructure build-out&lt;/h4&gt; &lt;p&gt;&lt;a target="_blank" href="https://www.theregister.co.uk/2017/04/06/elastifile_delivers_stretchy_file_software/"&gt;Elastifile&lt;/a&gt;, an Israeli startup developing a distributed file system for hybrid clouds, has picked up $16m in a funding round led by Western Digital Capital.â€¦&lt;/p&gt;</summary>
+  </entry>
+  <entry>
+    <id>tag:theregister.co.uk,2005:story/2017/09/06/huawei_developing_nmve_over_ip_ssd/</id>
+    <updated>2017-09-06T07:28:12Z</updated>
+    <author>
+      <name>Chris Mellor</name>
+      <uri>https://search.theregister.co.uk/?author=Chris%20Mellor</uri>
+    </author>
+    <link rel="alternate" type="text/html" href="http://go.theregister.com/feed/www.theregister.co.uk/2017/09/06/huawei_developing_nmve_over_ip_ssd/"/>
+    <title type="html">Huawei developing NMVe over IP SSD</title>
+    <summary type="html" xml:base="http://www.theregister.co.uk/">&lt;h4&gt;Seagate Kinetic drive idea had Huawei genesis and has Huawei follow-on&lt;/h4&gt; &lt;p&gt;&lt;b&gt;Analysis&lt;/b&gt; Huawei is developing an NVMe over IP SSD with an on-drive object storage scheme meaning radically faster object storage and a re-evaluation of what object storage's very purpose.â€¦&lt;/p&gt;</summary>
+  </entry>
+  <entry>
+    <id>tag:theregister.co.uk,2005:story/2017/09/05/toshiba_14tb_heliumfilled_disk/</id>
+    <updated>2017-09-05T08:51:13Z</updated>
+    <author>
+      <name>Chris Mellor</name>
+      <uri>https://search.theregister.co.uk/?author=Chris%20Mellor</uri>
+    </author>
+    <link rel="alternate" type="text/html" href="http://go.theregister.com/feed/www.theregister.co.uk/2017/09/05/toshiba_14tb_heliumfilled_disk/"/>
+    <title type="html">Whoosh, there it is: Toshiba bods say 14TB helium-filled disk is coming soon</title>
+    <summary type="html" xml:base="http://www.theregister.co.uk/">&lt;h4&gt;Arriving by the end of 2017&lt;/h4&gt; &lt;p&gt;Toshiba stand staff at the Huawei Connect conference 2017 in Shanghai said a 14TB helium-filled disk drive would arrive "very soon".â€¦&lt;/p&gt; &lt;p&gt;&lt;!--#include virtual='/data_centre/_whitepaper_textlinks_top.html' --&gt;&lt;/p&gt;</summary>
+  </entry>
+  <entry>
+    <id>tag:theregister.co.uk,2005:story/2017/09/04/a_storage_roundup/</id>
+    <updated>2017-09-04T10:28:10Z</updated>
+    <author>
+      <name>Chris Mellor</name>
+      <uri>https://search.theregister.co.uk/?author=Chris%20Mellor</uri>
+    </author>
+    <link rel="alternate" type="text/html" href="http://go.theregister.com/feed/www.theregister.co.uk/2017/09/04/a_storage_roundup/"/>
+    <title type="html">Detox from your weekend kebabs with a healthy storage golubtsy</title>
+    <summary type="html" xml:base="http://www.theregister.co.uk/">&lt;h4&gt;Storage pigeons roost as we munch on cabbagey treats&lt;/h4&gt; &lt;p&gt;&lt;strong&gt;Comment&lt;/strong&gt;Â  Did you overdo it with the bacon and buttered toast at the weekend? Never mind, who among us can resist cooked cabbage leaves wrapped round nutritious meaty storage fillings? Get your knife, fork, spoon and napkin ready and load up your plate with what we have in store.â€¦&lt;/p&gt;</summary>
+  </entry>
+  <entry>
+    <id>tag:theregister.co.uk,2005:story/2017/08/31/sandisk_microcard/</id>
+    <updated>2017-08-31T18:52:33Z</updated>
+    <author>
+      <name>Chris Mellor</name>
+      <uri>https://search.theregister.co.uk/?author=Chris%20Mellor</uri>
+    </author>
+    <link rel="alternate" type="text/html" href="http://go.theregister.com/feed/www.theregister.co.uk/2017/08/31/sandisk_microcard/"/>
+    <title type="html">SanDisk's little microSD card sucks up 400GB</title>
+    <summary type="html" xml:base="http://www.theregister.co.uk/">&lt;h4&gt;iPhone charging and backup base unit also on cards&lt;/h4&gt; &lt;p&gt;WDC has the highest-capacity microSDXC card at 400GB â€“ pumping up mobile device storage space â€“ and has launched a natty little iPhone charger that backs up the phoneâ€™s data.â€¦&lt;/p&gt;</summary>
+  </entry>
+  <entry>
+    <id>tag:theregister.co.uk,2005:story/2017/08/31/coho_data_shuts_up_shop/</id>
+    <updated>2017-08-31T17:46:26Z</updated>
+    <author>
+      <name>Chris Mellor</name>
+      <uri>https://search.theregister.co.uk/?author=Chris%20Mellor</uri>
+    </author>
+    <link rel="alternate" type="text/html" href="http://go.theregister.com/feed/www.theregister.co.uk/2017/08/31/coho_data_shuts_up_shop/"/>
+    <title type="html">The down low on why Coho Data is a no-go</title>
+    <summary type="html" xml:base="http://www.theregister.co.uk/">&lt;h4&gt;Compute-assisted DataStream Micro Arrays are no more&lt;/h4&gt; &lt;p&gt;&lt;strong&gt;Exclusive&lt;/strong&gt;Â  Compute-assisted storage array startup Coho Data has shut up shop.â€¦&lt;/p&gt;</summary>
+  </entry>
+  <entry>
+    <id>tag:theregister.co.uk,2005:story/2017/08/31/wdc_home_nas_box/</id>
+    <updated>2017-08-31T15:02:09Z</updated>
+    <author>
+      <name>Chris Mellor</name>
+      <uri>https://search.theregister.co.uk/?author=Chris%20Mellor</uri>
+    </author>
+    <link rel="alternate" type="text/html" href="http://go.theregister.com/feed/www.theregister.co.uk/2017/08/31/wdc_home_nas_box/"/>
+    <title type="html">Western Digital has cloudified the NAS and shoved it in a trendy box</title>
+    <summary type="html" xml:base="http://www.theregister.co.uk/">&lt;h4&gt;Not a universal home data store, but it's close&lt;/h4&gt; &lt;p&gt;&lt;strong&gt;+Comment&lt;/strong&gt;Â  WDC has released a home NAS that syncs with devices for storing, streaming and sharing wherever there's an internet connection.â€¦&lt;/p&gt;</summary>
+  </entry>
+  <entry>
+    <id>tag:theregister.co.uk,2005:story/2017/08/31/wdc_becoming_aggressive_chipstodiskstosystems_biz/</id>
+    <updated>2017-08-31T09:02:13Z</updated>
+    <author>
+      <name>Chris Mellor</name>
+      <uri>https://search.theregister.co.uk/?author=Chris%20Mellor</uri>
+    </author>
+    <link rel="alternate" type="text/html" href="http://go.theregister.com/feed/www.theregister.co.uk/2017/08/31/wdc_becoming_aggressive_chipstodiskstosystems_biz/"/>
+    <title type="html">WDC's biz banquet has made it a chips-to-disks-to-systems monstrosity</title>
+    <summary type="html" xml:base="http://www.theregister.co.uk/">&lt;h4&gt;CEO Milligan has reshaped firm upwards and outwards&lt;/h4&gt; &lt;p&gt;&lt;b&gt;Analysis&lt;/b&gt; Western Digital Corporation under CEO Steve Milligan's rule is becoming an aggressively expanding chips, disks, systems and cloud storage business. It's trying to buy &lt;a target="_blank" href="https://www.theregister.co.uk/2017/08/30/toshiba_to_decide_if_wdc_gets_its_flash_biz/"&gt;Toshiba's flash foundry joint-venture interest&lt;/a&gt; and has just announced it's buying storage array-maker &lt;a target="_blank" href="https://www.theregister.co.uk/2017/08/29/taken_wdc_buys_tegile_storage_array_business/"&gt;Tegile&lt;/a&gt; and personal cloud storage provider &lt;a target="_blank" href="https://search.theregister.co.uk/?q=WDC"&gt;Upthere&lt;/a&gt;. What is Milligan up to?â€¦&lt;/p&gt; &lt;p&gt;&lt;!--#include virtual='/data_centre/_whitepaper_textlinks_top.html' --&gt;&lt;/p&gt;</summary>
+  </entry>
+  <entry>
+    <id>tag:theregister.co.uk,2005:story/2017/08/30/vmworld_hyperheist/</id>
+    <updated>2017-08-30T19:19:13Z</updated>
+    <author>
+      <name>Simon Sharwood</name>
+      <uri>https://search.theregister.co.uk/?author=Simon%20Sharwood</uri>
+    </author>
+    <link rel="alternate" type="text/html" href="http://go.theregister.com/feed/www.theregister.co.uk/2017/08/30/vmworld_hyperheist/"/>
+    <title type="html">VMworld security asked to probe theft of anti-Nutanix schwag</title>
+    <summary type="html" xml:base="http://www.theregister.co.uk/">&lt;h4&gt;Rival hyperconverged vendor Maxta says someone pinched its pins and silenced its stand&lt;/h4&gt; &lt;p&gt;Scandal has struck VMworld 2017 this week: hyperconverged software vendor Maxta says someone stole marketing material in which it was less than kind to Nutanix.â€¦&lt;/p&gt;</summary>
+  </entry>
+  <entry>
+    <id>tag:theregister.co.uk,2005:story/2017/08/30/caringos_100tb_license_costfree_foot_in_the_door/</id>
+    <updated>2017-08-30T14:03:17Z</updated>
+    <author>
+      <name>Chris Mellor</name>
+      <uri>https://search.theregister.co.uk/?author=Chris%20Mellor</uri>
+    </author>
+    <link rel="alternate" type="text/html" href="http://go.theregister.com/feed/www.theregister.co.uk/2017/08/30/caringos_100tb_license_costfree_foot_in_the_door/"/>
+    <title type="html">Caringo's 100TB cost-free Swarm licence foot in the door</title>
+    <summary type="html" xml:base="http://www.theregister.co.uk/">&lt;h4&gt;Media and entertainment businesses get free object storage offer&lt;/h4&gt; &lt;p&gt;Object storage software shipper Caringo is offering free 100TB licences to media and entertainment companies.â€¦&lt;/p&gt;</summary>
+  </entry>
+  <entry>
+    <id>tag:theregister.co.uk,2005:story/2017/08/30/scales_ludicrous_mode_hcia_with_20_microsecond_responsiveness/</id>
+    <updated>2017-08-30T12:33:07Z</updated>
+    <author>
+      <name>Chris Mellor</name>
+      <uri>https://search.theregister.co.uk/?author=Chris%20Mellor</uri>
+    </author>
+    <link rel="alternate" type="text/html" href="http://go.theregister.com/feed/www.theregister.co.uk/2017/08/30/scales_ludicrous_mode_hcia_with_20_microsecond_responsiveness/"/>
+    <title type="html">Scale unveils ludicrously fast HCIA with 20Î¼s latencies</title>
+    <summary type="html" xml:base="http://www.theregister.co.uk/">&lt;h4&gt;Lights the afterburners with NVMe flash and Optane drives, plus VM direct storage access&lt;/h4&gt; &lt;p&gt;Scale Computing has run lab tests showing hyperconverged virtual machine IO performance using NVM express (NVMe), achieving mean IO latencies as low as 20Î¼s delivered to a guest virtual machine.â€¦&lt;/p&gt;</summary>
+  </entry>
+  <entry>
+    <id>tag:theregister.co.uk,2005:story/2017/08/30/toshiba_to_decide_if_wdc_gets_its_flash_biz/</id>
+    <updated>2017-08-30T08:02:13Z</updated>
+    <author>
+      <name>Chris Mellor</name>
+      <uri>https://search.theregister.co.uk/?author=Chris%20Mellor</uri>
+    </author>
+    <link rel="alternate" type="text/html" href="http://go.theregister.com/feed/www.theregister.co.uk/2017/08/30/toshiba_to_decide_if_wdc_gets_its_flash_biz/"/>
+    <title type="html">It's make-your-mind-up time! Toshiba to decide if WDC gets its flash biz</title>
+    <summary type="html" xml:base="http://www.theregister.co.uk/">&lt;h4&gt;Something may happen soonâ„¢&lt;/h4&gt; &lt;p&gt;Some details have leaked about the &lt;a target="_blank" href="https://www.theregister.co.uk/2017/08/23/toshiba_wd_memory_saga_latest/"&gt;bid consortium&lt;/a&gt; negotiating to buy Toshiba's interest in the flash foundry joint-venture it owns with WDC.â€¦&lt;/p&gt;</summary>
+  </entry>
+  <entry>
+    <id>tag:theregister.co.uk,2005:story/2017/08/29/taken_wdc_buys_tegile_storage_array_business/</id>
+    <updated>2017-08-29T16:01:05Z</updated>
+    <author>
+      <name>Chris Mellor</name>
+      <uri>https://search.theregister.co.uk/?author=Chris%20Mellor</uri>
+    </author>
+    <link rel="alternate" type="text/html" href="http://go.theregister.com/feed/www.theregister.co.uk/2017/08/29/taken_wdc_buys_tegile_storage_array_business/"/>
+    <title type="html">Western Digital continues buying spree by snapping up Tegile</title>
+    <summary type="html" xml:base="http://www.theregister.co.uk/">&lt;h4&gt;That's one way for a storage array business to avoid an IPO&lt;/h4&gt; &lt;p&gt;After dropping $1.4bn to try and buy Toshibaâ€™s stake in the WDC-Toshiba flash foundry joint-venture, WDC has just bought the Tegile storage array business. Oh, and it bought the &lt;a target="_blank" href="https://search.theregister.co.uk/?q=WDC"&gt;Upthere&lt;/a&gt; cloud consumer storage business for a guesstimated $100m-plus yesterday as well.â€¦&lt;/p&gt; &lt;p&gt;&lt;!--#include virtual='/data_centre/_whitepaper_textlinks_top.html' --&gt;&lt;/p&gt;</summary>
+  </entry>
+  <entry>
+    <id>tag:theregister.co.uk,2005:story/2017/08/29/storage_roundup/</id>
+    <updated>2017-08-29T05:01:06Z</updated>
+    <author>
+      <name>Chris Mellor</name>
+      <uri>https://search.theregister.co.uk/?author=Chris%20Mellor</uri>
+    </author>
+    <link rel="alternate" type="text/html" href="http://go.theregister.com/feed/www.theregister.co.uk/2017/08/29/storage_roundup/"/>
+    <title type="html">Fancy a free breakfast buffet? Tuck in to this storage smÃ¶rgÃ¥sbord</title>
+    <summary type="html" xml:base="http://www.theregister.co.uk/">&lt;h4&gt;See how how your storage food can be protected, replicated, encrypted, cached and more&lt;/h4&gt; &lt;p&gt;Breakfast is the most important meal of the day, so start yours right with a balanced meal of software-defined, hyper-converged, hardware-accelerated, containerised, and virtualised storage industry news.â€¦&lt;/p&gt;</summary>
+  </entry>
+  <entry>
+    <id>tag:theregister.co.uk,2005:story/2017/08/28/2d_to_3d_nand_transition/</id>
+    <updated>2017-08-28T09:37:12Z</updated>
+    <author>
+      <name>Chris Mellor</name>
+      <uri>https://search.theregister.co.uk/?author=Chris%20Mellor</uri>
+    </author>
+    <link rel="alternate" type="text/html" href="http://go.theregister.com/feed/www.theregister.co.uk/2017/08/28/2d_to_3d_nand_transition/"/>
+    <title type="html">Another dimension, new galaxy. Intergalactic planar-tary: Join us on our 3D NAND journey</title>
+    <summary type="html" xml:base="http://www.theregister.co.uk/">&lt;h4&gt;Part two of our look into storage world's transition from 2D&lt;/h4&gt; &lt;p&gt;&lt;strong&gt;Analysis&lt;/strong&gt;Â  &lt;a target="_blank" href="https://www.theregister.co.uk/2017/08/24/ssds_will_not_kill_off_hdds/"&gt;Part one&lt;/a&gt; of my attempt to understand the transition from 2D to 3DÂ NAND started out by trying to understand how 2DÂ NAND is made, so that its development towards 3DÂ NAND can be understood.â€¦&lt;/p&gt;</summary>
+  </entry>
+  <entry>
+    <id>tag:theregister.co.uk,2005:story/2017/08/25/pure_storage_switches_ceo/</id>
+    <updated>2017-08-25T10:40:13Z</updated>
+    <author>
+      <name>Chris Mellor</name>
+      <uri>https://search.theregister.co.uk/?author=Chris%20Mellor</uri>
+    </author>
+    <link rel="alternate" type="text/html" href="http://go.theregister.com/feed/www.theregister.co.uk/2017/08/25/pure_storage_switches_ceo/"/>
+    <title type="html">Pats on the back all round as Pure Storage announces new CEO and growing revenues</title>
+    <summary type="html" xml:base="http://www.theregister.co.uk/">&lt;h4&gt;Scott Dietzen chairman now, Charles Giancarlo takes reins&lt;/h4&gt; &lt;p&gt;As Pure Storage boasted strong second-quarter sales yesterday, the company also revealed that CEO Scott Dietzen would be stepping down to become chairman of the board.â€¦&lt;/p&gt;</summary>
+  </entry>
+  <entry>
+    <id>tag:theregister.co.uk,2005:story/2017/08/25/3d_nand_part_1/</id>
+    <updated>2017-08-25T08:02:11Z</updated>
+    <author>
+      <name>Chris Mellor</name>
+      <uri>https://search.theregister.co.uk/?author=Chris%20Mellor</uri>
+    </author>
+    <link rel="alternate" type="text/html" href="http://go.theregister.com/feed/www.theregister.co.uk/2017/08/25/3d_nand_part_1/"/>
+    <title type="html">Gather round, kids, and let's try to understand the science of 3D NAND</title>
+    <summary type="html" xml:base="http://www.theregister.co.uk/">&lt;h4&gt;Part 1: Start with the flat 2D planar stuff&lt;/h4&gt; &lt;p&gt;&lt;strong&gt;Backgrounder&lt;/strong&gt;Â  The world of flash is moving to 3D NAND, chips with 36, 48, 72 or 64 layers of flash cells, and 96-layer chips being prototyped. How has it developed from 2D NAND?â€¦&lt;/p&gt;</summary>
+  </entry>
+  <entry>
+    <id>tag:theregister.co.uk,2005:story/2017/08/25/suse_btrfs_defence/</id>
+    <updated>2017-08-25T01:36:56Z</updated>
+    <author>
+      <name>Simon Sharwood</name>
+      <uri>https://search.theregister.co.uk/?author=Simon%20Sharwood</uri>
+    </author>
+    <link rel="alternate" type="text/html" href="http://go.theregister.com/feed/www.theregister.co.uk/2017/08/25/suse_btrfs_defence/"/>
+    <title type="html">SUSE pledges endless love for btrfs, says Red Hat's dumping irrelevant</title>
+    <summary type="html" xml:base="http://www.theregister.co.uk/">&lt;h4&gt;Also hints at crypto and update tech to make it handy for updating Linux on IoT devices&lt;/h4&gt; &lt;p&gt;SUSE has decided to let the world know it has no plans to step away from the btrfs filesystem, and plans to make it even better.â€¦&lt;/p&gt; &lt;p&gt;&lt;!--#include virtual='/data_centre/_whitepaper_textlinks_top.html' --&gt;&lt;/p&gt;</summary>
+  </entry>
+  <entry>
+    <id>tag:theregister.co.uk,2005:story/2017/08/24/the_lesshidden_benefits_of_modern_flash/</id>
+    <updated>2017-08-24T13:53:08Z</updated>
+    <author>
+      <name>Bryan Betts</name>
+      <uri>https://search.theregister.co.uk/?author=Bryan%20Betts</uri>
+    </author>
+    <link rel="alternate" type="text/html" href="http://go.theregister.com/feed/www.theregister.co.uk/2017/08/24/the_lesshidden_benefits_of_modern_flash/"/>
+    <title type="html">The less-hidden benefits of modern Flash</title>
+    <summary type="html" xml:base="http://www.theregister.co.uk/">&lt;h4&gt;Letâ€™s go surfing the waves of AFA automation and orchestration&lt;/h4&gt; &lt;p&gt;&lt;strong&gt;Research&lt;/strong&gt;Â  Done properly, All-Flash Arrays are a lot more than just extra-fast storage: Reg readers told us in a &lt;a href="https://whitepapers.theregister.co.uk/paper/view/5926/all-flash-arrays-a-catalyst-for-transformation"&gt;recent survey&lt;/a&gt; that they can also be that rare thing, a transformational technology. Even if you have already invested in AFA technology and obtained good returns simply from the performance boost, there is almost certainly more that could be wrung from it, such as the opportunity to upskill and free up resources for more important tasks than routine admin.â€¦&lt;/p&gt;</summary>
+  </entry>
+  <entry>
+    <id>tag:theregister.co.uk,2005:story/2017/08/24/ssds_will_not_kill_off_hdds/</id>
+    <updated>2017-08-24T09:04:05Z</updated>
+    <author>
+      <name>Chris Mellor</name>
+      <uri>https://search.theregister.co.uk/?author=Chris%20Mellor</uri>
+    </author>
+    <link rel="alternate" type="text/html" href="http://go.theregister.com/feed/www.theregister.co.uk/2017/08/24/ssds_will_not_kill_off_hdds/"/>
+    <title type="html">&lt;i&gt;El Reg&lt;/i&gt; gets schooled on why SSDs will NOT kill off the trusty hard drive</title>
+    <summary type="html" xml:base="http://www.theregister.co.uk/">&lt;h4&gt;Shirts will be lost!&lt;/h4&gt; &lt;p&gt;&lt;strong&gt;Interview&lt;/strong&gt;Â  Some commentators think saying &lt;a target="_blank" href="https://www.theregister.co.uk/2017/08/10/128tb_ssds_signal_coming_armageddon_for_disk_drives/"&gt;SSDs will kill off disk drives&lt;/a&gt; is wrong. Here is an exchange &lt;i&gt;El Reg&lt;/i&gt; had with a storage media industry insider who wished to remain anonymousâ€¦&lt;/p&gt;</summary>
+  </entry>
+  <entry>
+    <id>tag:theregister.co.uk,2005:story/2017/08/23/wd_20tb_my_book_duo_external_drive/</id>
+    <updated>2017-08-23T12:46:05Z</updated>
+    <author>
+      <name>Chris Mellor</name>
+      <uri>https://search.theregister.co.uk/?author=Chris%20Mellor</uri>
+    </author>
+    <link rel="alternate" type="text/html" href="http://go.theregister.com/feed/www.theregister.co.uk/2017/08/23/wd_20tb_my_book_duo_external_drive/"/>
+    <title type="html">Western Digital hauls out weighty tome with 20TB external storage</title>
+    <summary type="html" xml:base="http://www.theregister.co.uk/">&lt;h4&gt;Sluggish Red drives pumped with RAID to get speed up&lt;/h4&gt; &lt;p&gt;Western Digital has bundled a pair of slow Red drives into a My Book Duo external storage product, using RAID to get the speed up.â€¦&lt;/p&gt;</summary>
+  </entry>
+  <entry>
+    <id>tag:theregister.co.uk,2005:story/2017/08/22/micron_changes_one_storage_bu_top_gun_for_another/</id>
+    <updated>2017-08-22T16:39:10Z</updated>
+    <author>
+      <name>Chris Mellor</name>
+      <uri>https://search.theregister.co.uk/?author=Chris%20Mellor</uri>
+    </author>
+    <link rel="alternate" type="text/html" href="http://go.theregister.com/feed/www.theregister.co.uk/2017/08/22/micron_changes_one_storage_bu_top_gun_for_another/"/>
+    <title type="html">Micron's new storage division lead is third former SanDisk recruit</title>
+    <summary type="html" xml:base="http://www.theregister.co.uk/">&lt;h4&gt;Anand Jayapalan replaces Darren Thomas&lt;/h4&gt; &lt;p&gt;Micron has replaced its storage business unit VP, Darren Thomas, with a former SanDisk exec, Anand Jayapalan.â€¦&lt;/p&gt;</summary>
+  </entry>
+  <entry>
+    <id>tag:theregister.co.uk,2005:story/2017/08/22/druva_funds/</id>
+    <updated>2017-08-22T14:58:13Z</updated>
+    <author>
+      <name>Chris Mellor</name>
+      <uri>https://search.theregister.co.uk/?author=Chris%20Mellor</uri>
+    </author>
+    <link rel="alternate" type="text/html" href="http://go.theregister.com/feed/www.theregister.co.uk/2017/08/22/druva_funds/"/>
+    <title type="html">End-point backupper Druva stuffs sack with another $80m in VC cash</title>
+    <summary type="html" xml:base="http://www.theregister.co.uk/">&lt;h4&gt;Funding round lifts startup's profile and firepower&lt;/h4&gt; &lt;p&gt;End-point backup and data governance starup Druva has just raked in an $80m funding round less than a year after it pulled in &lt;a target="_blank" href="https://www.theregister.co.uk/2016/09/29/druva_gets_funding_dosh_deluge/"&gt;$52m&lt;/a&gt;.â€¦&lt;/p&gt; &lt;p&gt;&lt;!--#include virtual='/data_centre/_whitepaper_textlinks_top.html' --&gt;&lt;/p&gt;</summary>
+  </entry>
+  <entry>
+    <id>tag:theregister.co.uk,2005:story/2017/08/22/aws_amazon_macie_bot/</id>
+    <updated>2017-08-22T13:04:05Z</updated>
+    <author>
+      <name>Chris Mellor</name>
+      <uri>https://search.theregister.co.uk/?author=Chris%20Mellor</uri>
+    </author>
+    <link rel="alternate" type="text/html" href="http://go.theregister.com/feed/www.theregister.co.uk/2017/08/22/aws_amazon_macie_bot/"/>
+    <title type="html">If there's a hole in your S3 bucket, data thieves will be sprayed by Macie</title>
+    <summary type="html" xml:base="http://www.theregister.co.uk/">&lt;h4&gt;Data loss prevention bot patrols Amazon's cloud storage solution&lt;/h4&gt; &lt;p&gt;&lt;strong&gt;Analysis&lt;/strong&gt;Â  Data loss prevention is about to get a whole lot smarter.â€¦&lt;/p&gt;</summary>
+  </entry>
+  <entry>
+    <id>tag:theregister.co.uk,2005:story/2017/08/21/tegile_goes_nvme/</id>
+    <updated>2017-08-21T16:02:11Z</updated>
+    <author>
+      <name>Chris Mellor</name>
+      <uri>https://search.theregister.co.uk/?author=Chris%20Mellor</uri>
+    </author>
+    <link rel="alternate" type="text/html" href="http://go.theregister.com/feed/www.theregister.co.uk/2017/08/21/tegile_goes_nvme/"/>
+    <title type="html">Tegile arrays tire of SAS backplane, cosy up to hunky newcomer NVMe</title>
+    <summary type="html" xml:base="http://www.theregister.co.uk/">&lt;h4&gt;It's all NVMe-me-me nowadays&lt;/h4&gt; &lt;p&gt;Tegile is moving on from SAS backplanes and has developed an N-Series array product line with NVMe flash drives.â€¦&lt;/p&gt;</summary>
+  </entry>
+  <entry>
+    <id>tag:theregister.co.uk,2005:story/2017/08/21/cisco_buying_springpath_320m/</id>
+    <updated>2017-08-21T15:34:12Z</updated>
+    <author>
+      <name>Chris Mellor</name>
+      <uri>https://search.theregister.co.uk/?author=Chris%20Mellor</uri>
+    </author>
+    <link rel="alternate" type="text/html" href="http://go.theregister.com/feed/www.theregister.co.uk/2017/08/21/cisco_buying_springpath_320m/"/>
+    <title type="html">Get hyped: Cisco makes $320m intentions known to startup Springpath</title>
+    <summary type="html" xml:base="http://www.theregister.co.uk/">&lt;h4&gt;Will supply the software for Netzilla's HyperFlex HCIA line&lt;/h4&gt; &lt;p&gt;Cisco is &lt;a target="_blank" rel="nofollow" href="https://blogs.cisco.com/news/cisco-announces-data-center-news-%E2%80%8E?_ga=2.11943740.949315187.1503323081-2138583859.1330077333"&gt;buying Springpath for $320m&lt;/a&gt; and will have the startup supply the software for its HyperFlex hyperconverged products.â€¦&lt;/p&gt;</summary>
+  </entry>
+  <entry>
+    <id>tag:theregister.co.uk,2005:story/2017/08/21/mangstor_raises_7m_for_nvme_array_development_shop/</id>
+    <updated>2017-08-21T12:04:07Z</updated>
+    <author>
+      <name>Chris Mellor</name>
+      <uri>https://search.theregister.co.uk/?author=Chris%20Mellor</uri>
+    </author>
+    <link rel="alternate" type="text/html" href="http://go.theregister.com/feed/www.theregister.co.uk/2017/08/21/mangstor_raises_7m_for_nvme_array_development_shop/"/>
+    <title type="html">NVMe? You should. Mangstor hauls in $7.1m for array development shop</title>
+    <summary type="html" xml:base="http://www.theregister.co.uk/">&lt;h4&gt;And Austin-based firm is hiring&lt;/h4&gt; &lt;p&gt;Stuttering NVMe-over-Fabrics startup Mangstor has raised $7.1m and is hiring.â€¦&lt;/p&gt;</summary>
+  </entry>
+  <entry>
+    <id>tag:theregister.co.uk,2005:story/2017/08/21/weekend_storage_sushi_bar/</id>
+    <updated>2017-08-21T10:23:05Z</updated>
+    <author>
+      <name>Chris Mellor</name>
+      <uri>https://search.theregister.co.uk/?author=Chris%20Mellor</uri>
+    </author>
+    <link rel="alternate" type="text/html" href="http://go.theregister.com/feed/www.theregister.co.uk/2017/08/21/weekend_storage_sushi_bar/"/>
+    <title type="html">The rice of cloud, avocado of virtualization and salmon of doubt: Let's eat storage sushi</title>
+    <summary type="html" xml:base="http://www.theregister.co.uk/">&lt;h4&gt;It's a week's worth of storage nutrition, so let's tuck in&lt;/h4&gt; &lt;p&gt;We've got a few storage news sushi snacks to start off your week. Get your chopsticks out and lift up each of these little beauties to get a taste of who's doing what in the land of the data-baiters, virtualizer commercializers and the cloud crowd.â€¦&lt;/p&gt; &lt;p&gt;&lt;!--#include virtual='/data_centre/_whitepaper_textlinks_top.html' --&gt;&lt;/p&gt;</summary>
+  </entry>
+  <entry>
+    <id>tag:theregister.co.uk,2005:story/2017/08/21/nvme_fabrics_comment/</id>
+    <updated>2017-08-21T08:10:10Z</updated>
+    <author>
+      <name>Chris Mellor</name>
+      <uri>https://search.theregister.co.uk/?author=Chris%20Mellor</uri>
+    </author>
+    <link rel="alternate" type="text/html" href="http://go.theregister.com/feed/www.theregister.co.uk/2017/08/21/nvme_fabrics_comment/"/>
+    <title type="html">NVMe fabrics could shuffle traditional arrays off to the graveyard</title>
+    <summary type="html" xml:base="http://www.theregister.co.uk/">&lt;h4&gt;With the array controller out of the data path, who needs it?&lt;/h4&gt; &lt;p&gt;&lt;strong&gt;Opinion&lt;/strong&gt;Â  NVMe-over-Fabrics (NVMeF) shared storage access could kill the legacy storage array business â€“ unless vendors get inventive and somehow continue to supply charged-for data management services alongside NVMeF data access.â€¦&lt;/p&gt;</summary>
+  </entry>
+  <entry>
+    <id>tag:theregister.co.uk,2005:story/2017/08/18/netapp_buys_icelandic_cloud_management_sw_biz/</id>
+    <updated>2017-08-18T14:50:05Z</updated>
+    <author>
+      <name>Chris Mellor</name>
+      <uri>https://search.theregister.co.uk/?author=Chris%20Mellor</uri>
+    </author>
+    <link rel="alternate" type="text/html" href="http://go.theregister.com/feed/www.theregister.co.uk/2017/08/18/netapp_buys_icelandic_cloud_management_sw_biz/"/>
+    <title type="html">NetApp swallows Icelandic cloud management software biz</title>
+    <summary type="html" xml:base="http://www.theregister.co.uk/">&lt;h4&gt;Greenqloudâ€™s QStack becomes gets NetApp-ed&lt;/h4&gt; &lt;p&gt;NetApp has made one of its relatively rare acquisitions â€“ this time an Icelandic cloud management software house called Greenqloud with its Qstack product.â€¦&lt;/p&gt;</summary>
+  </entry>
+  <entry>
+    <id>tag:theregister.co.uk,2005:story/2017/08/18/falconstor_ceo_replaced_after_just_six_weeks/</id>
+    <updated>2017-08-18T12:27:05Z</updated>
+    <author>
+      <name>Chris Mellor</name>
+      <uri>https://search.theregister.co.uk/?author=Chris%20Mellor</uri>
+    </author>
+    <link rel="alternate" type="text/html" href="http://go.theregister.com/feed/www.theregister.co.uk/2017/08/18/falconstor_ceo_replaced_after_just_six_weeks/"/>
+    <title type="html">Last FalconStor CEO survived just six weeks before being replaced</title>
+    <summary type="html" xml:base="http://www.theregister.co.uk/">&lt;h4&gt;New CFO too as data protection firm refuses to give in&lt;/h4&gt; &lt;p&gt;&lt;strong&gt;+Comment&lt;/strong&gt;Â  It's all change at FalconStor, which has a new CEO and CFO just six weeks after the last chief exec was appointed.â€¦&lt;/p&gt;</summary>
+  </entry>
+  <entry>
+    <id>tag:theregister.co.uk,2005:story/2017/08/17/dram_revenues/</id>
+    <updated>2017-08-17T14:07:10Z</updated>
+    <author>
+      <name>Andrew Silver</name>
+      <uri>https://search.theregister.co.uk/?author=Andrew%20Silver</uri>
+    </author>
+    <link rel="alternate" type="text/html" href="http://go.theregister.com/feed/www.theregister.co.uk/2017/08/17/dram_revenues/"/>
+    <title type="html">Making money is so DRAM easy for some memory-flingers</title>
+    <summary type="html" xml:base="http://www.theregister.co.uk/">&lt;h4&gt;Another record revenue quarter ... even as drought eases&lt;/h4&gt; &lt;p&gt;While we are recovering from the global DRAM shortage, there's still enough of a drought for chip-slingers to rake in record revenues.â€¦&lt;/p&gt;</summary>
+  </entry>
+  <entry>
+    <id>tag:theregister.co.uk,2005:story/2017/08/17/netapp_results/</id>
+    <updated>2017-08-17T09:38:04Z</updated>
+    <author>
+      <name>Chris Mellor</name>
+      <uri>https://search.theregister.co.uk/?author=Chris%20Mellor</uri>
+    </author>
+    <link rel="alternate" type="text/html" href="http://go.theregister.com/feed/www.theregister.co.uk/2017/08/17/netapp_results/"/>
+    <title type="html">NetApp, you went all-flash, never go all-fla... Hey, wait. It's working</title>
+    <summary type="html" xml:base="http://www.theregister.co.uk/">&lt;h4&gt;Slight biz uptick, steady results should keep CEO smiling&lt;/h4&gt; &lt;p&gt;NetApp has managed to go back to what it used to do do reliably: churn out revenue and profit increases as its customer base lapped up new kit.â€¦&lt;/p&gt; &lt;p&gt;&lt;!--#include virtual='/data_centre/_whitepaper_textlinks_top.html' --&gt;&lt;/p&gt;</summary>
+  </entry>
+  <entry>
+    <id>tag:theregister.co.uk,2005:story/2017/08/17/tintri_arrays_announce/</id>
+    <updated>2017-08-17T08:34:11Z</updated>
+    <author>
+      <name>Chris Mellor</name>
+      <uri>https://search.theregister.co.uk/?author=Chris%20Mellor</uri>
+    </author>
+    <link rel="alternate" type="text/html" href="http://go.theregister.com/feed/www.theregister.co.uk/2017/08/17/tintri_arrays_announce/"/>
+    <title type="html">What'll we do tonight, Kieran? Same thing we do every night, Tintri....</title>
+    <summary type="html" xml:base="http://www.theregister.co.uk/">&lt;h4&gt;... try to take over your public cloudy worlds (one array at a time)&lt;/h4&gt; &lt;p&gt;&lt;a target="_blank" href="https://www.theregister.co.uk/2017/06/30/tintri_ipo/"&gt;Newly-IPOâ€™d Tintri&lt;/a&gt; has made its storage array bigger, better and faster by extending it out to the AWS and IBM clouds, speeding specifically Storage vMotion, upping its scalability limit and predicting future capacity and compute needs.â€¦&lt;/p&gt;</summary>
+  </entry>
+  <entry>
+    <id>tag:theregister.co.uk,2005:story/2017/08/16/samsung_pocketable_2tb_ssd/</id>
+    <updated>2017-08-16T15:24:06Z</updated>
+    <author>
+      <name>Chris Mellor</name>
+      <uri>https://search.theregister.co.uk/?author=Chris%20Mellor</uri>
+    </author>
+    <link rel="alternate" type="text/html" href="http://go.theregister.com/feed/www.theregister.co.uk/2017/08/16/samsung_pocketable_2tb_ssd/"/>
+    <title type="html">Samsung's bantam SSD makes WD's 'passport' drive look passÃ©</title>
+    <summary type="html" xml:base="http://www.theregister.co.uk/">&lt;h4&gt;Is that 2TB in your pocket or are you just pleased to see me?&lt;/h4&gt; &lt;p&gt;Samsung has introduced a 2TB T5 portable SSD you can stick in your shirt pocket.â€¦&lt;/p&gt;</summary>
+  </entry>
+  <entry>
+    <id>tag:theregister.co.uk,2005:story/2017/08/16/toshiba/</id>
+    <updated>2017-08-16T13:04:59Z</updated>
+    <author>
+      <name>Chris Mellor</name>
+      <uri>https://search.theregister.co.uk/?author=Chris%20Mellor</uri>
+    </author>
+    <link rel="alternate" type="text/html" href="http://go.theregister.com/feed/www.theregister.co.uk/2017/08/16/toshiba/"/>
+    <title type="html">Toshiba must allow Western Digital access to joint-venture assets</title>
+    <summary type="html" xml:base="http://www.theregister.co.uk/">&lt;h4&gt;Tear down the wall, Tosh, says Cali Court&lt;/h4&gt; &lt;p&gt;Western Digital Corp has notched up another win in its attempt to force Toshiba to talk turkey about selling its Memory Business to WD, or a bid group with its JV partner in it.â€¦&lt;/p&gt;</summary>
+  </entry>
+  <entry>
+    <id>tag:theregister.co.uk,2005:story/2017/08/16/sphere_3d_looking_at_strategic_alternatives/</id>
+    <updated>2017-08-16T09:36:05Z</updated>
+    <author>
+      <name>Chris Mellor</name>
+      <uri>https://search.theregister.co.uk/?author=Chris%20Mellor</uri>
+    </author>
+    <link rel="alternate" type="text/html" href="http://go.theregister.com/feed/www.theregister.co.uk/2017/08/16/sphere_3d_looking_at_strategic_alternatives/"/>
+    <title type="html">Loss-making storage survivor Sphere 3D looking at 'strategic alternatives'</title>
+    <summary type="html" xml:base="http://www.theregister.co.uk/">&lt;h4&gt;We think it probably doesn't involve listening to Sonic Youth&lt;/h4&gt; &lt;p&gt;Sphere 3D is "reviewing strategic alternatives", a sign that itâ€™s open to a sale or being split up.â€¦&lt;/p&gt;</summary>
+  </entry>
+  <entry>
+    <id>tag:theregister.co.uk,2005:story/2017/08/16/red_hat_banishes_btrfs_from_rhel/</id>
+    <updated>2017-08-16T02:54:14Z</updated>
+    <author>
+      <name>Simon Sharwood</name>
+      <uri>https://search.theregister.co.uk/?author=Simon%20Sharwood</uri>
+    </author>
+    <link rel="alternate" type="text/html" href="http://go.theregister.com/feed/www.theregister.co.uk/2017/08/16/red_hat_banishes_btrfs_from_rhel/"/>
+    <title type="html">Red Hat banishes Btrfs from RHEL</title>
+    <summary type="html" xml:base="http://www.theregister.co.uk/">&lt;h4&gt;ZFS On Linux adds the proper crypto Google wants before considering Btfrs for Android&lt;/h4&gt; &lt;p&gt;Red Hat has banished the Btrfs, the Oracle-created file system intended to help harden Linux's storage capabilities.â€¦&lt;/p&gt; &lt;p&gt;&lt;!--#include virtual='/data_centre/_whitepaper_textlinks_top.html' --&gt;&lt;/p&gt;</summary>
+  </entry>
+  <entry>
+    <id>tag:theregister.co.uk,2005:story/2017/08/16/barracuda_aws_s3/</id>
+    <updated>2017-08-16T02:26:09Z</updated>
+    <author>
+      <name>Chris Mellor</name>
+      <uri>https://search.theregister.co.uk/?author=Chris%20Mellor</uri>
+    </author>
+    <link rel="alternate" type="text/html" href="http://go.theregister.com/feed/www.theregister.co.uk/2017/08/16/barracuda_aws_s3/"/>
+    <title type="html">When is a Barracuda not a Barracuda? When it's really AWS S3</title>
+    <summary type="html" xml:base="http://www.theregister.co.uk/">&lt;h4&gt;Now you can replicate backups to Barracuda's actually-Amazonian cloud&lt;/h4&gt; &lt;p&gt;Barracuda's backup appliances can now replicate data to Amazonâ€™s S3 cloud silos.â€¦&lt;/p&gt;</summary>
+  </entry>
+  <entry>
+    <id>tag:theregister.co.uk,2005:story/2017/08/15/datrium_expands_from_one_to_ten_data_nodes_and_separately_scales_compute_and_capacity/</id>
+    <updated>2017-08-15T16:36:12Z</updated>
+    <author>
+      <name>Chris Mellor</name>
+      <uri>https://search.theregister.co.uk/?author=Chris%20Mellor</uri>
+    </author>
+    <link rel="alternate" type="text/html" href="http://go.theregister.com/feed/www.theregister.co.uk/2017/08/15/datrium_expands_from_one_to_ten_data_nodes_and_separately_scales_compute_and_capacity/"/>
+    <title type="html">Datrium claims its split-provisioning DVX array is 'tomorrow calling'</title>
+    <summary type="html" xml:base="http://www.theregister.co.uk/">&lt;h4&gt;And it wants its super-scaling, newfangled tech back&lt;/h4&gt; &lt;p&gt;Datrium is providing separate scaling of CPU power and storage capacity in its disaggregated converged storage arrays.â€¦&lt;/p&gt;</summary>
+  </entry>
+  <entry>
+    <id>tag:theregister.co.uk,2005:story/2017/08/15/atomic_systems_servers_and_motherboards/</id>
+    <updated>2017-08-15T14:59:10Z</updated>
+    <author>
+      <name>Chris Mellor</name>
+      <uri>https://search.theregister.co.uk/?author=Chris%20Mellor</uri>
+    </author>
+    <link rel="alternate" type="text/html" href="http://go.theregister.com/feed/www.theregister.co.uk/2017/08/15/atomic_systems_servers_and_motherboards/"/>
+    <title type="html">Atomic bonds: Gigabyte, Supermicro fire out boosted Atom CPU range</title>
+    <summary type="html" xml:base="http://www.theregister.co.uk/">&lt;h4&gt;Denverton systems, servers and motherboards&lt;/h4&gt; &lt;p&gt;Gigabyte and Supermicro are bringing out &lt;a target="_blank" href="https://www.theregister.co.uk/2017/02/23/intel_scales_atom_to_16_cores_updates_xeon_socs/"&gt;Atom C3000-powered&lt;/a&gt; systems, servers and motherboards.â€¦&lt;/p&gt;</summary>
+  </entry>
+  <entry>
+    <id>tag:theregister.co.uk,2005:story/2017/08/15/netapp_nvme_over_fabrics_storage_class_memory/</id>
+    <updated>2017-08-15T08:02:23Z</updated>
+    <author>
+      <name>Chris Mellor</name>
+      <uri>https://search.theregister.co.uk/?author=Chris%20Mellor</uri>
+    </author>
+    <link rel="alternate" type="text/html" href="http://go.theregister.com/feed/www.theregister.co.uk/2017/08/15/netapp_nvme_over_fabrics_storage_class_memory/"/>
+    <title type="html">Nice guy NetApp's adopting 'disruptive' tech non-disruptively</title>
+    <summary type="html" xml:base="http://www.theregister.co.uk/">&lt;h4&gt;Gently easing us into the NVMe-over-Fabrics and storage-class memory future&lt;/h4&gt; &lt;p&gt;&lt;strong&gt;Analysis&lt;/strong&gt;Â  NetApp will bring disruptive NVMe-over-Fabrics technology to its customers in a non-disruptive way.â€¦&lt;/p&gt;</summary>
+  </entry>
+  <entry>
+    <id>tag:theregister.co.uk,2005:story/2017/08/14/diablo_technologies/</id>
+    <updated>2017-08-14T13:43:12Z</updated>
+    <author>
+      <name>Chris Mellor</name>
+      <uri>https://search.theregister.co.uk/?author=Chris%20Mellor</uri>
+    </author>
+    <link rel="alternate" type="text/html" href="http://go.theregister.com/feed/www.theregister.co.uk/2017/08/14/diablo_technologies/"/>
+    <title type="html">Diablo Technologies sheds three execs</title>
+    <summary type="html" xml:base="http://www.theregister.co.uk/">&lt;h4&gt;NV-DIMM flash tech changes&lt;/h4&gt; &lt;p&gt;Two co-founding execs and a senior veep for sales have exited flash NV-DIMM startup Diablo Technologies.â€¦&lt;/p&gt; &lt;p&gt;&lt;!--#include virtual='/data_centre/_whitepaper_textlinks_top.html' --&gt;&lt;/p&gt;</summary>
+  </entry>
+  <entry>
+    <id>tag:theregister.co.uk,2005:story/2017/08/11/washed_up_on_the_storage_beach/</id>
+    <updated>2017-08-11T16:01:14Z</updated>
+    <author>
+      <name>Chris Mellor</name>
+      <uri>https://search.theregister.co.uk/?author=Chris%20Mellor</uri>
+    </author>
+    <link rel="alternate" type="text/html" href="http://go.theregister.com/feed/www.theregister.co.uk/2017/08/11/washed_up_on_the_storage_beach/"/>
+    <title type="html">Where's the bloody flare gun? Cast adrift on a swirling gyre of storage</title>
+    <summary type="html" xml:base="http://www.theregister.co.uk/">&lt;h4&gt;I'm sending out an SAS&lt;/h4&gt; &lt;p&gt;Bobbing around the Sargasso Sea of storage news this week we see cast-off sandals, bits of plastic, seaweed... oh, what's that?! A lifeboat? No, just some Flash Memory Summit jetsam. Let's dive in and see what we have.â€¦&lt;/p&gt;</summary>
+  </entry>
+  <entry>
+    <id>tag:theregister.co.uk,2005:story/2017/08/11/mimecast_q1_2018/</id>
+    <updated>2017-08-11T11:02:48Z</updated>
+    <author>
+      <name>Chris Mellor</name>
+      <uri>https://search.theregister.co.uk/?author=Chris%20Mellor</uri>
+    </author>
+    <link rel="alternate" type="text/html" href="http://go.theregister.com/feed/www.theregister.co.uk/2017/08/11/mimecast_q1_2018/"/>
+    <title type="html">Data archiver striver Mimecast reports revenues rise of 40%</title>
+    <summary type="html" xml:base="http://www.theregister.co.uk/">&lt;h4&gt;Tackling cloud and ransomware takes firm to a happy place&lt;/h4&gt; &lt;p&gt;Email and data archiver &lt;a target="_blank" href="https://www.theregister.co.uk/2017/07/21/friday_storage_roundup/"&gt;Mimecast&lt;/a&gt; reported a year-on-year increase in revenues of 40 per cent for Q1 2018.â€¦&lt;/p&gt;</summary>
+  </entry>
+</feed>
