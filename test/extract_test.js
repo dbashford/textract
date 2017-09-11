@@ -284,6 +284,16 @@ describe( 'textract', function() {
       });
     });
 
+    it( 'will extract text from actual docx files and preserve line breaks [line-breaks.docx]', function( done ) {
+      var filePath = path.join( __dirname, 'files', 'line-breaks.docx' );
+      fromFileWithPath( filePath, { preserveLineBreaks: true }, function( error, text ) {
+        expect( error ).to.be.null;
+        expect( text ).to.be.a( 'string' );
+        expect( text ).to.eql( 'Paragraph follows\n\nLine break follows\n\nend\n\n' );
+        done();
+      });
+    });
+
     it( 'will error out when docx file isn\'t actually a docx', function( done ) {
       var filePath = path.join( __dirname, 'files', 'notadocx.docx' );
       fromFileWithPath( filePath, function( error, text ) {
