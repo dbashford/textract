@@ -1,6 +1,6 @@
 {
   "name": "textract",
-  "version": "2.1.2",
+  "version": "2.2.0",
   "homepage": "https://github.com/dbashford/textract",
   "author": "David Bashford",
   "description": "Extracting text from files of various type including html, pdf, doc, docx, xls, xlsx, csv, pptx, png, jpg, gif, rtf, text/*, and various open office.",
