@@ -89,8 +89,8 @@ describe( 'textract', function() {
       fromFileWithPath( docPath, function( error, text ) {
         expect( error ).to.be.null;
         expect( text ).to.be.an( 'string' );
-        expect( text.length ).to.eql( 26726 );
-        expect( text.substring( 0, 100 ) ).to.eql( ' tag:theregister.co.uk,2005:feed/theregister.co.uk/data_centre/storage/ The Register - Data Centre: ' );
+        expect( text.length ).to.eql( 26731 );
+        expect( text.substring( 0, 100 ) ).to.eql( ' @{}[]tag:theregister.co.uk,2005:feed/theregister.co.uk/data_centre/storage/ The Register - Data Cen' );
         done();
       });
     });
@@ -100,8 +100,8 @@ describe( 'textract', function() {
       fromFileWithPath( docPath, { preserveLineBreaks: true }, function( error, text ) {
         expect( error ).to.be.null;
         expect( text ).to.be.an( 'string' );
-        expect( text.length ).to.eql( 27436 );
-        expect( text.substring( 0, 100 ) ).to.eql( '\n tag:theregister.co.uk,2005:feed/theregister.co.uk/data_centre/storage/\n The Register - Data Centre' );
+        expect( text.length ).to.eql( 27441 );
+        expect( text.substring( 0, 100 ) ).to.eql( '\n @{}[]tag:theregister.co.uk,2005:feed/theregister.co.uk/data_centre/storage/\n The Register - Data C' );
         done();
       });
     });

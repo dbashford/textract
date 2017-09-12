@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
-  <id>tag:theregister.co.uk,2005:feed/theregister.co.uk/data_centre/storage/</id>
+  <id>@{}[]tag:theregister.co.uk,2005:feed/theregister.co.uk/data_centre/storage/</id>
   <title>The Register - Data Centre: Storage</title>
   <link rel="self" type="application/atom+xml" href="https://www.theregister.co.uk/data_centre/storage/headlines.atom"/>
   <link rel="alternate" type="text/html" href="https://www.theregister.co.uk/data_centre/storage/"/>
