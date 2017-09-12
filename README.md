@@ -168,7 +168,7 @@ textract.fromUrl(url, config, function( error, text ) {})
 
 ## Release Notes
 
-### 2.2.0 (pending)
+### 2.2.0
 * [#118](https://github.com/dbashford/textract/issues/118). Properly extracting horizontal bar character
 * [#119](https://github.com/dbashford/textract/pull/119). Passing exec options into RTF extraction.
 * [#119](https://github.com/dbashford/textract/pull/119). Preserving № character.
