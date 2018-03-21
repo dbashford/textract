@@ -57,6 +57,18 @@ describe( 'textract', function() {
         done();
       });
     });
+
+    it( 'will extract text from html files and preserve alt text when asked', function( done ) {
+      var docPath = path.join( __dirname, 'files', 'test-alt.html' );
+      fromFileWithPath( docPath, { includeAltText: true }, function( error, text ) {
+        expect( error ).to.be.null;
+        expect( text ).to.be.an( 'string' );
+        expect( text.length ).to.eql( 46 );
+        expect( text ).to.eql( ' This is a paragraph that has an image inside ' );
+        done();
+      });
+    });
+
   });
 
   describe( 'for .rss files', function() {
