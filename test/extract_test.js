@@ -320,6 +320,16 @@ describe( 'textract', function() {
         done();
       });
     });
+
+    it( 'can handle manage PDFs with passwords', function( done ) {
+      var filePath = path.join( __dirname, 'files', 'pdf-example-password.original.pdf' );
+      fromFileWithPath( filePath, { pdftotextOptions: { userPassword: 'test' } }, function( error, text ) {
+        expect( error ).to.be.null;
+        expect( text ).to.be.a( 'string' );
+        expect( text.substring( 0, 200 ) ).to.eql( 'Backup4all –backup solution for network environments Starting from version 2 it is easier to install Backup4all in a network environment. Network administrators can install Backup4all on a single comp' );
+        done();
+      });
+    });
   });
 
   describe( 'for .docx files', function() {
