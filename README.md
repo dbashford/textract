@@ -169,6 +169,11 @@ textract.fromUrl(url, config, function( error, text ) {})
 
 ## Release Notes
 
+### 2.3.0 (pending)
+* [#149](https://github.com/dbashford/textract/issues/149). Fixed a few text errors that had cropped up with previous PRs/library updates
+* [#139](https://github.com/dbashford/textract/issues/139). Updated mime and marked libraries because of GitHub vulnerability warnings
+* [#137](https://github.com/dbashford/textract/issues/137). Added ability to capture HTML `alt` text via `includeAltText` option.
+
 ### 2.2.0
 * [#118](https://github.com/dbashford/textract/issues/118). Properly extracting horizontal bar character
 * [#119](https://github.com/dbashford/textract/pull/119). Passing exec options into RTF extraction.
