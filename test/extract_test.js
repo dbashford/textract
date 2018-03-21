@@ -291,7 +291,7 @@ describe( 'textract', function() {
         expect( error ).to.be.null;
         expect( text ).to.be.a( 'string' );
         expect( text.indexOf(
-          'Abstract This work deals with a multi-cell topology based\non current-source converters based power cells.'
+          'Abstract— This work deals with a multi-cell topology based\non current-source converters based power cells.'
         ) > 500 ).to.be.true;
         done();
       });
@@ -303,7 +303,7 @@ describe( 'textract', function() {
         expect( error ).to.be.null;
         expect( text ).to.be.a( 'string' );
         expect( text.indexOf(
-          'Abstract This work deals with a multi-cell topology based\non current-source converters based power cells.'
+          'Abstract— This work deals with a multi-cell topology based\non current-source converters based power cells.'
         ) > 500 ).to.be.true;
         done();
       });
