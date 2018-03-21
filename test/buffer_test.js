@@ -17,7 +17,7 @@ var test = function(_testFunction, withMime) {
       var textBuff = fs.readFileSync(docPath);
 
       testFunction(
-        (withMime) ? mime.lookup( docPath ) : docPath,
+        (withMime) ? mime.getType( docPath ) : docPath,
         textBuff, function( error, text ) {
 
         expect(error).to.be.null;
