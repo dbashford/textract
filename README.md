@@ -169,7 +169,7 @@ textract.fromUrl(url, config, function( error, text ) {})
 
 ## Release Notes
 
-### 2.3.0 (pending)
+### 2.3.0
 * [#149](https://github.com/dbashford/textract/issues/149). Fixed a few text errors that had cropped up with previous PRs/library updates
 * [#139](https://github.com/dbashford/textract/issues/139). Updated mime and marked libraries because of GitHub vulnerability warnings
 * [#137](https://github.com/dbashford/textract/issues/137). Added ability to capture HTML `alt` text via `includeAltText` option.
