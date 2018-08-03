@@ -171,14 +171,12 @@ textract.fromUrl(url, config, function( error, text ) {})
 
 ## Release Notes
 
-### 2.4.0 (pending)
+### 2.4.0
 * [#164](https://github.com/dbashford/textract/issues/164). Fixed issue with extra text nodes in odt/ott extraction.
 * [#156](https://github.com/dbashford/textract/issues/156). Introduced `preserveOnlyMultipleLineBreaks` feature.
 * [#149](https://github.com/dbashford/textract/issues/149). RTF extraction error error fixed by [#166](https://github.com/dbashford/textract/pull/166).
 * [#145](https://github.com/dbashford/textract/issues/145). Handling Japanese full-width characters.
 * [#106](https://github.com/dbashford/textract/issues/106). Now extracting `.epub`
-
-156
 
 ### 2.3.0
 * [#149](https://github.com/dbashford/textract/issues/149). Fixed a few text errors that had cropped up with previous PRs/library updates
