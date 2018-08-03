@@ -330,6 +330,16 @@ describe( 'textract', function() {
         done();
       });
     });
+
+    // it( 'can handle arabic', function( done ) {
+    //   var filePath = path.join( __dirname, 'files', 'arabic.pdf' );
+    //   fromFileWithPath( filePath, { preserveLineBreaks: true }, function( error, text ) {
+    //     expect( error ).to.be.null;
+    //     expect( text ).to.be.a( 'string' );
+    //     expect( text.substring( 0, 200 ) ).to.eql( '' );
+    //     done();
+    //   });
+    // });
   });
 
   describe( 'for .docx files', function() {
