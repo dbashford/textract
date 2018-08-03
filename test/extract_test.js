@@ -343,7 +343,7 @@ describe( 'textract', function() {
 
     // it( 'can handle arabic', function( done ) {
     //   var filePath = path.join( __dirname, 'files', 'arabic.pdf' );
-    //   fromFileWithPath( filePath, { preserveLineBreaks: true }, function( error, text ) {
+    //   fromFileWithPath( filePath, function( error, text ) {
     //     expect( error ).to.be.null;
     //     expect( text ).to.be.a( 'string' );
     //     expect( text.substring( 0, 200 ) ).to.eql( '' );
@@ -420,6 +420,16 @@ describe( 'textract', function() {
         expect( error ).to.be.null;
         expect( text ).to.be.a( 'string' );
         expect( text.substring( 0, 100 ) ).to.eql( 'Hashtag chambray XOXO PBR&B chia small batch. Before they sold out banh mi raw denim, fap synth hell' );
+        done();
+      });
+    });
+
+    it( 'can handle arabic', function( done ) {
+      var filePath = path.join( __dirname, 'files', 'arabic.docx' );
+      fromFileWithPath( filePath, function( error, text ) {
+        expect( error ).to.be.null;
+        expect( text ).to.be.a( 'string' );
+        expect( text.substring( 0, 100 ) ).to.eql( ' التعرف الضوئي على الحروف إشعار عدم التمييز (المصدر: مكتب الصحة والخدمات الإنسانية من أجل الحقوق الم' );
         done();
       });
     });
