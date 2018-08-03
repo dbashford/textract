@@ -113,6 +113,16 @@ describe( 'textract', function() {
         done();
       });
     });
+
+    it( 'will only strip single line breaks when requested', function( done ) {
+      var filePath = path.join( __dirname, 'files', 'line-breaks.txt' );
+      fromFileWithPath( filePath, { preserveOnlyMultipleLineBreaks: true }, function( error, text ) {
+        expect( error ).to.be.null;
+        expect( text ).to.be.a( 'string' );
+        expect( text ).to.eql( 'This is a text file\n\nthat has a combination of multiple\n\n\n\nand single line breaks, for use when testing the preserveOnlyMultipleLineBreaks option that keeps only\n\n\nmultiple line breaks.' );
+        done();
+      });
+    });
   });
 
   describe( 'can handle all the different API variations', function() {

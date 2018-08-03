@@ -68,7 +68,6 @@ describe( 'textract', function() {
         done();
       });
     });
-
   });
 
   describe( 'for .rss files', function() {

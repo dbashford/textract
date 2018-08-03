@@ -1,0 +1,15 @@
+This is a
+text file
+
+that has a combination
+of multiple
+
+
+
+and single line breaks, for use
+when testing the preserveOnlyMultipleLineBreaks
+option that keeps
+only
+
+
+multiple line breaks.

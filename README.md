@@ -52,6 +52,7 @@ Note, if any of the requirements below are missing, textract will run and extrac
 Configuration can be passed into textract.  The following configuration options are available
 
 * `preserveLineBreaks`: When using the command line this is set to `true` to preserve stdout readability. When using the library via node this is set to `false`. Pass this in as `true` and textract will not strip any line breaks.
+* `preserveOnlyMultipleLineBreaks`: Some extractors, like PDF, insert line breaks at the end of every line, even if the middle of a sentence. If this option (default `false`) is set to `true`, then any instances of a single line break are removed but multiple line breaks are preserved. Check your output with this option, though, this doesn't preserve paragraphs unless there are multiple breaks.
 * `exec`: Some extractors (dxf) use node's `exec` functionality. This setting allows for providing [config to `exec` execution](http://nodejs.org/api/child_process.html#child_process_child_process_exec_command_options_callback). One reason you might want to provide this config is if you are dealing with very large files. You might want to increase the `exec` `maxBuffer` setting.
 * `[ext].exec`: Each extractor can take specific exec config. Keep in mind many extractors are responsible for extracting multiple types, so, for instance, the `odt` extractor is what you would configure for `odt` and `odg`/`odt` etc.  Check [the extractors](https://github.com/dbashford/textract/tree/master/lib/extractors) to see which you want to specifically configure. At the bottom of each is a list of `types` for which the extractor is responsible.
 * `tesseract.lang`: A pass-through to tesseract allowing for setting of language for extraction. ex: `{ tesseract: { lang:"chi_sim" } }`
@@ -171,8 +172,11 @@ textract.fromUrl(url, config, function( error, text ) {})
 
 ### 2.3.1 (pending)
 * [#164](https://github.com/dbashford/textract/issues/164). Fixed issue with extra text nodes in odt/ott extraction.
+* [#156](https://github.com/dbashford/textract/issues/156). Introduced `preserveOnlyMultipleLineBreaks` feature.
 * [#149](https://github.com/dbashford/textract/issues/149). RTF extraction error error fixed by [#166](https://github.com/dbashford/textract/pull/166).
 * [#145](https://github.com/dbashford/textract/issues/145). Handling Japanese full-width characters.
+
+156
 
 ### 2.3.0
 * [#149](https://github.com/dbashford/textract/issues/149). Fixed a few text errors that had cropped up with previous PRs/library updates
