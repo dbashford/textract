@@ -11,6 +11,7 @@ A text extraction node module.
 * HTML, HTM
 * ATOM, RSS
 * Markdown
+* EPUB
 * XML, XSL
 * PDF
 * DOC, DOCX
@@ -170,11 +171,12 @@ textract.fromUrl(url, config, function( error, text ) {})
 
 ## Release Notes
 
-### 2.3.1 (pending)
+### 2.4.0 (pending)
 * [#164](https://github.com/dbashford/textract/issues/164). Fixed issue with extra text nodes in odt/ott extraction.
 * [#156](https://github.com/dbashford/textract/issues/156). Introduced `preserveOnlyMultipleLineBreaks` feature.
 * [#149](https://github.com/dbashford/textract/issues/149). RTF extraction error error fixed by [#166](https://github.com/dbashford/textract/pull/166).
 * [#145](https://github.com/dbashford/textract/issues/145). Handling Japanese full-width characters.
+* [#106](https://github.com/dbashford/textract/issues/106). Now extracting `.epub`
 
 156
 

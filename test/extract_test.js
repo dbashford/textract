@@ -94,6 +94,32 @@ describe( 'textract', function() {
     });
   });
 
+  describe( 'for .epub files', function() {
+    it( 'will extract text from epub files', function( done ) {
+      var docPath = path.join( __dirname, 'files', 'Metamorphosis-jackson.epub' );
+      this.timeout( 5000 );
+      fromFileWithPath( docPath, function( error, text ) {
+        expect( error ).to.be.null;
+        expect( text ).to.be.an( 'string' );
+        expect( text.length ).to.eql( 119329 );
+        expect( text.substring( 3000, 3500 ) ).to.eql( "dboard so that he could lift his head better; found where the itch was, and saw that it was covered with lots of little white spots which he didn't know what to make of; and when he tried to feel the place with one of his legs he drew it quickly back because as soon as he touched it he was overcome by a cold shudder. He slid back into his former position. \"Getting up early all the time\", he thought, \"it makes you stupid. You've got to get enough sleep. Other travelling salesmen live a life of lu" );
+        done();
+      });
+    });
+
+    it( 'will extract text from epub files and preserve line breaks', function( done ) {
+      var docPath = path.join( __dirname, 'files', 'Metamorphosis-jackson.epub' );
+      this.timeout( 5000 );
+      fromFileWithPath( docPath, { preserveLineBreaks: true }, function( error, text ) {
+        expect( error ).to.be.null;
+        expect( text ).to.be.an( 'string' );
+        expect( text.length ).to.eql( 119342 );
+        expect( text.substring( 3000, 3500 ) ).to.eql( "rds the headboard so that he could lift his head better; found where the itch was, and saw that it was covered with lots of little white spots which he didn't know what to make of; and when he tried to feel the place with one of his legs he drew it quickly back because as soon as he touched it he was overcome by a cold shudder.\nHe slid back into his former position. \"Getting up early all the time\", he thought, \"it makes you stupid. You've got to get enough sleep. Other travelling salesmen live a" );
+        done();
+      });
+    });
+  });
+
   describe( 'for .atom files', function() {
     it( 'will extract text from atom files', function( done ) {
       var docPath = path.join( __dirname, 'files', 'atom.atom' );
