@@ -125,7 +125,7 @@ describe( 'fromUrl tests', function() {
   test(
     'ott',
     'ott.ott',
-    'This is a document template, yay templates! Woo templates get me so excited! Woo templates get me so'
+    'This is a document template, yay templates! Woo templates get me so excited!'
   );
 
   test(

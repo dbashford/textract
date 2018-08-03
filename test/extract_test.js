@@ -550,6 +550,18 @@ describe( 'textract', function() {
     });
   });
 
+  describe( 'for odt files', function() {
+    it( 'will extract text from ODT files', function( done ) {
+      var filePath = path.join( __dirname, 'files', 'spaced.odt' );
+      fromFileWithPath( filePath, function( error, text ) {
+        expect( error ).to.be.null;
+        expect( text ).to.be.an( 'string' );
+        expect( text ).to.eql( 'This Is some text' );
+        done();
+      });
+    });
+  });
+
   describe( 'for image files', function() {
     it( 'will extract text from PNG files', function( done ) {
       var filePath = path.join( __dirname, 'files', 'testphoto.png' );
@@ -675,8 +687,8 @@ describe( 'textract', function() {
   test(
     'ott',
     'ott.ott',
-    'This is a document template, yay templates! Woo templates get me so excited! Woo templates get me so',
-    'This is a document template, yay templates!\nWoo templates get me so excited!\nWoo templates get me so'
+    'This is a document template, yay templates! Woo templates get me so excited!',
+    'This is a document template, yay templates!\nWoo templates get me so excited!'
   );
 
   test(
