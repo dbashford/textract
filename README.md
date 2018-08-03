@@ -169,6 +169,9 @@ textract.fromUrl(url, config, function( error, text ) {})
 
 ## Release Notes
 
+### 2.3.1 (pending)
+* [#149](https://github.com/dbashford/textract/issues/149). RTF extraction error error fixed by [#166](https://github.com/dbashford/textract/pull/166).
+
 ### 2.3.0
 * [#149](https://github.com/dbashford/textract/issues/149). Fixed a few text errors that had cropped up with previous PRs/library updates
 * [#139](https://github.com/dbashford/textract/issues/139). Updated mime and marked libraries because of GitHub vulnerability warnings
