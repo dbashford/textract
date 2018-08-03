@@ -170,7 +170,9 @@ textract.fromUrl(url, config, function( error, text ) {})
 ## Release Notes
 
 ### 2.3.1 (pending)
+* [#164](https://github.com/dbashford/textract/issues/164). Fixed issue with extra text nodes in odt/ott extraction.
 * [#149](https://github.com/dbashford/textract/issues/149). RTF extraction error error fixed by [#166](https://github.com/dbashford/textract/pull/166).
+* [#145](https://github.com/dbashford/textract/issues/145). Handling Japanese full-width characters.
 
 ### 2.3.0
 * [#149](https://github.com/dbashford/textract/issues/149). Fixed a few text errors that had cropped up with previous PRs/library updates

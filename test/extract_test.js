@@ -331,6 +331,16 @@ describe( 'textract', function() {
       });
     });
 
+    it( 'can handle manage PDFS with full-width Japanese characters', function( done ) {
+      var filePath = path.join( __dirname, 'files', 'full-width-j.pdf' );
+      fromFileWithPath( filePath, function( error, text ) {
+        expect( error ).to.be.null;
+        expect( text ).to.be.a( 'string' );
+        expect( text.replace( / /g, '' ).substring( 2685, 2900 ) ).to.eql( '＄％＆＇（）＊＋，－．／０１２３４５６７８９：；＜＝＞？＠ＡＢＣＤＥＦＧＨＩＪＫＬＭＮＯＰＱＲＳＴＵＶＷＸＹＺ［＼］＾＿｀ａｂｃｄｅｆｇｈｉｊｋｌｍｎｏｐｑｒｓｔｕｖｗｘｙｚ｛｜｝～｟｠｡｢｣､･ｦｧｨｩｪｫｬｭｮｯｰｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿﾀﾁﾂﾃﾄﾅﾆﾇﾈﾉﾊﾋﾌﾍﾎﾏﾐﾑﾒﾓﾔﾕﾖﾗﾘﾙﾚﾛﾜﾝﾞﾟﾡﾢﾣﾤﾥﾦﾧﾨﾩﾪﾫﾬﾭﾮﾯﾰﾱﾲﾳﾴﾵﾶﾷﾸﾹﾺﾻﾼﾽﾾￂￃￄￅￆￇￊￋￌￍￎￏￒￓￔￕￖￗￚￛￜ￠￡￢￣￤￥￦F' );
+        done();
+      });
+    });
+
     // it( 'can handle arabic', function( done ) {
     //   var filePath = path.join( __dirname, 'files', 'arabic.pdf' );
     //   fromFileWithPath( filePath, { preserveLineBreaks: true }, function( error, text ) {
