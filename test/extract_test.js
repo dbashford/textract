@@ -481,6 +481,16 @@ describe( 'textract', function() {
       });
     });
 
+    it( 'will error when .txt file encoding cannot be detected', function( done ) {
+      var filePath = path.join( __dirname, 'files', 'unknown-encoding.txt' );
+      fromFileWithPath( filePath, function( error ) {
+        expect( error ).to.be.an( 'object' );
+        expect( error.message ).to.be.a( 'string' );
+        expect( error.message ).to.eql( 'Could not detect encoding for file named [[ unknown-encoding.txt ]]' );
+        done();
+      });
+    });
+
     it( 'will extract text specifically from a .css file', function( done ) {
       var filePath = path.join( __dirname, 'files', 'css.css' );
       fromFileWithPath( filePath, function( error, text ) {
