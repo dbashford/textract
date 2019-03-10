@@ -1,4 +1,5 @@
 ### 2.5.0 (pending)
+* [#179](https://github.com/dbashford/textract/pull/179). PR added ability to capture powerpoint speaker notes.
 * [#175](https://github.com/dbashford/textract/pull/175). PR captured cases where `text` mime types files couldn't have their encoding detected
 
 ### 2.4.0

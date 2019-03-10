@@ -566,6 +566,16 @@ describe( 'textract', function() {
       });
     });
 
+    it( 'will extract text PPTX files with notes', function( done ) {
+      var filePath = path.join( __dirname, 'files', 'PrezoWithNotes.pptx' );
+      fromFileWithPath( filePath, function( error, text ) {
+        expect( error ).to.be.null;
+        expect( text ).to.be.an( 'string' );
+        expect( text).to.eql( 'This is a slide These are speaker notes 1 ' );
+        done();
+      });
+    });
+
     it( 'will extract slides in the right order', function( done ) {
       var filePath = path.join( __dirname, 'files', 'order.pptx' );
       fromFileWithPath( filePath, { preserveLineBreaks: true }, function( error, text ) {
