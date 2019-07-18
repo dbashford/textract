@@ -631,7 +631,6 @@ describe( 'textract', function() {
     it( 'will extract text from ODT files with header and footers', function( done ) {
       var filePath = path.join( __dirname, 'files', 'header-footer.odt' );
       fromFileWithPath( filePath, function( error, text ) {
-        console.log(text + '\nLength: ' + text.length)
         expect( error ).to.be.null;
         expect( text ).to.be.an( 'string' );
         expect( text.length ).to.eql( 50);
