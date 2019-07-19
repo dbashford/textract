@@ -630,10 +630,12 @@ describe( 'textract', function() {
     describe( 'for advanced odt files', function() {
     it( 'will extract text from ODT files with header and footers', function( done ) {
       var filePath = path.join( __dirname, 'files', 'header-footer.odt' );
-      fromFileWithPath( filePath, function( error, text ) {
+      var options = {preserveLineBreaks: true, allowHeaderAndFooter: true}
+      fromFileWithPath( filePath, options, function( error, text ) {
+        var raw = text.replace(/\n/g, '');
         expect( error ).to.be.null;
         expect( text ).to.be.an( 'string' );
-        expect( text.length ).to.eql( 50);
+        expect( raw.length ).to.eql(94);
         done();
       });
     });
