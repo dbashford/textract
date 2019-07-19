@@ -61,6 +61,7 @@ Configuration can be passed into textract.  The following configuration options 
 * `pdftotextOptions`: This is a proxy options object to the library textract uses for pdf extraction: [pdf-text-extract](https://github.com/nisaacson/pdf-text-extract). Options include `ownerPassword`, `userPassword` if you are extracting text from password protected PDFs. IMPORTANT: textract modifies the pdf-text-extract `layout` default so that, instead of `layout: layout`, it uses `layout:raw`. It is not suggested you modify this without understanding what trouble that might get you in. See [this GH issue](https://github.com/dbashford/textract/issues/75) for why textract overrides that library's default.
 * `typeOverride`: Used with `fromUrl`, if set, rather than using the `content-type` from the URL request, will use the provided `typeOverride`.
 * `includeAltText`: When extracting HTML, whether or not to include `alt` text with the extracted text. By default this is `false`.
+* `allowHeaderAndFooter`: This option includes the extraction of content from header and footer in .odt files. By default this is `false`.
 
 To use this configuration at the command line, prefix each open with a `--`.
 

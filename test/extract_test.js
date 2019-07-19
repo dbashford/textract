@@ -615,13 +615,27 @@ describe( 'textract', function() {
     });
   });
 
-  describe( 'for odt files', function() {
+  describe( 'for simple odt files', function() {
     it( 'will extract text from ODT files', function( done ) {
       var filePath = path.join( __dirname, 'files', 'spaced.odt' );
       fromFileWithPath( filePath, function( error, text ) {
         expect( error ).to.be.null;
         expect( text ).to.be.an( 'string' );
         expect( text ).to.eql( 'This Is some text' );
+        done();
+      });
+    });
+  });
+
+    describe( 'for advanced odt files', function() {
+    it( 'will extract text from ODT files with header and footers', function( done ) {
+      var filePath = path.join( __dirname, 'files', 'header-footer.odt' );
+      var options = {preserveLineBreaks: true, allowHeaderAndFooter: true}
+      fromFileWithPath( filePath, options, function( error, text ) {
+        var raw = text.replace(/\n/g, '');
+        expect( error ).to.be.null;
+        expect( text ).to.be.an( 'string' );
+        expect( raw.length ).to.eql(94);
         done();
       });
     });
