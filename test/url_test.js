@@ -14,7 +14,7 @@ describe( 'fromUrl tests', function() {
       expect( error ).to.be.null;
       expect( text ).to.be.an( 'string' );
       expect( text.substring( 0, 100 ) ).to.eql(
-        ' Washington State Legislature Bill Summary 2017-2018 2015-2016 2013-2014 2011-2012 2009-2010 2007-20' );
+        ' Washington State Legislature Bill Summary Search by Bill or Initiative Number Bill Initiative 2019-' );
       done();
     });
   });
