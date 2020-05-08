@@ -60,15 +60,15 @@
     "iconv-lite": "0.4.15",
     "jschardet": "1.4.1",
     "yauzl": "2.7.0",
-    "epub2": "1.3.4"
+    "epub2": "^1.3.8"
   },
   "devDependencies": {
     "chai": "1.5.0",
-    "eslint": "2.11.1",
-    "eslint-config-airbnb": "^9.0.1",
-    "eslint-plugin-react": "^5.1.1",
-    "eslint-plugin-jsx-a11y": "^1.2.0",
-    "eslint-plugin-import": "^1.7.0 ",
+    "eslint": "^6.7.2",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-import": "^2.20.2",
     "mocha": "^7.1.2"
   },
   "scripts": {
