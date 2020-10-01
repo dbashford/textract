@@ -27,6 +27,7 @@ A text extraction node module.
 * DXF
 * `application/javascript`
 * All `text/*` mime-types.
+* We will be adding more text formats for you all. 
 
 In almost all cases above, what textract cares about is the mime type.  So `.html` and `.htm`, both possessing the same mime type, will be extracted.  Other extensions that share mime types with those above should also extract successfully. For example, `application/vnd.ms-excel` is the mime type for `.xls`, but also for 5 other file types.
 
@@ -168,3 +169,6 @@ textract.fromUrl(url, config, function( error, text ) {})
 - `sudo port install tesseract-eng`
 - You will also want to disable textract's usage of textutil as the tests are based on output from antiword.
   - Go into `/lib/extractors/{doc|doc-osx|rtf}` and modify the code under `if ( os.platform() === 'darwin' ) {`. Uncommented the commented lines in these sections.
+  
+  
+* We are working continously to make this project more efficient. Till then , keep extracting!!!!!!!!!!!!!
