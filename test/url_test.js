@@ -14,16 +14,15 @@ describe( 'fromUrl tests', function() {
       expect( error ).to.be.null;
       expect( text ).to.be.an( 'string' );
       expect( text.substring( 0, 100 ) ).to.eql(
-        ' Washington State Legislature Bill Summary Search by Bill or Initiative Number Bill Initiative 2019-' );
+        ' Washington State Legislature Bill Summary Search by Bill or Initiative Number Bill Initiative 2021-'
+      );
       done();
     });
   });
 
   it( 'take object URL', function( done ) {
     var url = 'https://cdn.rawgit.com/dbashford/textract/master/test/files/doc.doc?raw=true'
-      , urlObj = nodeUrl.parse( url )
-      ;
-
+      , urlObj = nodeUrl.parse( url );
     fromUrl( urlObj, function( error, text ) {
       expect( error ).to.be.null;
       expect( text ).to.be.an( 'string' );
