@@ -121,7 +121,7 @@ var test = function(_testFunction, withMime) {
   _test(
     "ots",
     "ots.ots",
-    "This,is , template, an,open,office,template isn't,it,awesome?, you,know,it,is "
+    "This,is, template, an,open,office,template isn't,it,awesome?, you,know,it,is "
   );
 
   _test(

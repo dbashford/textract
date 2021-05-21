@@ -278,16 +278,6 @@ describe( 'textract', function() {
         done();
       });
     });
-
-    it( 'will error when input file is not an actual xlsx file', function( done ) {
-      var filePath = path.join( __dirname, 'files', 'notaxlsx.xlsx' );
-      fromFileWithPath( filePath, function( error ) {
-        expect( error ).to.be.an( 'object' );
-        expect( error.message ).to.be.a( 'string' );
-        expect( error.message.substring( 0, 43 ) ).to.eql( 'Could not extract notaxlsx.xlsx, Error: PRN' );
-        done();
-      });
-    });
   });
 
   describe( 'for .pdf files', function() {
@@ -718,7 +708,7 @@ describe( 'textract', function() {
     'ods',
     'ods.ods',
     'This,is,a,ods Really,it,is, I,promise,, ',
-    'This,is,a,ods\nReally,it,is,\nI,promise,,\n'
+    'This,is,a,ods\nReally,it,is,\nI,promise,,\n\n\n'
   );
 
   test(
@@ -759,8 +749,8 @@ describe( 'textract', function() {
   test(
     'ots',
     'ots.ots',
-    "This,is , template, an,open,office,template isn't,it,awesome?, you,know,it,is ",
-    "This,is , template,\nan,open,office,template\nisn't,it,awesome?,\nyou,know,it,is\n"
+    "This,is, template, an,open,office,template isn't,it,awesome?, you,know,it,is ",
+    "This,is, template,\nan,open,office,template\nisn't,it,awesome?,\nyou,know,it,is\n\n\n"
   );
 
   test(
