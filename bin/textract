@@ -20,7 +20,7 @@ var path = require( 'path' )
 
 var cli = meow({
   help: help,
-  pkg: '../package.json'
+  pkg: require('../package.json')
 });
 
 if ( !cli.input || cli.input.length === 0 ) {
