@@ -55,7 +55,7 @@
     "cheerio": "1.0.0-rc.2",
     "marked": "0.6.2",
     "meow": "3.7.0",
-    "got": "5.7.1",
+    "got": "11.8.5",
     "html-entities": "1.2.0",
     "iconv-lite": "0.4.15",
     "jschardet": "1.4.1",
